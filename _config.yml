@@ -13,4 +13,5 @@ include: ['_pages']
 kramdown:
   input: GFM
 collections:
-  - writeups
+  writeups:
+    output: true
