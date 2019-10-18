@@ -3,7 +3,7 @@ title: UBG Hacking Team
 email: none@none.com
 description: >
   a hacking team dedicated to Hack The Box, Capture The Flags and security blogging
-baseurl: "/"
+baseurl: ""
 url: "http://ubghacking.github.io"
 github_username: ubghacking
 # Build Settings
