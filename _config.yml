@@ -5,7 +5,7 @@ description: >
   a hacking team dedicated to Hack The Box, Capture The Flags and security blogging
 baseurl: "/"
 url: "http://ubghacking.github.io"
-github_username:  ubghacking
+github_username: ubghacking
 # Build Settings
 sass:
   sass_dir: _sass
