@@ -1,12 +1,11 @@
 # Site Settings
-title: Start Jekyll
-email: taniarascia@gmail.com
+title: UBG Hacking Team
+email: none@none.com
 description: >
-  A guide to getting started with Jekyll.
-baseurl: "/startjekyll"
-url: "http://taniarascia.github.io"
-twitter_username: taniarascia
-github_username:  taniarascia
+  a hacking team dedicated to Hack The Box, Capture The Flags and security blogging
+baseurl: "/ubghacking.hithub.io"
+url: "http://ubghacking.github.io"
+github_username:  ubghacking
 # Build Settings
 sass:
   sass_dir: _sass
