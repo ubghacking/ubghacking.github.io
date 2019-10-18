@@ -1,0 +1,9 @@
+---
+layout: default
+---
+
+<h2>HTB Writeups</h2>
+{% for writeup in site.writeups %}
+		<time>{{ writeup.date | date: "%b %-d, %Y" }}</time>
+		<h3><a href="{{ writeup.url | prepend: site.baseurl }}">{{ writeup.title }}</a></h3>
+{% endfor %}
