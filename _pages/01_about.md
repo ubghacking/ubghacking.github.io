@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-We are a group of information technology professionals during the day, and computer hackers by night. ALl team members work in the information security field in one fashion or another. There is a collective background from defenfisve security administrators, offensive penetration testers and red teamers. We share a common goal of having a passion to learn to sharpen our skills. Whether we are at our home doing Hack The Box, online Capture The Flag challenges, Pentesterlabs, or at a con participating, we all enjoy learning new ways to gain privileged access.
+We are a group of information technology professionals during the day, and computer hackers by night. All team members work in the information security field in one fashion or another. There is a collective background from defensive security administrators, offensive penetration testers and red teamers. We share a common goal of having a passion to learn to sharpen our skills. Whether we are at our home doing Hack The Box, online Capture The Flag challenges, Pentesterlabs, or at a con participating, we all enjoy learning new ways to gain privileged access.
 
 Want to join our team? Message nanobyte#1089 on discord!
 
