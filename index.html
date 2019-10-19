@@ -5,3 +5,9 @@ layout: default
   <h2><font color="red">root@kali</font><font color="black">:</font><font color="blue">~/UBG/Hacking/Team</font><font color="black">#</font></h2>
 
 A Hack The Box, CTF, all things security and security blogging team. Please join our team for HTB so we can get into the top 50! 
+
+<h2>News</h2>
+{% for article in site.news %}
+		<time>{{ article.date | date: "%b %-d, %Y" }}</time>
+		<h3>{{ article.title }}</h3>
+{% endfor %}
