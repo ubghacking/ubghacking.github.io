@@ -15,3 +15,5 @@ kramdown:
 collections:
   writeups:
     output: true
+  news:
+    output: true
