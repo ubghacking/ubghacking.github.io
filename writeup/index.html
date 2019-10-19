@@ -2,7 +2,8 @@
 layout: default
 ---
 
-<h2>HTB Writeups</h2>
+ <h2><font color="red">h4x0r@kali</font><font color="black">:</font><font color="blue">HTB/Writeups</font><font color="black">#</font></h2>
+
 {% for writeup in site.writeups %}
 		<time>{{ writeup.date | date: "%b %-d, %Y" }}</time> | <h4><a href="{{ writeup.url | prepend: site.baseurl }}">{{ writeup.title }}</a></h4>
 {% endfor %}
