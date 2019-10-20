@@ -1,3 +1,22 @@
+@media screen and (max-width:720px) {
+
+h1 {
+  font-size: 20px;
+}
+ 
+h2 {
+  font-size: 18px;
+}
+ 
+h3 {
+  font-size: 16px;
+}
+ 
+h4 {
+  font-size: 14px;
+}
+}
+
 body {
 	margin: 0;
 	background-color: $background;
@@ -113,11 +132,13 @@ aside {
 		}
 	}
 }
+
 .boxed {
 	background: #FFFFFF;
 	max-width: $content-width;
 	margin: auto;
 }
+
 footer {
 	text-align: right;
 	padding: 5px;
