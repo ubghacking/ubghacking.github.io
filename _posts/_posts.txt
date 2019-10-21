@@ -8,3 +8,5 @@ date:   YYYY-MM-DD
 description: Brief description
 tags: tag [please note for tags, to appear, there must be a tag page setup in /tags dir!]
 ---
+
+< content >
