@@ -10,6 +10,5 @@ A Hack The Box, CTF, all things security and security blogging team. Please join
 {% for article in site.news %}
 		<time>{{ article.date | date: "%b %-d, %Y" }}</time> | <h4>{{ article.title }}</h4>
 		<p>{{ article.content }}</p>
+		{% if article.author %} --cheers-- {{ article.author }}{% endif %}
 {% endfor %}
-
-{% if article.author %} --cheers-- {{ article.author }}{% endif %}
