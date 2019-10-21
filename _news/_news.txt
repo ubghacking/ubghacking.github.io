@@ -7,3 +7,5 @@ author: htb_handle
 date:   YYYY-MM-DD
 tags: tags [for tags to appear, there must be a tag markdown setup in /tag]
 ---
+
+< content >
