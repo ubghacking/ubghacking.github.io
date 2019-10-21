@@ -17,3 +17,5 @@ collections:
     output: true
   news:
     output: true
+  tag:
+    output: true
