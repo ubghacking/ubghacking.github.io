@@ -18,4 +18,4 @@ collections:
   news:
     output: true
   tag:
-    output: true
+    output: false
