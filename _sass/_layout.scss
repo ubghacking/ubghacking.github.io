@@ -1,3 +1,9 @@
+@media (max-width:629px) {
+  img#optionalstuff {
+    display: none;
+  }
+} 
+
 body {
 	margin: 0;
 	background-color: $background;
