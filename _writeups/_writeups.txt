@@ -1,0 +1,11 @@
+a place to put all htb writeups to appear in Writeups. Format to follow:
+
+---
+layout: post
+title:  "News Article Title!"
+author: htb_handle
+date:   YYYY-MM-DD
+tags: tags [for tags to appear, there must be a tag markdown setup in /tag]
+---
+
+< content >
