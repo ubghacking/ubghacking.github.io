@@ -8,6 +8,6 @@ A Hack The Box, CTF, all things security and security blogging team. Please join
 
 <h2>News</h2>
 {% for article in site.news %}
-		<time>{{ article.date | date: "%b %-d, %Y" }}</time> | <h4>{{ article.title }}</h4>
+		<time>{{ article.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • {{ page.author }}{% endif %} | <h4>{{ article.title }}</h4>
 		<p>{{ article.content }}</p>
 {% endfor %}
