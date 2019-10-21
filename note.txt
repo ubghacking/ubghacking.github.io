@@ -1,0 +1,1 @@
+DO NOT PLACE ANY BLOGS IN HERE! All blogs appear in /_posts as markdown!
