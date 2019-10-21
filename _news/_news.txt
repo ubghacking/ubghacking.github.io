@@ -1,0 +1,1 @@
+use this dir to put all news articles to appear on the front page
