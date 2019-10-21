@@ -1,13 +1,13 @@
 .discordlink {
-	width: 45px;
-	height: 45px;
+	max-width:100%;
+ 	height:auto;
   	display: block;
 	background:transparent url('/images/discord/Discord-Logo-Blue.png');
 }
 
 .discordlink:hover {
-	width: 45px;
-	height: 45px;
+	max-width:100%;
+ 	height:auto;
   	display: block;
 	background-image: url('/images/discord/Discord-Logo-Black.png');
 }
