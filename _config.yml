@@ -10,6 +10,7 @@ github_username: ubghacking
 sass:
   sass_dir: _sass
 include: ['_pages']
+markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
