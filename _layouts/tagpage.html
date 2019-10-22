@@ -10,4 +10,11 @@ layout: default
   </li>
 {% endfor %}
 </ul>
+<ul>
+{% for writeups in site.tags[page.tag] %}
+  <li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }})<br>
+    {{ post.description }}
+  </li>
+{% endfor %}
+</ul>
 </div>
