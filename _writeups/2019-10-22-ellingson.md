@@ -30,7 +30,7 @@ Nmap done: 1 IP address (1 host up) scanned in 16.92 seconds
 
 Once I was able to identify what services were running, I hopped on over to the website and began to poke around while running gobuster. When I got to the /articles/ directory, I noticed the numbers incremented and so manually fuzzed. Fuzzing http://10.10.10.139/articles/5 was able to find python interactive shells. There, I had access to a python debugger!
 
-{% highlight bash lineos %}
+{% highlight %}
 File "/opt/corp-web/run.py", line 32, in show_articles
 slug = articles[index-1]
 
