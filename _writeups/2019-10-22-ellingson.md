@@ -10,7 +10,7 @@ Ellingson was an awesome box to root! Not only did I get to sharpen some of my R
 
 First off, I ran nmap against the box
 
-``` bash
+~~~ bash
 nmap -sV -O 10.10.10.139
 Starting Nmap 7.70 ( https://nmap.org ) at 2019-10-22 10:15 CDT
 Nmap scan report for 10.10.10.139
@@ -26,7 +26,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 16.92 seconds
-```
+~~~
 
 Once I was able to identify what services were running, I hopped on over to the website and began to poke around while running gobuster. When I got to the /articles/ directory, I noticed the numbers incremented and so manually fuzzed. Fuzzing http://10.10.10.139/articles/5 was able to find python interactive shells. There, I had access to a python debugger!
 
