@@ -3,6 +3,7 @@ layout: post
 title:  "Ellingson Walkthrough"
 author: nanobyte
 date:   2019-10-22
+description: Hack The Box writeup for Ellingson, Retired Hard Box
 tags: ROP SSH Python
 ---
 
