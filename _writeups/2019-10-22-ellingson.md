@@ -11,7 +11,7 @@ Ellingson was an awesome box to root! Not only did I get to sharpen some of my R
 First off, I ran nmap against the box
 
 {% highlight bash lineos %}
-nmap -sV -O 10.10.10.139
+nmap -sV -sC -p- -oA ellingson.htb 10.10.10.139
 Starting Nmap 7.70 ( https://nmap.org ) at 2019-10-22 10:15 CDT
 Nmap scan report for 10.10.10.139
 Host is up (0.066s latency).
@@ -102,9 +102,9 @@ margo:iamgod$08
 
 Now that it’s cracked, let’s login as user!
 
+{% highlight bash %}
 su margo
 
-{% highlight bash %}
 cat /home/margo/user.txt
 d0ff9e3f9da8--------------------
 {% endhighlight %}
