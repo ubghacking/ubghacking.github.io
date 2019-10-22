@@ -4,8 +4,6 @@ layout: default
 
  <h2><font color="red">h4x0r@kali</font><font color="black">:</font><font color="blue">~/UBG/{{ page.title }}</font><font color="black">#</font></h2><br>
 
-<h3>{% if page.title %}{{ page.title }}{% endif %}</h3>
-
 <span>[ Tags:
   {% for tag in page.tags %}
     {% capture tag_name %}{{ tag }}{% endcapture %}
@@ -13,6 +11,7 @@ layout: default
   {% endfor %}
 ]</span><br><br>
 
-<time>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</time>
+<h3>{% if page.title %}{{ page.title }}{% endif %}</h3>
+<time>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} | {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</time>
 
 {{ content }}
