@@ -1,6 +1,6 @@
 {% assign rawtags = "" %}
-{% for writeup in site.writeups %}
-  {% assign ttags = writeup.tags | join:'|' | append:'|' %}
+{% for post in site.posts %}
+  {% assign ttags = post.tags | join:'|' | append:'|' %}
   {% assign rawtags = rawtags | append:ttags %}
 {% endfor %}
 {% assign rawtags = rawtags | split:'|' | sort %}
