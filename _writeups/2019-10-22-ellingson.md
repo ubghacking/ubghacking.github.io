@@ -41,7 +41,7 @@ hal
 
 Nice! I found I have the ability to run os system commands. During enumeration, I also found that there is Port 22 open. First, I tried to steal the SSH key, but I did not know the key passphrase. However, looking further, I can write to the authorized_keys file! Since taking the id_rsa key file on there didn’t work, let’s generate a new key, and place our pub key in there:
 
-{% highlight bash %}
+{% highlight %}
 import os
 
 os.system("echo '\nssh-rsa [your RSA key] root@kali' >> /home/hal/.ssh/authorized_keys")
@@ -51,7 +51,7 @@ And now I can login to SSH! Awesome, initial foothold gained!
 
 Now that we login, during further enumeration we are user Hal and need to get to user. Enumerating the system, there is a backup folder. In there, we have read permissions to shadow.bak!? Bad admin!
 
-{% highlight bash %}
+{% highlight bash lineos %}
 cat /var/backups/shadow.bak
 
 root:*:17737:0:99999:7:::
