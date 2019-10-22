@@ -8,11 +8,5 @@ layout: default
   <li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }})<br>
     {{ post.description }}
   </li>
-{% endfor %}
-  {% for writeup in site.tags[page.tag] %}
-  <li><a href="{{ writeup.url }}">{{ writeup.title }}</a> ({{ writeup.date | date_to_string }})<br>
-    {{ writeup.description }}
-  </li>
-{% endfor %}
 </ul>
 </div>
