@@ -3,8 +3,8 @@
   {% assign ttags = post.tags | join:'|' | append:'|' %}
   {% assign rawtags = rawtags | append:ttags %}
 {% endfor %}
-{% for post in site.writeups %}
-  {% assign ttags = post.tags | join:'|' | append:'|' %}
+{% for writeup in site.writeups %}
+  {% assign ttags = writeup.tags | join:'|' | append:'|' %}
   {% assign rawtags = rawtags | append:ttags %}
 {% endfor %}
 {% assign rawtags = rawtags | split:'|' | sort %}
