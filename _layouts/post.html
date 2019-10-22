@@ -2,11 +2,7 @@
 layout: default
 ---
 
- <h2><font color="red">h4x0r@kali</font><font color="black">:</font><font color="blue">~/UBG/{{ page.title }}</font><font color="black">#</font></h2>
-
-<time>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</time>
-
-{{ content }}
+ <h2><font color="red">h4x0r@kali</font><font color="black">:</font><font color="blue">~/UBG/{{ page.title }}</font><font color="black">#</font></h2><br>
 
 <span>[ Tags:
   {% for tag in page.tags %}
@@ -14,3 +10,7 @@ layout: default
     <a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
   {% endfor %}
 ]</span>
+
+<time>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</time>
+
+{{ content }}
