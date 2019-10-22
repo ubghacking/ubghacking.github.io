@@ -3,7 +3,7 @@ layout: post
 title:  "Ellingson Walkthrough"
 author: nanobyte
 date:   2019-10-22
-tags: ROP, SSH, Python
+tags: ROP SSH Python
 ---
 
 Ellingson was an awesome box to root! Not only did I get to sharpen some of my ROP skills, but the throwback to one of my favorite movies (Hackers) was a treat from beginning to root. For those of you who have not seen Hackers, shame on you. Go watch it! This box was also awesome because getting the initial foothold was not the average run this flavor exploit, but really had to think out of the box for me and starting new. So, lets get started!
