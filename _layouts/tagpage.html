@@ -6,7 +6,7 @@ layout: default
 <ul>
 {% for post in site.tags[page.tag] %}
   
-  <time>{{ post.date | date: "%b %-d, %Y" }}</time> | <h4><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
+  <time>{{ post.date | date: "%b %-d, %Y" }}</time> | <h4><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4><br>
     {{ post.description }}
   </li>
 {% endfor %}
