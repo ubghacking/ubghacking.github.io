@@ -1,8 +1,30 @@
 /**
  * Syntax highlighting styles
  */
-.highlight {
+/**.highlight {
     background: #fff;
+   */ 
+    .highlight {
+    background: #fff;
+    @extend %vertical-rhythm;
+
+    .highlighter-rouge & {
+    //   background: #eef;
+      background: $background;
+    }
+}
+// override the _base.scss
+pre,
+code {
+    font-size: 15px;
+    border: 1px solid $grey-color-light;
+    border-radius: 3px;
+    background-color: $background;
+}
+
+code {
+    padding: 1px 5px;
+}
 
     .c     { color: #998; font-style: italic } // Comment
     .err   { color: #a61717; background-color: #e3d2d2 } // Error
