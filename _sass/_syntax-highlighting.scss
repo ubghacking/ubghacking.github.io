@@ -5,21 +5,21 @@
     background: #fff;
    */ 
     .highlight {
-    background: #fff;
+    background: #999999;
     @extend %vertical-rhythm;
 
     .highlighter-rouge & {
     //   background: #eef;
-      background: $background;
+      background: #999999;
     }
 }
 // override the _base.scss
 pre,
 code {
     font-size: 15px;
-    border: 1px solid $grey-color-light;
+    border: 1px solid #999999;
     border-radius: 3px;
-    background-color: $background;
+    background-color: #999999;
 }
 
 code {
