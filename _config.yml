@@ -13,7 +13,6 @@ include: ['_pages']
 markdown: kramdown
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
 collections:
   writeups:
     output: true
