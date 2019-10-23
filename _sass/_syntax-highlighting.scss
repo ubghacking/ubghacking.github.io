@@ -3,37 +3,6 @@ pre, code {
   background-color: #fcfcff;
   margin: 0;
 }
-
-pre {
-  overflow-y: scroll;
-  word-wrap: normal;
-}
-
-figure {
-  margin: 0;
-  padding: 0;
-}
-
-pre.highlight {
-  padding: 1em;
-}
-
-.lineno {
-  padding: .5em;
-}
-
-.gutter, .lineno {
-  background-color: #CAEBF2;
-}
-
-td.code {
-  padding: 1em .5em;
-}
-
-.highlight {
-  margin: 1em 0;
-}
-
 /* Solarized Dark 
 For use with Jekyll and Pygments
 http://ethanschoonover.com/solarized
