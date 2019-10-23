@@ -11,7 +11,7 @@ Ellingson was an awesome box to root! Not only did I get to sharpen some of my R
 
 First off, I ran nmap against the box:
 
-{% highlight bash lineno %}
+{% highlight bash linenos %}
 nmap -sV -sC -p- -oA ellingson.htb 10.10.10.139
 Starting Nmap 7.70 ( https://nmap.org ) at 2019-10-22 10:15 CDT
 Nmap scan report for 10.10.10.139
