@@ -29,5 +29,5 @@ Abstracted<br/>
 
 elsid<br/>
 <script src="https://www.hackthebox.eu/badge/27474"></script><br/>
-(Insert Bio Here)<br/><br/>
+(Insert Bio Here)
 </center>
