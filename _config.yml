@@ -14,7 +14,5 @@ markdown: kramdown
 kramdown:
     input: GFM
 collections:
-  writeups:
-    output: true
   news:
     output: true
