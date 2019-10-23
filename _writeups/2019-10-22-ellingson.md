@@ -7,7 +7,7 @@ description: Hack The Box writeup for Ellingson, Retired Hard Box
 tags: ROP SSH Python test
 ---
 
-{% for tag in site.tags %}
+{% for tag in site.documents %}
       {{ tag.tags }}
 {% endfor %}
 
