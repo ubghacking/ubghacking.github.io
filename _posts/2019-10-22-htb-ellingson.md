@@ -7,9 +7,9 @@ description: Hack The Box writeup for Ellingson, Retired Hard Box
 tags: HTB_Walkthrough ROP SSH Python
 ---
 
-Ellingson was an awesome box to root! Not only did I get to sharpen some of my ROP skills, but the throwback to one of my favorite movies (Hackers) was a treat from beginning to root. For those of you who have not seen Hackers, shame on you. Go watch it! This box was also awesome because getting the initial foothold was not the average run this flavor exploit, but really had to think out of the box for me and starting new. So, lets get started!
+Ellingson was an awesome box to root! Not only did I get to sharpen some of my ROP skills, but the throwback to one of my favorite movies (Hackers) was a treat from beginning to root. For those of you who have not seen the 1995 film Hackers, go watch it! This box was also awesome because getting the initial foothold was not the average run this exploit, or find these credentials. I really had to think out of the box (get it?) since I am still so new to hacking. So, lets get started!
 
-First off, I ran nmap against the box
+First off, I ran nmap against the box:
 
 {% highlight bash lineos %}
 nmap -sV -sC -p- -oA ellingson.htb 10.10.10.139
@@ -31,7 +31,7 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 16.92 seconds
 {% endhighlight %}
 
-Once I was able to identify what services were running, I hopped on over to the website and began to poke around while running gobuster. When I got to the /articles/ directory, I noticed the numbers incremented and so manually fuzzed. Fuzzing http://10.10.10.139/articles/5 was able to find python interactive shells. There, I had access to a python debugger!
+Once I was able to identify what services were running, I hopped on over to the website and began to poke around while running gobuster. When I got to the /articles/ directory, I noticed the numbers incremented and so I manually "fuzzed". I did this by simply adding iterations of numbers after the /articles/ directory, until I got to 5. Once on http://10.10.10.139/articles/5 I was able to find python debugger shells.
 
 {% highlight bash lineos %}
 File "/opt/corp-web/run.py", line 32, in show_articles
@@ -42,17 +42,17 @@ slug = articles[index-1]
 hal
 {% endhighlight %}
 
-Nice! I found I have the ability to run os system commands. During enumeration, I also found that there is Port 22 open. First, I tried to steal the SSH key, but I did not know the key passphrase. However, looking further, I can write to the authorized_keys file! Since taking the id_rsa key file on there didn’t work, let’s generate a new key, and place our pub key in there:
+Nice! I found I have the ability to run os system commands. During initial enumeration, I found that there is Port 22 open. First, I tried to steal the SSH key, but I did not know the key passphrase so connection was refused. However, looking further, I can write to the authorized_keys file. So, I generated a new SSH RSA key, and placed my pub key in authorized_keys:
 
 {% highlight bash lineos %}
 import os
 
-os.system("echo '\nssh-rsa [your RSA key] root@kali' >> /home/hal/.ssh/authorized_keys")
+os.system("echo '\nssh-rsa [your RSA key]' >> /home/hal/.ssh/authorized_keys")
 {% endhighlight %}
 
-And now I can login to SSH! Awesome, initial foothold gained!
+And now I can login to SSH. Awesome, initial foothold gained!
 
-Now that we login, during further enumeration we are user Hal and need to get to user. Enumerating the system, there is a backup folder. In there, we have read permissions to shadow.bak!? Bad admin!
+Now that we have SSH, completing further enumeration I found I was user Hal, and needed to escelate to user. Enumerating the system, there is a backup folder in /var/. In there, I have read permissions to shadow.bak!? Bad admin!
 
 {% highlight bash lineos %}
 cat /var/backups/shadow.bak
@@ -110,7 +110,7 @@ cat /home/margo/user.txt
 d0ff9e3f9da8--------------------
 {% endhighlight %}
 
-From here, I ran the linenum.sh script, and found a binary running that should NOT be there!
+User owned. From here, I ran the linenum.sh script, and found a binary running that should NOT be there:
 
 {% highlight bash %}
 find / -perm -u=s -type f 2>/dev/null
@@ -118,7 +118,7 @@ find / -perm -u=s -type f 2>/dev/null
 /usr/bin/garbage
 {% endhighlight %}
 
-I tried several methods to get the binary to my box. All ways failed, until I found openssl base64! 
+I tried several methods to get the binary to my box. All ways failed, so assume that it's blocked on the box. I found openssl base64 as an alternative method.
 
 {% highlight bash %}
 openssl base64 < garbage
@@ -130,7 +130,7 @@ openssl base64 < garbage
 openssl base64 -d < garbage.input > garbage.output
 {% endhighlight %}
 
-Garbage.output is now the binary on your system! For the ROP, I had to watch Bitterman's video several times, and speak woith the HTB community on Discord (if you are NOT on their channel, I highly recommend it. There is a community of hackers who really do want to help you along with nudges!). After watching the second half of the video, and chatting with a few fellow hackers, I was able to come up with the following:
+Garbage.output is now the binary on my system. For the ROP, I had to watch Bitterman's video several times, and speak wth the HTB community on Discord (if you are NOT on their channel, I highly recommend it. There is a community of hackers who really do want to help you along with nudges when you are stuck, which is especially nice for a n00b like me). After watching the second half of the video, and chatting with a few fellow hackers, I was able to come up with the following:
 
 {% highlight bash %}
 from pwn import *
@@ -181,7 +181,7 @@ p.clean()
 p.interactive()
 {% endhighlight %}
 
-Now, once you run the binary on your local system, it will deliver root!
+Now, once I ran the binary, I was delivered root!
 
 {% highlight bash %}
 cat /root/root.txt
