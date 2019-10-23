@@ -11,8 +11,8 @@ sass:
   sass_dir: _sass
 include: ['_pages']
 markdown: kramdown
-kramdown:
-  input: GFM
+highlighter: rouge
+    input: GFM
 collections:
   writeups:
     output: true
