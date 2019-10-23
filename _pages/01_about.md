@@ -8,26 +8,26 @@ We are a group of information technology professionals during the day, and compu
 
 Want to join our team? Message us on <a href="https://discordapp.com/users/165851543860543488" target="_blank">Discord</a>!
 
-<center>About our Hack The Box team:<br>
+<center>About our Hack The Box team:<br/>
 
 We are almost to the top 100!
-<script src="https://www.hackthebox.eu/badge/team/1845"></script><br>
+<script src="https://www.hackthebox.eu/badge/team/1845"></script><br/>
 
-<h2>Team Members:</h2><br>
+<h2>Team Members:</h2><br/>
 
-exabyt3<br>
-<script src="https://www.hackthebox.eu/badge/24990"></script><br>
-(Insert Bio Here)<br><br>
+exabyt3<br/>
+<script src="https://www.hackthebox.eu/badge/24990"></script><br/>
+(Insert Bio Here)<br/><br/>
 
-nan0byt3<br>
-<script src="https://www.hackthebox.eu/badge/25075"></script><br>
-(Insert Bio Here)<br><br>
+nan0byt3<br/>
+<script src="https://www.hackthebox.eu/badge/25075"></script><br/>
+(Insert Bio Here)<br/><br/>
 
-Abstracted<br>
-<script src="https://www.hackthebox.eu/badge/114437"></script><br>
-(Insert Bio Here)<br><br>
+Abstracted<br/>
+<script src="https://www.hackthebox.eu/badge/114437"></script><br/>
+(Insert Bio Here)<br/><br/>
 
-elsid<br>
-<script src="https://www.hackthebox.eu/badge/27474"></script><br>
-(Insert Bio Here)<br><br>
+elsid<br/>
+<script src="https://www.hackthebox.eu/badge/27474"></script><br/>
+(Insert Bio Here)<br/><br/>
 </center>
