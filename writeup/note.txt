@@ -1,1 +1,3 @@
+**UPDATED** removed use of this directory, because tags only work for _posts without heavy modification which I do not feel like doing right now.
+
 DO NOT PLACE ANY WRITEUPS IN HERE! All blogs appear in /_writeups as markdown!
