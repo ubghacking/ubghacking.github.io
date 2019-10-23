@@ -18,5 +18,3 @@ collections:
     output: true
   news:
     output: true
-  tags:
-    output: true
