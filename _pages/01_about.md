@@ -13,7 +13,7 @@ Want to join our team? Message us on <a href="https://discordapp.com/users/16585
 We are almost to the top 100!
 <script src="https://www.hackthebox.eu/badge/team/1845"></script><br/>
 
-<h2>Team Members:</h2><br/>
+<h3>Team Members:</h3><br/>
 
 exabyt3<br/>
 <script src="https://www.hackthebox.eu/badge/24990"></script><br/>
