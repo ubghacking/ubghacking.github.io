@@ -8,10 +8,10 @@ We are a group of information technology professionals during the day, and compu
 
 Want to join our team? Message us on <a href="https://discordapp.com/users/165851543860543488" target="_blank">Discord</a>!
 
-<center>About our Hack The Box team:\
+<center>About our Hack The Box team:<br/>
 
 We are almost to the top 100!
-<script src="https://www.hackthebox.eu/badge/team/1845"></script>\
+<script src="https://www.hackthebox.eu/badge/team/1845"></script><br/>
 
 <h2>Team Members:</h2><br/>
 
