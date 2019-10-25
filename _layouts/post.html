@@ -15,9 +15,3 @@ layout: default
 <time>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} | {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</time>
 
 {{ content }}
-
-<div class="post {{ page.class }}">
-  {% include item.html %}
-  {{ page.content }}
-  {% include comments.html %}
-</div>
