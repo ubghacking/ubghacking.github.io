@@ -16,3 +16,7 @@ kramdown:
 collections:
   news:
     output: true
+# Comments
+emptyArray: []
+comments:
+  receiver: https://{{your-receiver-site}}/api/PostComment}}
