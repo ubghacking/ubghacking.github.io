@@ -28,7 +28,7 @@ defaults:
       type: pages
     values:
       layout: page
-      author: damieng
+      author: nanobyte
       commenting: open
   -
     scope:
@@ -36,5 +36,5 @@ defaults:
       type: posts
     values:
       layout: post
-      author: damieng
+      author: nanobyte
       commenting: open
