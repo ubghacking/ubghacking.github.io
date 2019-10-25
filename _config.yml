@@ -16,25 +16,3 @@ kramdown:
 collections:
   news:
     output: true
-# Comments
-emptyArray: []
-comments:
-  receiver: https://{{your-receiver-site}}/api/PostComment}}
-
-defaults:
-  -
-    scope:
-      path: ''
-      type: pages
-    values:
-      layout: page
-      author: nanobyte
-      commenting: open
-  -
-    scope:
-      path: '_posts'
-      type: posts
-    values:
-      layout: post
-      author: nanobyte
-      commenting: open
