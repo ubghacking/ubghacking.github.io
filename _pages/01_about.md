@@ -23,6 +23,10 @@ nan0byt3<br/>
 <script src="https://www.hackthebox.eu/badge/25075"></script><br/>
 (Insert Bio Here)<br/><br/>
 
+artemishlr<br/>
+<script src="https://www.hackthebox.eu/badge/95259"></script><br/>
+(Insert Bio Here)<br/><br/>
+
 Abstracted<br/>
 <script src="https://www.hackthebox.eu/badge/114437"></script><br/>
 (Insert Bio Here)<br/><br/>
