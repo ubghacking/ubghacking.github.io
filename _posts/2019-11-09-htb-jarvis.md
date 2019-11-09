@@ -153,7 +153,7 @@ $debug = 0;
 
 Once I had the reverse shell configured, I used a python simple web server to host this reverse shell:
 
-% highlight bash linenos %}
+{% highlight bash linenos %}
 python -m SimpleHTTPServer 80
 {% endhighlight %}
 
@@ -177,18 +177,7 @@ sudo -l
 sudo -u pepper /var/www/Admin-Utilities/simpler.py -p 127.0.0.1;
 {% endhighlight %}
 
-I headed over, and looked at the python script I had access to run with sudo rights. Looking through the code, there is a function declaration that calls ping to run:
-
-{% highlight bash linenos %}
-def exec_ping():
-    forbidden = ['&', ';', '-', '`', '||', '|']
-    command = input('Enter an IP: ')
-    for i in forbidden:
-        if i in command:
-            print('Got you')
-            exit()
-    os.system('ping ' + command)
-{% endhighlight %}
+I headed over, and looked at the python script I had access to run with sudo rights. Looking through the code, there is a function declaration that calls ping to run.
 
 This function also eliminates the use of some characters which are common in command injection. I started playing around with the script, running it constantly looking or ways to get command injection. I found a character which was not listed in the forbidden that can be used to escape, $. Essentially, I used this escape to run commands from the simpler.py script:
 
