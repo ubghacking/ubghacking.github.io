@@ -3,7 +3,7 @@ layout: post
 title:  "HTB Jarvis Walkthrough"
 author: nanobyte
 date:   2019-11-09
-description: Hack The Box writeup for Jarvis, Retired Hard Box
+description: Hack The Box writeup for Jarvis, Retired Medium Box
 tags: HTB_Walkthrough SQLMap said systemctl
 ---
 
