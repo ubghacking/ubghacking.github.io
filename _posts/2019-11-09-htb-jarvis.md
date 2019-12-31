@@ -4,7 +4,7 @@ title:  "HTB Jarvis Walkthrough"
 author: nanobyte
 date:   2019-11-09
 description: Hack The Box writeup for Jarvis, Retired Medium Box
-tags: HTB_Walkthrough SQLMap said systemctl
+tags: HTB_Walkthrough SQLMap suid systemctl
 ---
 
 Jarvis was a Medium rated box on Hack The Box. This machine was another great box that I thoroughly enjoyed, and the first one I got to use SQLMap's os-shell. I also was able to learn how to create my first malicious SUID systemctl service! Now, onto the goods.
