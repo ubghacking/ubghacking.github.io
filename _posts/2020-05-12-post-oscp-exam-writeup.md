@@ -63,4 +63,6 @@ To this point, I received 55 points from proof.txt files, and I had two local.tx
 
 <H1>End Rant</H1>
 
-And this brings my to my closing comments. Even though I am unsure if I passed, I learned so much about myself and my determination to "Try Harder". I did something over the last few days that challenged me entirely. To those of you in my multiple Slack, Discrod and Reddit threads, thank you! Exabyt3, SurgicalMittens, Xalion, nineninenine, Gridith, The XSS Rat, CyberTuna, and anyone I forgot, you kept me sane and helped me through when times were tough with this. I will find out in 
+And this brings me to my closing comments. Even though I am unsure if I passed, I learned so much about myself and my determination to "Try Harder". I did something over the last few days that challenged me entirely. To those of you in my multiple Slack and Discrod servers and Reddit threads, thank you! Exabyt3, SurgicalMittens, Xaliom, nineninenine, Gridith, The XSS Rat, CyberTuna, and anyone I forgot, you kept me sane and helped me through when times were tough with this. I will find out in 10 business days or less what the outcome is.
+
+Thanks for reading!
