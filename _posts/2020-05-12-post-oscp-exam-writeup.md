@@ -69,7 +69,7 @@ As requested, here are my top five takeways:
 2. Versions. Always find them. They may be hidden from banner grabbing. You may need to do some digging, even by using WireShark and grabbing packets to find the version. But finding exactly what you are working with is important.
 3. Enumeration, enumeration, and then more enumeration. Enumeration is solid. Enumerate more.
 4. When you think you are lost, take a break. Walk away, go and do something else. Towards the end of my 30 days of labs, I was burned out. It is good to step away, take a breathe, go tell the family you love them, and get back to work when you can.
-5. You can do anything you put your mind to. This is cliche, I KNOW. But honestly, I always wanted to try for this cert, and a year ago it seemed dautning. But this exam attempt has made me realize that I can do things I never thought I could. It seemed out of grasp, maybe it still is. But getting here has been a journey! Pass or fail, I am proud at what I have accomplished (and you can't take that from me).
+5. You can do anything you put your mind to. This is cliche, I KNOW. But honestly, I always wanted to try for OSCP, and a year ago it seemed daunting. But this exam attempt has made me realize that I can do things I never thought I could. It seemed out of grasp, maybe it still is. But getting here has been a journey! Pass or fail, I am proud at what I have accomplished (and you can't take that from me).
 
 <H1>End Rant</H1>
 
