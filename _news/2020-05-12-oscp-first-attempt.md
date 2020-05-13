@@ -5,4 +5,4 @@ author: nanobyte
 date:   2020-05-12
 ---
 
-Nan0byt3 has completed his first OSCP exam attempt! Curious to know how he "tried harder"? Go read his <a href="https://ubghacking.github.io/2020/05/12/post-oscp-exam-writeup.html">post-exam writeup</a>!
+Nanobyte has completed his first OSCP exam attempt! Curious to know how he "tried harder"? Go read his <a href="https://ubghacking.github.io/2020/05/12/post-oscp-exam-writeup.html">post-exam writeup</a>!
