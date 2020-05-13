@@ -61,6 +61,16 @@ At this point, it was dinner time, where I took another break. I walked away for
 
 To this point, I received 55 points from proof.txt files, and I had two local.txt files. That is where it stayed, I was never able to privilege escalate to administrator on the final 20 point and 25 point machines. I was able to get onto all five, all without MetaSploit. I worked until the final five minutes of my exam, living off bawls (the energy drink, get your mind out of the gutter...) and an hour and a half of sleep. But, at the end of my time, I took a small nap and got to work on my exam report. I finished by the evening, and 36 hours after my exam start time, my report was officially submitted, all 49 pages...
 
+<H1>Top Five Takeaways</H1>
+
+As requested, here are my top five takeways:
+
+1. There is ALWAYS a way in, you just need to find it. It may not be apparent, it may require two or three vulnerabilities discovered, but EVERYTHING is hackable.
+2. Versions. Always find them. They may be hidden from banner grabbing. You may need to do some digging, even by using WireShark and grabbing packets to find the version. But finding exactly what you are working with is important.
+3. Enumeration, enumeration, and then more enumeration. Enumeration is solid. Enumerate more.
+4. When you think you are lost, take a break. Walk away, go and do something else. Towards the end of my 30 days of labs, I was burned out. It is good to step away, take a breathe, go tell the family you love them, and get back to work when you can.
+5. You can do anything you put your mind to. This is cliche, I KNOW. But honestly, I always wanted to try for this cert, and a year ago it seemed dautning. But this exam attempt has made me realize that I can do things I never thought I could. It seemed out of grasp, maybe it still is. But getting here has been a journey! Pass or fail, I am proud at what I have accomplished (and you can't take that from me).
+
 <H1>End Rant</H1>
 
 And this brings me to my closing comments. Even though I am unsure if I passed, I learned so much about myself and my determination to "Try Harder". I did something over the last few days that challenged me entirely. To those of you in my multiple Slack and Discrod servers and Reddit threads, thank you! Exabyt3, SurgicalMittens, Xaliom, nineninenine, Gridith, The XSS Rat, CyberTuna, The Mad Human, Cyptik, Auxa, and anyone I forgot, you kept me sane and helped me through when times were tough with this. I will find out in 10 business days or less what the outcome is.
