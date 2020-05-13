@@ -65,7 +65,7 @@ To this point, I received 55 points from proof.txt files, and I had two local.tx
 
 As requested, here are my top five takeways:
 
-1. There is ALWAYS a way in, you just need to find it. It may not be apparent, it may require two or three vulnerabilities discovered, but EVERYTHING is hackable.
+1. There is ALWAYS a way in, you just need to find it. It may not be apparent, it may require two or three vulnerabilities to get in, but EVERYTHING is hackable. Stay determined.
 2. Versions. Always find them. They may be hidden from banner grabbing. You may need to do some digging, even by using WireShark and grabbing packets to find the version. But finding exactly what you are working with is important.
 3. Enumeration, enumeration, and then more enumeration. Enumeration is solid. Enumerate more.
 4. When you think you are lost, take a break. Walk away, go and do something else. Towards the end of my 30 days of labs, I was burned out. It is good to step away, take a breathe, go tell the family you love them, and get back to work when you can.
