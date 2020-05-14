@@ -14,7 +14,7 @@ We need to get back into the top 100!
 <h2>Team Members:</h2>
 
 <h3>exabyt3 - CSSP, CISSP, OSCP</h3>
-A Senior Security Consultant at a large firm, exabyt3 created the UBG "clan" in the old days of early online FPS. Exabyt3 enjoys penetration testing.
+A Senior Security Consultant at a penetration testing firm, exabyt3 created the UBG "clan" in the old days of early online FPS.
 <script src="https://www.hackthebox.eu/badge/24990"></script>
 
 <h3>nan0byt3 - CEH</h3>
