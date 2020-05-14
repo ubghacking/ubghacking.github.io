@@ -21,17 +21,5 @@ exabyt3<br/>
 
 nan0byt3<br/>
 <script src="https://www.hackthebox.eu/badge/25075"></script><br/>
-(Insert Bio Here)<br/><br/>
-
-artemishlr<br/>
-<script src="https://www.hackthebox.eu/badge/95259"></script><br/>
-(Insert Bio Here)<br/><br/>
-
-Abstracted<br/>
-<script src="https://www.hackthebox.eu/badge/114437"></script><br/>
-(Insert Bio Here)<br/><br/>
-
-elsid<br/>
-<script src="https://www.hackthebox.eu/badge/27474"></script><br/>
-(Insert Bio Here)
-</center>
+Certified Ethical Hacker<br>
+A Security Admin by day, and a hacking enthusisast by night (at least a few a week), nan0byt3 has been branded UBG since high school when the "Clan" was into video games. UBG has since evolved into a hacking team, with still some original members who are still active in it. Nan0byt3 enjoys Hack the Box hacking the most, but is also active in TryHackMe, PentesterLabs and needs to attend more conferences and online CTF's. Join the team, help us get back into the top 100 teams, and let's grab a conference ticket for a CTF!<br/><br/>
