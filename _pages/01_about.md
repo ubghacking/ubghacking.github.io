@@ -11,7 +11,7 @@ Want to join our team? Message us on <a href="https://discordapp.com/users/16585
 <center>About our Hack The Box team:<br/><br/>
 
 We need to get back into the top 100!
-<script src="https://www.hackthebox.eu/badge/team/1845"></script><br/>
+<script src="https://www.hackthebox.eu/badge/team/1845"></script><br/></center>
 
 <h2>Team Members:</h2><br/>
 
