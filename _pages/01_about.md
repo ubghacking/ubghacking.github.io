@@ -11,17 +11,18 @@ Want to join our team? Message us on <a href="https://discordapp.com/users/16585
 <center>About our Hack The Box team:<br/><br/>
 
 We need to get back into the top 100!
-<script src="https://www.hackthebox.eu/badge/team/1845"></script><br/></center>
+<script src="https://www.hackthebox.eu/badge/team/1845"></script><br/>
 
 <h1>Team Members:</h1><br/>
 
 <h2>exabyt3</h2><br/>
-<center><script src="https://www.hackthebox.eu/badge/24990"></script></center><br/>
+<script src="https://www.hackthebox.eu/badge/24990"></script><br/>
 CSSP, CISSP, OSCP<br/><br/>
 A Senior Security Consultant at a large firm, exabyt3 created the UBG "clan" in the old days of early online FPS. Exabyt3 enjoys penetration testing.
 <br/><br/>
 
 <h2>nan0byt3</h2><br/>
-<center><script src="https://www.hackthebox.eu/badge/25075"></script></center><br/>
+<script src="https://www.hackthebox.eu/badge/25075"></script><br/>
 CEH<br/><br/>
 A Security Admin by day, and a hacking enthusiast by night (at least a few nights a week), nan0byt3 has been branded UBG since high school when the "clan" was into video games. UBG has since evolved into a hacking team, with still some original members who are still active in it. Nan0byt3 enjoys Hack the Box hacking the most, but is also active in TryHackMe, PentesterLabs and needs to attend more conferences and online CTF's. Join the team, help us get back into the top 100 teams, and let's grab a conference ticket for a CTF!<br/><br/>
+</center>
