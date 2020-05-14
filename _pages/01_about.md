@@ -18,5 +18,5 @@ A Senior Security Consultant at a penetration testing firm, exabyt3 created the 
 <script src="https://www.hackthebox.eu/badge/24990"></script>
 
 <h3>nan0byt3 - CEH</h3>
-A Security Admin by day, and a hacking enthusiast by night (at least a few nights a week), nan0byt3 has been branded UBG since high school when the "clan" was into video games. UBG has since evolved into a hacking team, with still some original members who are still active in it. Nan0byt3 enjoys Hack the Box hacking the most, but is also active in TryHackMe, PentesterLabs and needs to attend more conferences and online CTF's. Join the team, help us get back into the top 100 teams on HTB, and let's grab some root.txt's!
+A Security Admin by day, and a hacking enthusiast by night (at least a few nights a week), nan0byt3 has been branded UBG since high school. Nan0byt3 enjoys Hack the Box hacking the most but is also active in TryHackMe and PentesterLabs. Officially starting his security career in 2019, nan0byt3 was prior communications maintenance for almost a decade in the United States Marine Corps, making the transition to IT upon being honorably discharged.
 <script src="https://www.hackthebox.eu/badge/25075"></script>
