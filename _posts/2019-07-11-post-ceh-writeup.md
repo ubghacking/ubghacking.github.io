@@ -9,7 +9,7 @@ tags: CEH post-exam
 
 First, I want to drop some background about me. My past is radio communications maintenance for the military (for 9 years), but wanted to work on computers (darn recruiters!). Anyways, I tried CCNA but didn't finish module 4 about 8 years ago, and got some smaller military computer training. I got an Associates of Computer Science while I was in, and used my GI Bill to get a Bachelor's in Cyber Security from Colorado Tech, graduating last year (I honestly don't know how "Technical" is in there name... The classes were all papers!). I have been officially working in IT for two years, and have been interested in security for the last few. I also have a family with 3 kids, 3 dogs, and work full time. So life is always busy, and during testing I dedicated an hour or two, about 3 to 4 days a week, for 3 months to complete this.
 
-Now, onto my study methods. Work paid for me to take the training and the exam, so they purchased the self paced iClass. This came with iLabs. What I found with the iClass was a good introduction to the basics with the videos. When it came to learning the tools in the class with the labs, I cannot say that a single one helped me in the exam (these labs are not iLabs, but go "along" with the videos, they're more like excercises). I finished the iClass in my first 30 days, taking notes along the way. I do not think any of the class was critical, and I think I would have been able to pass the exam without this!
+Now, onto my study methods. Work paid for me to take the training and the exam, so they purchased the self paced iClass. This came with iLabs. What I found with the iClass was a good introduction to the basics with the videos. When it came to learning the tools in the class with the labs, I cannot say that a single one helped me in the exam (these labs are not iLabs, but go "along" with the videos, they're more like exercises). I finished the iClass in my first 30 days, taking notes along the way. I do not think any of the class was critical, and I think I would have been able to pass the exam without this!
 
 Because I was in the military, I have a free FedVTE account. If you were in, or worked for the government I believe, you also have access to all the free videos. In there was CEH v9, and I completed all these videos as well. I watched and listened to them while I was at work in the background, and was another good foundation.
 
@@ -19,7 +19,7 @@ About 30 days ago I started the Matt Walker All-In-One. I found that reading thi
 
 The final night before the exam, I quizzed myself, re-memorizing nmap flags, common port numbers, etc. Once I got to the exam and checked in, as soon as I sat down, I re-wrote all of this from memory so it was in front of me the entire exam. I found that it did not really aide me as much as the Matt Walker book said it would, but kept me consistent in my answers as a reference.
 
-For the xam itself, it is already touched on. But it is riddled with spelling mistakes, and poorly worded English (much like my post). In fact, even one question was similar to this (as an example...):
+For the exam itself, it is already touched on. But it is riddled with spelling mistakes, and poorly worded English (much like my post). In fact, even one question was similar to this (as an example...):
 
 
 Here is the question. Please select the best answer below:
