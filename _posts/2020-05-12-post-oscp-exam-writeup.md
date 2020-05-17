@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "nanobytes Post OSCP Exam Attempt #1 Writeup"
+title:  "nanobytes Post OSCP Exam Attempt"
 author: nanobyte
 date:   2020-05-12
 description: Post Exam Writeup for my Offensive Security Certified Professional (OSCP)
