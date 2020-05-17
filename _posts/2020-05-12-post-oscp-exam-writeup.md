@@ -7,7 +7,7 @@ description: Post Exam Writeup for my Offensive Security Certified Professional 
 tags: OSCP post-exam
 ---
 
-<H1>Update</H1>
+<H2>Update</H2>
 
 I passed my exam, and earned my OSCP!
 
