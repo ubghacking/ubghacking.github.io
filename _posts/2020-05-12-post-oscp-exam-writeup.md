@@ -3,9 +3,13 @@ layout: post
 title:  "nanobytes Post OSCP Exam Attempt #1 Writeup"
 author: nanobyte
 date:   2020-05-12
-description: Post Exam Writeup for my Offensive Security Certified Professional (OSCP) Attempt #1
+description: Post Exam Writeup for my Offensive Security Certified Professional (OSCP)
 tags: OSCP post-exam
 ---
+
+<H1>Update</H1>
+
+I passed my exam, and earned my OSCP!
 
 <H2>Pre-Exam Talk</H2>
 
