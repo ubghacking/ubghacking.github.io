@@ -177,7 +177,7 @@ evil-winrm -i 10.10.10.169 -p Serv3r4Admin4cc123! -u ryan
 
 Again, I began to manually enumerate the machine. I began by looking over what rights I had as this user, and by running a simple `whoami /all` command, I discovered I was a part of a very interesting group:
 
-{% endhighlight %}
+{% highlight bash linenos %}
 *Evil-WinRM* PS C:\Users\ryan\Documents> whoami /all
 
 ...
