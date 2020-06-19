@@ -3,7 +3,7 @@ layout: post
 title:  "HTB Monteverde Walkthrough"
 author: nanobyte
 date:   2020-06-19
-description: Hack The Box writeup for Resolute, Retired Windows Medium Box
+description: Hack The Box writeup for Monteverde, Retired Windows Medium Box
 tags: HTB_Walkthrough
 ---
 
