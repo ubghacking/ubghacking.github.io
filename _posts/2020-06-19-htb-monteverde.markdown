@@ -4,7 +4,7 @@ title:  "HTB Monteverde Walkthrough"
 author: nanobyte
 date:   2020-06-19
 description: Hack The Box writeup for Monteverde, Retired Windows Medium Box
-tags: HTB_Walkthrough impacket rpcclient Evil-WinRM PowerShell
+tags: enum4linux HTB_Walkthrough impacket rpcclient Evil-WinRM PowerShell
 ---
 
 I began my enumeration with my normal procedures, NMAP and enum4linux:
