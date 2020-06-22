@@ -4,7 +4,7 @@ title:  "HTB Resolute Walkthrough"
 author: nanobyte
 date:   2020-06-02
 description: Hack The Box writeup for Resolute, Retired Windows Medium Box
-tags: HTB_Walkthrough
+tags: HTB_Walkthrough Evil-WinRM PowerShell msfvenom impacket
 ---
 
 In this walkthrough, I will take you through the steps of what I performed to root this machine from Hack the Box penetration testing labs. This was a Windows based OS that was rated as a medium difficulty. To begin, I started with my enumeration of the target machine:
