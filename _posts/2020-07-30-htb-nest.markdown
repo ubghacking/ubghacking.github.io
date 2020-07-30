@@ -327,6 +327,7 @@ smb: \C.Smith\HQK Reporting\> ls
 
 But, it was empty. That would have been to easy! However, looking at the file attributes, there is a stream associated to it, so I copied of the Alternate Data Stream (ADS) to get the password file:
 
+{% highlight bash linenos %}
 smb: \C.Smith\HQK Reporting\> allinfo "Debug Mode Password.txt"
 altname: DEBUGM~1.TXT
 create_time:    Thu Aug  8 06:06:12 PM 2019 CDT
@@ -342,7 +343,7 @@ smb: \C.Smith\HQK Reporting\> get "Debug Mode Password.txt:Password"
 
 root@hax0r:~# cat "/root/Debug Mode Password.txt:Password" 
 WBQ201953D8w 
-{% highlight bash linenos %}
+{% endhighlight %}
 
 And now, with this password, I can telnet into the box and enable Debug:
 
