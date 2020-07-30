@@ -245,7 +245,7 @@ smb: \IT\Carl\> dir
   VB Projects                         D        0  Tue Aug  6 09:41:55 2019
 {% endhighlight %}
   
-  This is important. Note above, that when I was in the Secure$\IT directory, I could not list the contents. However, I could still change to the Carl directory. Awesome! Enumerating these files, I found a RUScanner in VB direcory:
+This is important. Note above, that when I was in the Secure$\IT directory, I could not list the contents. However, I could still change to the Carl directory. Awesome! Enumerating these files, I found a RUScanner in VB direcory:
   
   {% highlight bash linenos %}
   smb: \IT\Carl\VB Projects\WIP\RU\RUScanner\> dir
