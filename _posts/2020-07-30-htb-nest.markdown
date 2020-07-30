@@ -4,7 +4,7 @@ title:  "HTB Nest Walkthrough"
 author: nanobyte
 date:   2020-07-30
 description: Hack The Box writeup for Nest, Retired Windows Easy Box
-tags: smbclient
+tags: smbclient alternate_data_stream reverse_engineer
 ---
 
 This is one of my favorite Hack the Box machines, throughout my time completing them! I absolutely enjoyed every minute of this box.
