@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "HTB Nest Walkthrough"
+author: nanobyte
+date:   2020-07-30
+description: Hack The Box writeup for Nest, Retired Windows Easy Box
+tags: 
+---
+
+This is one of my favorite Hack the Box machines, throughout my time completing them! I absolutely enjoyed every minute of this box.
+
+My first NMAP scan, running with multiple flags, failed. I performed a simple nmap scan, and it returned only one port open:
+
+{% highlight bash linenos %}
+nmap 10.10.10.178                                                                                     
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-01-28 09:25 CST                                                      
+Nmap scan report for 10.10.10.178                                                                                    
+Host is up (0.043s latency).                                                                                         
+Not shown: 999 filtered ports                                                                                        
+PORT    STATE SERVICE                                                                                                
+445/tcp open  microsoft-ds                                                                                           
+                                                                                                                     
+Nmap done: 1 IP address (1 host up) scanned in 5.41 seconds
+{% endhighlight %}
+
+In the above, with port 445 open, I then ran a scan against SMB. Server Message Block (also known as Samba) is a way for Windows to share files, printers, serial ports and communications abstractions such as named pipes and mail slots between computers.
