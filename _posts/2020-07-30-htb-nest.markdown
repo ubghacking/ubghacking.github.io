@@ -40,7 +40,7 @@ Enter WORKGROUP\root's password:
 SMB1 disabled -- no workgroup available
 {% endhighlight %}
 
-The smbclient command showed that there were several network shares. I went through and connected to each, and found that I was able to login and find possible Usernames in the Users share. I took note of this:
+The smbclient command showed that there were several network shares. I went through and connected to each, and found that I was able to login and find possible Usernames in the Users share. I took note of this, as this information is sure to come up later for this box:
 
 {% highlight bash linenos %}
 smbclient \\\\10.10.10.178\\Users
@@ -58,7 +58,7 @@ smb: \> dir
                 10485247 blocks of size 4096. 6449754 blocks available
 {% endhighlight %}
 
-However, access was denied for each of the directories in this share. Continuing my enumeration of the network shares, I connected to Data, and found I could login to the Shared directory:
+I did attempt to access the user shares, but access was denied for each of the directories. Continuing my enumeration of the network shares, I connected to Data, and found I could login to the Shared directory:
 
 {% highlight bash linenos %}
 smbclient \\\\10.10.10.178\\Data
@@ -84,7 +84,7 @@ smb: \Shared\> dir
                 10485247 blocks of size 4096. 6449754 blocks available
 {% endhighlight %}
 
-In this directory, I found a file, Alerts.txt. I used the get command to transfer to my local box, to view the file:
+In this directory, I found a file, `Maintenance Alerts.txt`. I used the get command to downlaod the file to my local box, and viewed the file:
 
 {% highlight bash linenos %}
 smb: \Shared\Maintenance\> dir
