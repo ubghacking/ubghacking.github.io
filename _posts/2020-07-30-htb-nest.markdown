@@ -102,7 +102,7 @@ root@bhax0r:~# cat 'Maintenance Alerts.txt'
 There is currently no scheduled maintenance work
 {% endhighlight %}
 
-However, still nothing! I then went up one directory, and logged into the `Templates` directory and found another file, `Welcome Email.txt`. This sounded pronmising:
+However, still nothing! I then went up one directory, and logged into the `Templates` directory and found another file, `Welcome Email.txt`. This sounded promising:
 
 {% highlight bash linenos %}
 smb: \Shared\Templates\HR\> dir
