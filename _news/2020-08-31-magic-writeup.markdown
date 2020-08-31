@@ -7,4 +7,4 @@ date:   2020-08-31
 
 Magic has now been retired! More points gone, but new writeup posted! Take a peek over at the <a href="/_posts/htb-magic.html">writeup</a> to see how nanobyte fumbled and tripped his way through this box.
 
-Thanks for reading!
+On a side note, nanobyt3 has also reserved a seat for Offensive Security's AWAE course to pursue his OWSE. And exabyt3 has enrolled into CTP to pursue his OSCE!
