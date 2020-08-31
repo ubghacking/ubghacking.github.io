@@ -4,7 +4,7 @@ title:  "HTB Traceback Walkthrough"
 author: nanobyte
 date:   2020-08-31
 description: Hack The Box writeup for Traceback, Retired Linux Easy Box
-tags: HTB_Walkthrough ssh pspy
+tags: HTB_Walkthrough SSH pspy
 ---
 
 I began with some simple enumeration scans:
