@@ -4,7 +4,7 @@ title:  "HTB Magic Walkthrough"
 author: nanobyte
 date:   2020-08-31
 description: Hack The Box writeup for Magic, Retired Linux Medium Box
-tags: HTB_Walkthrough gobuster suid SQL_injection
+tags: HTB_Walkthrough gobuster suid SQL_Injection
 ---
 
 I began with some simple enumeration scans:
