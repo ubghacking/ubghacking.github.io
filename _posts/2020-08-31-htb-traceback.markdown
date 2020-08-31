@@ -47,7 +47,7 @@ This led to nothing. So, checking out http, there was a note in the soure code:
 
 Performing some OSINT, XH4H has a GitHub and forked a project over with the best php web shells:
 
-https://github.com/Xh4H/Web-Shells
+<a href="https://github.com/Xh4H/Web-Shells" target="_blank">https://github.com/Xh4H/Web-Shells</a>
 
 Once I had that, I check to see if any were on the website. One was! http://traceback.htb/smevk.php. Once I logged in to the webshell with the default `admin:admin` credentials, I then found that user webadmin had ssh, and an `authorized_keys` file I could write to. I wrote my `id_rsa.pub` to the authorized keys, and logged in with ssh.
 
