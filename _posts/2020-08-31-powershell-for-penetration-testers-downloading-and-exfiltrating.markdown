@@ -4,7 +4,7 @@ title:  "Powershell For Penetration Testers Downloading And Exfiltrating"
 author: nanobyte
 date:   2020-08-31
 description: PowerShell for Penetration Testing, and how to download files to a victim machine, and exfiltrate data from the victim machine
-tags: PowerShell Python
+tags: PowerShell
 ---
 
 This next installment in the Powershell For Penetration Testers looks into how an attacker can introduce files to a victim machine through a PowerShell download, as well as how to use PowerShell to upload files rom a victim machine to your attacking box. I recently decided to continue on with this series to help other new comers into the field to learn as I learn. I recently used these skills on a recent Hack The Box machine, which if I remember to, will post the link to the writeup as a practical example.
