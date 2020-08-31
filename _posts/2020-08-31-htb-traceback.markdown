@@ -87,13 +87,13 @@ $ cat user.txt
 xxxxxxxxxxxxxxxxxxxx33ffbf0cceb2c46020
 {% endhighlight %}
 
-Enumerating, looking at pspy, I found that there is a running process every 30 seconds:
+While enumerating, looking at pspy, I found that there is a running process every 30 seconds:
 
 {% highlight bash linenos %}
 /bin/sh -c sleep 30 ; /bin/cp /var/backups/.update-motd.d/* /etc/update-motd.d/
 
 {% endhighlight %}
-Looking in /etc/update-motd.d/ I see I have write access to 00-header, which displays the welcome message! Towards the bottom, I added the following to /etc/update-motd.d/00-header:
+Looking in `/etc/update-motd.d/` I see I have write access to `00-header`, which displays the welcome message! Towards the bottom, I added the following to `/etc/update-motd.d/00-header`:
 
 {% highlight bash linenos %}
 [ -r /etc/lsb-release ] && . /etc/lsb-release
