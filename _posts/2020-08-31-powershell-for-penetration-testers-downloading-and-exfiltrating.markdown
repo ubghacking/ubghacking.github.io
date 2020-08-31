@@ -2,7 +2,7 @@
 layout: post
 title:  "Powershell For Penetration Testers Downloading And Exfiltrating"
 author: nanobyte
-date:   2020-08-31
+date:   2020-08-28
 description: PowerShell for Penetration Testing, and how to download files to a victim machine, and exfiltrate data from the victim machine
 tags: PowerShell
 ---
