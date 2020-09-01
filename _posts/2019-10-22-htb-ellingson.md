@@ -30,7 +30,7 @@ Nmap done: 1 IP address (1 host up) scanned in 16.92 seconds
 
 Once I was able to identify what services were running, I hopped on over to the website and began to poke around while running gobuster. When I got to the /articles/ directory, I noticed the numbers incremented and so I manually "fuzzed". I did this by simply adding iterations of numbers after the /articles/ directory, until I got to 5. Once on http://10.10.10.139/articles/5 I was able to find python debugger shells.
 
-{% highlight bash linenos %}
+{% highlight python linenos %}
 File "/opt/corp-web/run.py", line 32, in show_articles
 slug = articles[index-1]
 
@@ -41,7 +41,7 @@ hal
 
 Nice! I found I have the ability to run os system commands. During initial enumeration, I found that there is Port 22 open. First, I tried to steal the SSH key, but I did not know the key passphrase so connection was refused. However, looking further, I can write to the authorized_keys file. So, I generated a new SSH RSA key, and placed my pub key in authorized_keys:
 
-{% highlight bash linenos %}
+{% highlight python linenos %}
 import os
 
 os.system("echo '\nssh-rsa [your RSA key]' >> /home/hal/.ssh/authorized_keys")
@@ -129,7 +129,7 @@ openssl base64 -d < garbage.input > garbage.output
 
 Garbage.output is now the binary on my system. For the ROP, I had to watch Bitterman's video several times, and speak wth the HTB community on Discord (if you are NOT on their channel, I highly recommend it. There is a community of hackers who really do want to help you along with nudges when you are stuck, which is especially nice for a n00b like me). After watching the second half of the video, and chatting with a few fellow hackers, I was able to come up with the following:
 
-{% highlight bash linenos %}
+{% highlight python linenos %}
 from pwn import *
 
 context(terminal=['tmux', 'new-window'])
