@@ -22,7 +22,7 @@ I knew that I wanted to be a penetration tester after earning my Offensive Secur
 
 My background in development is severely limited - learning two high-level languages in college (Java and C++) and some Python scripting. I have never developed anything in production (or even close) in the real world. However, while taking this course and knocking off the rust, I was able read the source code.
 
-Looking back, during your preparation for AWAE, I would urge you to take some time to also include time learning common web languages. I took time to touch up on Python scripting, but avoided brushing up on anything else. This was definitely a mistake. If you are not familiar with these common web app languages, take some time to be able to brush up. You won't need the ability to write fully functional web apps in them - but rather have the ability to follow the logic, the functions, which parameters are useful, etc. Something at a base level.
+Looking back, during your preparation for AWAE, I would urge you to take some time to also review common web languages, to include PHP, Java, JavaScript, .Net, etc. I took time to touch up on Python scripting, but avoided brushing up on anything else. This was definitely a mistake. If you are not familiar with these common web app languages, take some time to be able to brush up. You won't need the ability to write fully functional web apps in them - but rather have the ability to follow the logic, the functions, which parameters are useful, etc. Something at a base level.
 
 <h2>2. nan0's Preparation</h2>
 
