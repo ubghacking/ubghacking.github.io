@@ -8,7 +8,7 @@ tags: post-exam
 ---
 
 1. Introduction & Lookbacks
-2. nan0's Preperation
+2. Preperation
 3. The Labs
 4. The Exam - Attempt 1
 5. The Exam - Attempt 2
@@ -18,20 +18,20 @@ tags: post-exam
 
 <h2>1. Introduction & Lookbacks</h2>
 
-I knew that I wanted to be a penetration tester after earning my Offensive Security Certified Professional (OSCP) certificate. For this goal, I wanted to become more familiar with penetration testing web applications. This is what kicked off my Offensive Security Web Expert (OSWE) (https://www.offensive-security.com/awae-oswe/) certification interest. Offensive Securities Advanced Web Attacks and Exploitation (AWAE) course, which is required for the OSWE exam, was an intense course, consisting of several modules that carried me through vulnerability discovery within source code to remote code execution on a variety of web applications in several different languages. AWAE is a white box course, meaning you have access to all the web application's source code. This is not a black box course. The most difficult task for me during this course was being able to follow the source code and identify vulnerabilities in the various languages. I have heard that a heavy development background is required to pass this course. On the contrary, if you are able to read the source code, then you should be able to complete this course.
+I knew that I wanted to be a penetration tester after earning my Offensive Security Certified Professional (OSCP) certificate. For this goal, I wanted to become more familiar with penetration testing web applications. This is what kicked off my Offensive Security Web Expert (OSWE) (https://www.offensive-security.com/awae-oswe/) certification interest. Offensive Securities Advanced Web Attacks and Exploitation (AWAE) course, which is required for the OSWE exam, was an intense course. It consisted of several modules that carried me through vulnerability discovery within source code to remote code execution on a variety of web applications in several different languages. AWAE is a white box course, meaning you have access to all the web application's source code. This is not a black box course. The most difficult task during this course was being able to follow the source code and identify vulnerabilities in the various languages. I have heard that a heavy development background is required to pass this course. On the contrary, if you are able to read the source code, then you should be able to complete this course.
 
-My background in development is severely limited - learning two high-level languages in college (Java and C++) and some Python scripting. I have never developed anything in production (or even close) in the real world. However, while taking this course and knocking off the rust, I was able read the source code.
+My background in development is severely limited - learning two high-level languages in college (Java and C++) and some Python scripting. I have never developed anything in production (or even close) in the real world. However, while taking this course and knocking off the rust, I was able to follow along.
 
-Looking back, during your preparation for AWAE, I would urge you to take some time to also review common web languages, to include PHP, Java, JavaScript, .Net, etc. I took time to touch up on Python scripting, but avoided brushing up on anything else. This was definitely a mistake. If you are not familiar with these common web app languages, take some time to be able to brush up. You won't need the ability to write fully functional web apps in them - but rather have the ability to follow the logic, the functions, which parameters are useful, etc. Something at a base level.
+Looking back, during your preparation for AWAE, I would urge you to take some time to also review common web languages, to include PHP, Java, JavaScript, .Net, etc. I took time to touch up on Python scripting, but avoided brushing up on anything else. This was definitely a mistake. If you are not familiar with these common web app languages, take some time to learn them. You won't need the ability to write fully functional web apps - but rather have the ability to follow the logic, the functions, which parameters are useful, etc.
 
-<h2>2. nan0's Preparation</h2>
+<h2>2. Preparation</h2>
 
 I began to prepare for AWAE shortly after earning my OSCP certificate. I prepared for around 6 months before starting my labs. I read every review I could find, but with the updated 2020 content, many of the reviews were on the old course. For those like me who have never penetration tested web applications, Burp Suite's PortSwigger labs were an amazing resource for diving into AWAE. The ability to better understand common web vulnerabilities, why they were vulnerable, and how to exploit them, were very useful in understanding the attack content in the course. Some of the labs I completed were:
 
--SQL injection
--Cross-site scripting
--XML external entity (XXE) injection
--Insecure deserialization
+-SQL injection<br>
+-Cross-site scripting<br>
+-XML external entity (XXE) injection<br>
+-Insecure deserialization<br>
 
 Looking back through these labs, I wish I would have also focused on a few others. However, coming into this course, I only had an idea of web attacks from OSCP and Hack the Box (https://www.hackthebox.eu/). Performing PortSwigger's labs and how they provided instructions on these attacks when stuck, was amazing for me. I highly recommend PortSwigger to anyone looking to just better familiarize themselves with common web attacks.
 
@@ -41,7 +41,7 @@ Finally, I got back into the groove of practicing Python. I had learned how to r
 
 <h2>3. The Labs</h2>
 
-I decided to purchase the 60 days of labs. I read many comments that stated one could easily do the entire course in 30 days. However I have a family, with kids and dogs and cats. I knew I would not be at my PC every night, and that I needed to take breaks, especially since I took booked this course over the holidays. Take whatever you are comfortable with, but the breaks between modules helped keep mine and my family’s sanity. I read the PDF, going through each module, and then would play the videos and follow along with my labs. I completed most extra miles - but should have completed every extra mile at this stage. The extra miles are key to helping me understand taking that extra step and discovering vulnerabilities on my own. Take the time, and do every extra mile you can.
+I decided to purchase the 60 days of labs. I read many comments that stated one could easily do the entire course in 30 days. However I have a family, with kids and dogs and cats. I knew I would not be at my PC every night, and that I needed to take breaks, especially since I took booked this course over the holidays. Take whatever you are comfortable with, but the breaks between modules helped keep mine and my family’s sanity. I read the PDF, going through each module, and then would play the videos and follow along with my labs. I completed most extra miles - but should have completed every extra mile at this stage. The extra miles werr key to help me understand going the extra step and discovering vulnerabilities on my own. Take the time, and do every extra mile you can.
 
 I think the labs were great, for the most part. There were some instances of Offensive Security going above the novices (like me) and providing a statement, such as "And by reviewing the source code one could find this vulnerability...", or something along that line. However, I have never reviewed source code, and it was difficult to understand how anyone would identify that as a vulnerability! Read between the lines, and get the message before glancing over and continuing. This will help you come exam time.
 
@@ -55,7 +55,7 @@ I failed my first attempt with 0 points. This was hard to swallow, since I have 
 
 <h2>5. The Exam - Attempt 2</h2>
 
-During my second attempt, I told myself I just wanted to do better than my previous attempt. This meant just getting a few points on the board. This time, I was able to identify one vulnerability and create a working Proof of Concept (POC) and get a few points! However, ultimately I did not achieve enough, and still failed my second attempt. After failing twice, I was on the 60 day cool-off period for exams, and decided not to buy any more lab time. However, I did review my notes, re-read the PDF, and watched the videos for explanation in vulnerability discovery in source code, what I felt I lacked on the most.
+During my second attempt, I told myself I just wanted to do better than my previous attempt. This meant just getting a few points on the board. This time, I was able to identify one vulnerability and create a working Proof of Concept (POC) and got a few points! However, ultimately I did not achieve enough, and still failed my second attempt. After failing twice, I was on the 60 day cool-off period for exams, and decided not to buy any more lab time. However, I did review my notes, re-read the PDF, and watched the videos for explanation in vulnerability discovery in source code, what I felt I lacked on the most.
 
 Another thing I did during this time was create an in-depth checklist of what I should follow for a methodology in my next attempt. This is something I should have done for my first two, but failed to write. In my first two attempts, I followed whatever looked interesting, but did not systematically follow a check-list.
 
