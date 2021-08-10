@@ -77,4 +77,6 @@ Upon completion of my exam time, I wrote my exam report, and submitted it. I rec
 
 This is the hardest exam I have ever taken in my life. I am thrilled to have been able to again pass another Offensive Security exam, and have OSWE as a part of my credentials. Although I am still not a penetration tester, I hope one day to apply the skills I have learned to a security position in my future. Thank you Offensive Security for a great course!
 
+Thanks for reading!
+
 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="5b89204b-da53-4f03-a6b9-b1e3f885c028" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
