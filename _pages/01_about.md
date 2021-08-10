@@ -12,7 +12,7 @@ Want to join our team? Message us on <a href="https://discordapp.com/users/16585
 
 <h2>Team Members:</h2>
 
-<h3>exabyt3 - CSSP, CISSP, OSCP</h3>
+<h3>exabyt3 - CSSP, CISSP, GIAC, OSCP</h3>
 A Senior Security Consultant at a penetration testing firm, exabyt3 created the UBG "clan" in the old days of early online FPS.
 <script src="https://www.hackthebox.eu/badge/24990"></script>
 
