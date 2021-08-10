@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-<h3>nan0byt3 - CEH, OSCP, OSWE</h3>
+<h3>Nan0byt3 - CEH, OSCP, OSWE</h3>
 
 <center><script src="https://www.hackthebox.eu/badge/25075"></script></center>
 
