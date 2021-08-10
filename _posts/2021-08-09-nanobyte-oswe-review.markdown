@@ -4,7 +4,7 @@ title:  "nanobytes OSWE Review"
 author: nanobyte
 date:   2021/08/09
 description: Post Exam Writeup for my Offensive Security Web Expert (OSWE)
-tags: post-exam
+tags: OffSec OSWE post-exam
 ---
 
 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="5b89204b-da53-4f03-a6b9-b1e3f885c028" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
