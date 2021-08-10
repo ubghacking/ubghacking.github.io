@@ -22,11 +22,11 @@ I knew that I wanted to be a penetration tester after earning my Offensive Secur
 
 My background in development is severely limited - learning two high-level languages in college (Java and C++) and some Python scripting. I have never developed anything in production (or even close) in the real world. However, while taking this course and knocking off the rust, I was able to follow along.
 
-Looking back, during your preparation for AWAE, if you are not familiar with some of the languages, I would urge you to take some time to also review common web languages. This includes PHP, Java, JavaScript, .Net, etc. I took time to touch up on Python scripting, but avoided brushing up on anything else. This was definitely a mistake. If you are not familiar with these common web app languages, take some time to learn them. You won't need the ability to write fully functional web apps - but rather have the ability to follow the logic, the functions, which parameters are useful, etc.
+Looking back, during your preparation for AWAE, if you are not familiar with some of the languages, I would urge you to take some time to review common web languages. This includes PHP, Java, JavaScript and .Net. I took time to touch up on Python scripting, but avoided brushing up on anything else. This was definitely a mistake. If you are not familiar with these languages, take some time to learn them. You won't need the ability to write fully functional web apps - but rather have the ability to follow the logic, the functions, which parameters are useful, etc.
 
 <h2>2. Preparation</h2>
 
-I began to prepare for AWAE shortly after earning my OSCP certificate. I prepared for around 6 months before starting my labs. I read every review I could find, but with the updated 2020 content, many of the reviews were on the old course. For those like me who have never penetration tested web applications, <a href="https://portswigger.net/web-security" target="_blank">Burp Suite's PortSwigger</a> labs were an amazing resource for diving into AWAE. The ability to better understand common web vulnerabilities, why they were vulnerable, and how to exploit them, were very useful in understanding the attacks in the course. Some of the labs I completed were:
+I began to prepare for AWAE shortly after earning my OSCP. I prepared for around 6 months before starting my labs. I read every review I could find, but with the updated 2020 content, many of the reviews were on the old course. For those like me who have never penetration tested web applications, <a href="https://portswigger.net/web-security" target="_blank">Burp Suite's PortSwigger</a> labs were an amazing resource for diving into AWAE. The ability to better understand common web vulnerabilities, why they were vulnerable, and how to exploit them, were very useful in understanding the attacks in the course. Some of the labs I completed were:
 
 -SQL injection<br>
 -Cross-site scripting<br>
@@ -55,7 +55,7 @@ I failed my first attempt with 0 points. This was hard to swallow, since I have 
 
 <h2>5. The Exam - Attempt 2</h2>
 
-During my second attempt, I told myself I just wanted to do better than my previous attempt. This meant just getting a few points on the board. This time, I was able to identify one vulnerability and create a working Proof of Concept (POC) and got a few points! However, ultimately I did not achieve enough, and still failed my second attempt. After failing twice, I was on the 60 day cool-off period for exams, and decided not to buy any more lab time. However, I did review my notes, re-read the PDF, and watched the videos for explanation in vulnerability discovery in source code, what I felt I lacked on the most.
+During my second attempt, I told myself I just wanted to do better than my previous attempt. This meant just getting a few points on the board. This time, I was able to identify one vulnerability and create a working Proof of Concept (POC) and got a few points! Ultimately I did not achieve enough, and still failed my second attempt. After failing twice, I was on the 60 day cool-off period for exams, and decided not to buy any more lab time. I did review my notes, re-read the PDF, and re-watched the videos for explanation in vulnerability discovery in source code, what I felt I lacked in the most.
 
 Another thing I did during this time was create an in-depth checklist of what I should follow for a methodology in my next attempt. This is something I should have done for my first two, but failed to write. In my first two attempts, I followed whatever looked interesting, but did not systematically follow a check-list.
 
@@ -67,12 +67,14 @@ Upon completion of my exam time, I wrote my exam report, and submitted it. I rec
 
 <h2>7. Top Five Takeaways</h2>
 
-1. This course is tough, in my opinion much tougher than OSCP. However, Offensive Security gives you the methodologies and tools that you need to complete this course. It will require reading and studying outside of the PDF to complete some of the extra miles, but this prepares you for the exam.
+1. This course is tough, in my opinion much tougher than OSCP. Although, Offensive Security gives you the methodologies and tools that you need to complete this course. It will require reading and studying outside of the PDF or videos to complete some of the extra miles, but this prepares you for the exam.
 2. My scripting abilities have grown ten-fold since entering this course. I am able to quickly craft a Python exploit from scratch.
 3. I have a deep understanding of a variety of web application attacks. Not just how to perform them in a black box scenario, but also from a white box scenario with source code provided.
-4. When you think you cannot go any further, take a break. Walk away from the computer, go spend five minutes with your family. Yes, even during the exam! Grab some water, and get back into it with fresh eyes. When you need to during lab time, take a day or two off for another hobby. You don't need to overwork yourself!
+4. When you think you cannot go any further, take a break. Walk away from the computer, go spend five minutes with your family. Yes, even during the exam! Grab some water, and get back into it with fresh eyes. When you need to during your lab time, take a day or two off for another hobby. You don't need to overwork yourself!
 5. If you stay persistent, you can accomplish amazing things. I thought I may have made a mistake after my first exam attempt - but staying persistent allowed me to achieve this amazing certificate.
 
 <h2>8. Final Thoughts</h2>
 
 This is the hardest exam I have ever taken in my life. I am thrilled to have been able to again pass another Offensive Security exam, and have OSWE as a part of my credentials. Although I am still not a penetration tester, I hope one day to apply the skills I have learned to a security position in my future. Thank you Offensive Security for a great course!
+
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="5b89204b-da53-4f03-a6b9-b1e3f885c028" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
