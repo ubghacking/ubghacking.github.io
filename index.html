@@ -11,5 +11,5 @@ A security professional constantly learning how to break into and defend systems
 {% for article in sorted %}
 		<time>{{ article.date | date: "%b %-d, %Y" }}</time> | <h4>{{ article.title }}</h4>
 		<p>{{ article.content }}</p>
-		<br><br>
+		<br>
 {% endfor %}
