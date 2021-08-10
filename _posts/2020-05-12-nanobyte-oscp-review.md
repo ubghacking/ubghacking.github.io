@@ -4,7 +4,7 @@ title:  "nanobytes Post OSCP Exam Attempt"
 author: nanobyte
 date:   2020-05-12
 description: Post Exam Writeup for my Offensive Security Certified Professional (OSCP)
-tags: OSCP post-exam
+tags: OffSec OSCP post-exam
 ---
 
 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="ebca62c5-9219-42ff-9e29-fd4aaa2c2676" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
