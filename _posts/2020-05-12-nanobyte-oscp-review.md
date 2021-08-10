@@ -7,9 +7,6 @@ description: Post Exam Writeup for my Offensive Security Certified Professional 
 tags: OffSec OSCP post-exam
 ---
 
-<br/>
-<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="ebca62c5-9219-42ff-9e29-fd4aaa2c2676" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-
 <H2>Update</H2>
 
 I passed my exam, and earned my OSCP!
