@@ -74,3 +74,5 @@ Here are my top five takeways:
 And this brings me to my closing comments. Even though I am unsure if I passed, I learned so much about myself and my determination to OSCP's motto of "try harder". I did something over the last few days that challenged me entirely. To those of you in my multiple Slack and Discrod servers and Reddit threads, thank you! Exabyt3, SurgicalMittens, Xaliom, nineninenine, Gridith, The XSS Rat, CyberTuna, The Mad Human, Cyptik, Axua, and anyone I forgot, you kept me sane and helped me through when times were tough with this. I will find out in 10 business days or less what the outcome is.
 
 Thanks for reading!
+
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="ebca62c5-9219-42ff-9e29-fd4aaa2c2676" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
