@@ -11,6 +11,5 @@ A Hack The Box, CTF, all things security and security blogging team.
 {% for article in sorted %}
 		<time>{{ article.date | date: "%b %-d, %Y" }}</time> | <h4>{{ article.title }}</h4>
 		<p>{{ article.content }}</p>
-		<p>{% if article.author %} -- {{ article.author }}{% endif %}</p>
 		<br><br>
 {% endfor %}
