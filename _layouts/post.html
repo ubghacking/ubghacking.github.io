@@ -2,6 +2,9 @@
 layout: default
 ---
 
+
+<h2>{% if page.title %}{{ page.title }}{% endif %}</h2>
+
 <span>[
   {% for tag in page.tags %}
     {% capture tag_name %}{{ tag }}{% endcapture %}
@@ -9,7 +12,6 @@ layout: default
   {% endfor %}
 ]</span><br>
 
-<h3>{% if page.title %}{{ page.title }}{% endif %}</h3>
 <time>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} | {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</time>
 
 {{ content }}
