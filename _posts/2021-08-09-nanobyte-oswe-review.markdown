@@ -8,7 +8,7 @@ tags: OffSec OSWE post-exam
 ---
 
 1. Introduction & Lookbacks
-2. Preperation
+2. Preparation
 3. The Labs
 4. The Exam - Attempt 1
 5. The Exam - Attempt 2
