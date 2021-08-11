@@ -1,6 +1,6 @@
 ---
 layout: tagpage
-title: "Tag: Post-Exam"
-tag: post-exam
+title: "Tag: cert-writeup"
+tag: cert-writeup
 exclude: true
 ---
