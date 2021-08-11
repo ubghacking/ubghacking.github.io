@@ -31,9 +31,7 @@ I also tackled the OSCP like HTB machines (<a href="https://www.reddit.com/r/osc
 
 Notes. Notes were essential. I constantly referred to my notes, which I have gathered over these last nine months. I tried several different platforms. I tried Cherry Tree on Linux first, and honestly really liked it. Due to not having a single VM (no homelab available yet, and I used two different PC's) I moved to Google Docs, huge mistake. Ultimately what I used in the end was GitBook. I highly recommend GitBook for its functionality and searching within GitBook is insanely fast and efficient. When I needed a reference for a tool, let's say hydra, typing in 'hydra' into the search bar not only displayed my notes in 'Web Attacks' for what the tool was, but I found practical examples from machines in HTB where I had used it.
 
-After my lab time was done, I needed something to work on in the gap before my exam. I used <a href="https://tryhackme.com/" target="_blank">TryHackMe</a>, a similar tool to HTB. I completed TryHackMe's OSCP learning path.
-
-Now, at this point, I was eager and ready to sign up. I had read a few books, I was an Elite Hacker on HTB, and did the OSCP like boxes. I signed up and enrolled to begin 30 days of labs to start.
+After my lab time was done, I needed something to work on in the gap before my exam. I used <a href="https://tryhackme.com/" target="_blank">TryHackMe</a>, a similar tool to HTB. I completed TryHackMe's OSCP learning path. At this point, I was eager and ready to sign up. I had read a few books, I was an Elite Hacker on HTB, and did the OSCP like boxes. I signed up and enrolled to begin 30 days of labs to start.
 
 <H2>3. The Labs</H2>
 
