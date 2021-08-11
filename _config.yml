@@ -1,8 +1,8 @@
 # Site Settings
-title: nanobyte Security
+title: Nan0byt3 Security
 email: none@none.com
 description: >
-  a hacking team dedicated to Hack The Box, Capture The Flags and security blogging
+  a security enthusiast trying to make a security-ish blog
 baseurl: "/"
 url: "http://ubghacking.github.io"
 github_username: ubghacking
