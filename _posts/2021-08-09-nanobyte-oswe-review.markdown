@@ -4,7 +4,7 @@ title:  "nanobytes OSWE Review"
 author: nanobyte
 date:   2021/08/09
 description: Post Exam Writeup for my Offensive Security Web Expert (OSWE)
-tags: OffSec OSWE post-exam
+tags: OffSec OSWE cert-writeup
 ---
 
 1. Introduction & Lookbacks
