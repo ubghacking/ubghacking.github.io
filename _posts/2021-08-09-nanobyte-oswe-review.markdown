@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "nanobytes OSWE Review"
+title:  "Nan0byt3s OSWE Review"
 author: nanobyte
 date:   2021/08/09
 description: Post Exam Writeup for my Offensive Security Web Expert (OSWE)
