@@ -11,13 +11,20 @@ tags: OffSec OSCP cert-writeup
 
 I passed my exam, and earned my OSCP!
 
-<H2>Pre-Exam Talk</H2>
+1. Pre-Exam Talk
+2. Preparation
+3. Buffer Overflow Preparation
+4. The Exam
+5. Top-Five Takeaways
+6. End Rant
+
+<H2>1. Pre-Exam Talk</H2>
 
 Hello, and thanks for taking the time to read my post exam writeup for my first attempt at the Offensive Security Certified Professional (OSCP) certificate! I say first attempt, because I just submitted my exam report yesterday, and I honestly do not know if I passed or not. Details on being unsure are to follow below. However, I am eager to write this to share with my online fellow hackers that pushed me, and stuck with me, over the last several months. You guys rock, and even though you may not think you helped me, you kept me sane and helped me more then you may know. So, thank you!
 
 I first got eager to earn my OSCP when a close friend, exabyt3, earned his and told me about what it meant to hold the certification, years ago in the early 2010's. I recall thinking what a "badass" he was, being able to hack into computers and gain administrative access to computer systems. At this time in my life I was "computer savvy". I could build them, play computer games and build websites, but not well versed in the Linux terminal or Windows command line, at all. To be honest, it boggled my mind back then how someone could actually USE these as a means to interact with a computer. I was just to heavily reliable on what a GUI provided. But nonetheless, I wanted to earn this certificate, more than anyone knew.
 
-<H2>Preparation</H2>
+<H2>2. Preparation</H2>
 
 I began my studies over nine months ago, when I was introduced to <a href="https://www.hackthebox.eu/" target="_blank">Hack the Box</a>. For those that do not know what Hack the Box (HTB) is, it is a network of machines that are vulnerable. You receive a VPN connection pack when you make an account (you need to "hack" the login page to make an account, but don't worry there are guides to walk you through it) and once you have your connection pack, you can VPN into the network and attack these vulnerable machines. I began the overwhelming process of learning Linux, all while learning how to perform these attacks by hand from my Certified Ethical Hacker certificate. Sure, I KNEW what a SQL Injection attack was. But was I able to perform one on my own? That's what SQLMap was for! This goes into the same for any attack; local file inclusions, cross site scripting, the list goes on. I knew what the attacks were from memorization. But PERFORMING them by hand on my own was completely different. I worked my way through machines, starting with the easy rated boxes and working my way up from Linux to Windows. In those early days of HTB, forum checks were numerous, and calls for aide were constant. One thing I did do, which helped me even through OSCP, was I began to keep rudimentary notes of my accomplishments, and walkthroughs so I had my own reference of the tools I used. This helped me, I knew what the syntax and output looked like. These writeups are still in my notes, and I even used them on my exam!
 
@@ -39,11 +46,11 @@ At first, 30 days seemed so long. However, by the last few days, I could not bel
 
 Finally, before I knew it, it was May 10th, and the exam was the next day. Although I was frantic, I called it an early night and turned my computer off before dinner. I understood that nothing I would do the night before, would prep me any more. I spent the night with my family, ate a good dinner, and was in bed 9 hours before my exam start time. I was to eager and nervous! I could hardly sleep.
 
-<H2>Buffer Overflow Preparation</H2>
+<H2>3. Buffer Overflow Preparation</H2>
 
 The buffer overflow scared me when I started this learning path. The idea of learning how memory worked, to create a malicious exploit to crash a program, that sent a reverse connection back for system access!? It is not bad. I looked at Justin Steven's dostackbufferoverflowgood (<a href="https://github.com/justinsteven/dostackbufferoverflowgood" target="_blank">https://github.com/justinsteven/dostackbufferoverflowgood</a>) which is an awesome tutorial. I started by spinning up a Windows 7 "exploit" machine (again, I use several computers, and this was portable). I installed Immunity, IDA, DNSpy, all the tools I could think of for exploit creation. I did the dostackbufferoverflowgood, and moved on to other executables. I found a vulnerable version of minishare, and exploited that, along with vulnserver. Do all you can, practice!
 
-<H2>The Exam</H2>
+<H2>4. The Exam</H2>
 
 I have switched from Chrome to FireFox being my daily web browser. I tested my webcam in FireFox, and when I got my browser going for the proctoring software, my CPU utilization jumped to 98%, and stayed steady through the entire exam. FireFox took all my CPU, and Chrome could not detect my webcam. It was already 40 minutes into my exam and did not want to waste any more exam time troubleshooting. Get your Chrome's working for the proctoring software, everyone I talked to on this said they used Chrome. Maybe stear clear of FireFox?
 
@@ -59,7 +66,7 @@ At this point, it was dinner time, where I took another break. I walked away for
 
 That is where it stayed, I was never able to privilege escalate on the final two machines. I was able to get onto all five, all without MetaSploit. I worked until the final five minutes of my exam, living off energy drinks and an hour and a half of sleep. But, at the end of my time, I took a small nap and got to work on my exam report. I finished by the evening, and 36 hours after my exam start time, my report was officially submitted...
 
-<H2>Top Five Takeaways</H2>
+<H2>5. Top Five Takeaways</H2>
 
 Here are my top five takeways:
 
@@ -69,7 +76,7 @@ Here are my top five takeways:
 4. When you think you are lost, take a break. Walk away, go and do something else. Towards the end of my 30 days of labs, I was burned out. It is good to step away, take a breath, go tell the family you love them, and get back to work when you can.
 5. You can do anything you put your mind to. This is cliche, I KNOW. But honestly, I always wanted to try for OSCP, and a year ago it seemed daunting. But this exam attempt has made me realize that I can do things I never thought I could. It seemed out of grasp, maybe it still is. But getting here has been a journey! Pass or fail, I am proud at what I have accomplished.
 
-<H2>End Rant</H2>
+<H2>6. End Rant</H2>
 
 And this brings me to my closing comments. Even though I am unsure if I passed, I learned so much about myself and my determination to OSCP's motto of "try harder". I did something over the last few days that challenged me entirely. To those of you in my multiple Slack and Discrod servers and Reddit threads, thank you! Exabyt3, SurgicalMittens, Xaliom, nineninenine, Gridith, The XSS Rat, CyberTuna, The Mad Human, Cyptik, Axua, and anyone I forgot, you kept me sane and helped me through when times were tough with this. I will find out in 10 business days or less what the outcome is.
 
