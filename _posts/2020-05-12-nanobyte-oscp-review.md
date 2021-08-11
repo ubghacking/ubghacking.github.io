@@ -39,7 +39,7 @@ The OSCP labs and material were absolutely amazing. When the labs were unlocked,
 
 Because I purchased 30 days of lab time, I did not complete the exercises and submit a lab report. For those preparing for the OSCP, in looking back, I would recommend looking at this option. I wish I would have done the lab report, even though it is extensive. The lab report requires you have a write-up of ten machines you "pwned", as well as all the lab exercises in the PDF. The lab exercises are what scared me away since I wanted to focus on playing in the labs. I was able to root 20 machines in the lab, all MOSTLY on my own. That's all I "pwned" in my lab time. For the times I was stuck, I turned to the forums. The Offensive Security forums were very casual and useful. They were a great place to turn to for suggestions, post questions and even request nudges when stuck, similar to the HTB forums. I always used this a last-ditch effort, always trying and covering everything I could think of before reaching out for help.
 
-While in the labs, I started building my own automation tools to help me quicjly enumerate. These crude scripts took a list of IP's from a text file, and fed them into a script one liner that output it's findings into a directory of the IP for safe keeping and reporting. Here is an example of one of my scripts, gobuster_enum.sh:
+While in the labs, I started building my own automation tools to help me quicly enumerate. These crude scripts took a list of IP's from a text file, and fed them into a script one liner that output it's findings into a directory of the IP for safe keeping and reporting. Here is an example of one of my scripts, gobuster_enum.sh:
 
 {% highlight python linenos %}
 #!/bin/bash
