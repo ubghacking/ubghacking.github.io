@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "OSCP Exam Attempt #1"
+title:  "OSCP Review"
 author: nanobyte
 date:   2020-05-12
 ---
