@@ -57,6 +57,8 @@ I could run these scripts with:
 ./gobuster_enum.sh IP.txt
 {% endhighlight %}
 
+I used this format, and made scripts for dirb, gobuster, nikto, and nmap scans.
+
 Finally, before I knew it, the exam was the next day. Although I was frantic, I called it an early night and turned my computer off before dinner. I understood that anything I would do the night before, would not prep me any more. I spent the night with my family, ate a good dinner, and was in bed 9 hours before my exam start time. Get a good nights rest before your exam if ytou can!
 
 <H2>4. Buffer Overflow Preparation</H2>
@@ -65,13 +67,11 @@ The buffer overflow scared me when I started this learning path. The idea of lea
 
 <H2>5. The Exam</H2>
 
-Before the exam, I wrote some basic scripts for my enumeration right at the exam start. I made some small scripts prior to the exam that took a file (i.e. IP.txt) with all the IP's for my machines in that file. I fed this into scripts like nikto_enum.sh, nmap_enum.sh, dirb_enum.sh, etc. These enum scripts were basic shell one-liners that performed a quick for loop, to loop though the IP's and perform a standard scan, and then save the output of each to a folder of it's own IP. I have heard of better suggestions, but these were easy and worked. I also built some other quick terminal line options for these scripts with pre-built scans for further enumeration if needed. I recommend doing this, and having rudimentary scripts to automate your standard scans, it will save time.
+I kicked off my exam by enumerating with the script examples above. Once scanning kicked off, I got to work on the Buffer Overflow. I quickly got a working exploit in the first hour and a half. Slow to what others get it, but for this n00b I was proud of that time frame. I then went for the next box, an easier one, where I quickly rooted it. This was two hours in, and I had already received half the exam points needed. Halfway there ...
 
-Once scanning kicked off, I got to work on the Buffer Overflow. I quickly got a working exploit in the first hour and a half. Slow to what others get it, but for this n00b I was proud of that time frame. I then went for the next box, an easier one, where I quickly rooted it. This was two hours in, and I had already received half the exam points needed. Halfway there ...
+I then got to work on the remaining three boxes. All my scans were complete at this point, and so I began working on two machines. After some time and frustration I stepped away and ate lunch. I spent 30 minutes with my family and cooled off my jets. Breaks are essential, or were for me!
 
-I then got to work on the remaining three boxes. All my scans were complete at this point, and so I began working on two of the medium ones. After some time and frustration I stepped away and ate lunch. I spent 30 minutes with my family and cooled off my jets.
-
-When I returned, I took a peek at the harder machine. After reviewing the scan results, I found the way in through some light tinkering. With that, I performed some privilege escalation scans, and looked at another box. And, I found something I missed on my initial enumeration, that led me to finally getting in. I got onto the machine as a low-level user. I found something else interesting, and quickly got root.
+When I returned, I took a peek at the harder machine. After reviewing the scan results, I found the way in through some light tinkering. With that, I performed some privilege escalation scans, and looked at another box. And, I found something I missed on my initial enumeration, that led me to finally getting in. I got onto the machine as a low-level user. I found something else interesting, and quickly leveled up.
 
 At this point, it was dinner time, where I took another break. I walked away for another 30 minutes and took some time with my family. I must honestly say, the small breaks and stepping away, not getting caught in the rabbit holes, checked my sanity! Do not get lost on the rabbit holes, take a step back, and look at the problem. When I returned, I popped a shell on another box, and got the final find of my exam.
 
@@ -89,6 +89,6 @@ Here are my top five takeways:
 
 <H2>7. End Rant</H2>
 
-And this brings me to my closing comments. Even though I am unsure if I passed, I learned so much about myself and my determination to OSCP's motto of "try harder". I did something over the last few days that challenged me entirely. To those of you in my multiple Slack and Discrod servers and Reddit threads, thank you! Exabyt3, SurgicalMittens, Xaliom, nineninenine, Gridith, The XSS Rat, CyberTuna, The Mad Human, Cyptik, Axua, and anyone I forgot, you kept me sane and helped me through when times were tough with this. I will find out in 10 business days or less what the outcome is.
+And this brings me to my closing comments. I learned so much about myself and my determination, living off OSCP's motto of "try harder". I did something over the last few days that challenged me entirely. To those of you in my multiple Slack and Discrod servers and Reddit threads, thank you! Exabyt3, SurgicalMittens, Xaliom, nineninenine, Gridith, The XSS Rat, CyberTuna, The Mad Human, Cyptik, Axua, and anyone I forgot, you kept me sane and helped me through when times were tough with this.
 
 Thanks for reading!
