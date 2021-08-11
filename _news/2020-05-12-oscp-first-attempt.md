@@ -5,4 +5,4 @@ author: nanobyte
 date:   2020-05-12
 ---
 
-Nanobyte has completed his first OSCP exam attempt and earned his OSCP! Curious to know how he "tried harder"? Go read his <a href="http://nanobytesecurity.com/2020/05/12/post-oscp-exam-writeup.html">post-exam writeup</a>!
+I have passed my Offensive Security Certified Professional (OSCP)! Want to know how I "tried harder"? Go read this <a href="http://nanobytesecurity.com/2020/05/12/post-oscp-exam-writeup.html">post-exam writeup</a>!
