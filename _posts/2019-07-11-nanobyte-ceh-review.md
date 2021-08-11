@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "nanobytes Post CEH Writeup"
+title:  "Nan0byt3s CEH Review"
 author: nanobyte
 date:   2019-07-11
 description: Post Exam Writeup for my Certified Ethical Hacker (CEH)
-tags: CEH post-exam
+tags: CEH cert-writeup
 ---
 
 First, I want to drop some background about me. My past is radio communications maintenance for the military (for 9 years), but wanted to work on computers (darn recruiters!). Anyways, I tried CCNA but didn't finish module 4 about 8 years ago, and got some smaller military computer training. I got an Associates of Computer Science while I was in, and used my GI Bill to get a Bachelor's in Cyber Security from Colorado Tech, graduating last year (I honestly don't know how "Technical" is in there name... The classes were all papers!). I have been officially working in IT for two years, and have been interested in security for the last few. I also have a family with 3 kids, 3 dogs, and work full time. So life is always busy, and during testing I dedicated an hour or two, about 3 to 4 days a week, for 3 months to complete this.
