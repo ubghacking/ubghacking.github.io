@@ -7,16 +7,16 @@ description: Post Exam Writeup for my Offensive Security Certified Professional 
 tags: OffSec OSCP cert-writeup
 ---
 
-<H2>Update</H2>
-
-I passed my exam, and earned my OSCP!
-
 1. Pre-Exam Talk
 2. Preparation
 3. Buffer Overflow Preparation
 4. The Exam
 5. Top-Five Takeaways
 6. End Rant
+
+<H2>Update</H2>
+
+I passed my exam, and earned my OSCP!
 
 <H2>1. Pre-Exam Talk</H2>
 
