@@ -7,7 +7,7 @@ description: How to leverage web.config for bypassing a file upload restriction
 tags: PowerShell HTB_Walkthrough BypassUploadRestriction
 ---
 
-<h2>Bypassing Upload Restrictions</h2>
+<h3>Bypassing Upload Restrictions</h3>
 
 The following attack was identified during Hack the Box's retired Bounty machine. In that vulnerable machine, there was access to a file upload. The goal was to achieve remote code execution from the file upload functionality. The application only took JPG extensions, all other file extensions were blocked. This restriction could be defeated by adding a null byte and the JPG extension at the end of a malicious filename.
 
@@ -29,7 +29,7 @@ However, if we navigate to this file, we would receive the following error:
 
 With the presence of web.config present, and the ability to bypass file upload restrictions discovered, we can create a malicious web.config, and upload a version that is useful to us, as attackers.
 
-<h2>Malicious web.config</h2>
+<h3>Malicious web.config</h3>
 
 We can create our own malicious web.config file, which contains a PowerShell command to download a reverse shell hosted on a web server:
 
