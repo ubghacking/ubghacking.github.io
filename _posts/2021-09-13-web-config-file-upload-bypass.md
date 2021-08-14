@@ -27,7 +27,7 @@ However, if we navigate to this file, we would receive the following error:
 
 <center><img src="/images/posts/webconfig-writeup/image-4.png" alt="file-load-error"></center>
 
-With the presence of web.config present, and the ability to bypass file upload restrictions discovered, we can create a malicious web.config, and upload a version that is useful to us, as attackers.
+With the presence of the web.config file, and the ability to bypass file upload restrictions discovered, we can create a malicious web.config, and upload a version that can maliciously download a reverse shell, which we can use to connect back to our machine. Please see the below web.config template:
 
 <h2>Malicious web.config</h2>
 
@@ -58,7 +58,7 @@ We can create our own malicious web.config file, which contains a PowerShell com
 %>
 {% endhighlight %}
 
-Before you upload this file to the server, make sure that you host a PowerShell reverse shell hosted on your local machine. Here are some great PowerShell options available from <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#powershell" target="_blank">PayloadAllTheThings</a>.
+Before you upload this file to the server, make sure that you have a PowerShell reverse shell hosted from your local machine. Here are some great PowerShell options available from <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#powershell" target="_blank">PayloadAllTheThings</a>.
 
 Once a PowerShell reverse shell is saved on your local machine, you must setup a web server to host this file. I generally usen a Python SimpleHTTPServer. This can be quickly setup with the following command, from the directory your reverse shell is saved in:
 
@@ -66,6 +66,6 @@ Once a PowerShell reverse shell is saved on your local machine, you must setup a
 python -m SimpleHTTPServer 80
 {% endhighlight %}
 
-Once the above is setup and ready to go, you can then upload the malicious web.config file. You must perform the same bypass restriction, adding the required null byte and JPG extension. Once on the server, open a NetCat listener, and open the web.config file on the web server. Completing the above, a reverse connection was received:
+Once the above is setup, you can then upload the malicious web.config file. You must perform the same bypass restriction, adding the required null byte and JPG extension. Once on the server, open a NetCat listener, and open the web.config file on the web server from your browser. Once completed, a reverse connection was received:
 
 <center><img src="/images/posts/webconfig-writeup/image-5.png" alt="burp-suite-intercept"></center>
