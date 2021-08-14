@@ -4,7 +4,7 @@ title:  "Using web.config to Bypass File Upload Restrictions"
 author: nanobyte
 date:   2021-09-13
 description: How to leverage web.config for bypassing a file upload restriction
-tags: HTB_Walkthrough SQLMap suid systemctl gobuster
+tags: PowerShell HTB_Walkthrough BypassUploadRestriction
 ---
 
 <h2>Bypassing Upload Restrictions</h2>
