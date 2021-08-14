@@ -11,7 +11,7 @@ tags: PowerShell HTB_Walkthrough BypassUploadRestriction
 
 The following attack was identified during Hack the Box's retired Bounty machine. In that vulnerable machine, there was access to a file upload. The goal was to achieve remote code execution from the file upload functionality. The application only took JPG extensions, all other file extensions were blocked. This restriction could be defeated by adding a null byte and the JPG extension at the end of a malicious filename.
 
-TO begin the attack, first use Burp Suite and enable intercept. Once ready, upload a file, in this scenario Kali Linux's cmdasp.aspx is being uploaded:
+To begin the attack, first use Burp Suite and enable intercept. Once ready, upload a file, in this scenario Kali Linux's cmdasp.aspx is being uploaded:
 
 <center><img src="/images/posts/webconfig-writeup/image_1.png" alt="upload-file"></center>
 
