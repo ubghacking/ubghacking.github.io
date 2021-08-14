@@ -27,7 +27,7 @@ However, if we navigate to this file, we would receive the following error:
 
 <center><img src="/images/posts/webconfig-writeup/image-4.png" alt="file-load-error"></center>
 
-However, with the presence of web.config present, and the ability to bypass file upload restrictions discovered, we can create a malicious web.config, and upload a version that is useful to us, as attackers.
+With the presence of web.config present, and the ability to bypass file upload restrictions discovered, we can create a malicious web.config, and upload a version that is useful to us, as attackers.
 
 <h2>Malicious web.config</h2>
 
