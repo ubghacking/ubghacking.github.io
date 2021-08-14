@@ -2,7 +2,7 @@
 layout: post
 title:  "Using web.config to Bypass File Upload Restrictions"
 author: nanobyte
-date:   2021-09-13
+date:   2021-08-13
 description: How to leverage web.config for bypassing a file upload restriction
 tags: PowerShell HTB_Walkthrough BypassUploadRestriction
 ---
