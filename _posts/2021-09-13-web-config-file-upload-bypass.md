@@ -13,11 +13,11 @@ The following attack was identified during Hack the Box's retirned Bounty machin
 
 First use Burp Suite and enable intercept. Once ready, upload a file, in this scenario transfer.aspx is being uploaded:
 
-<center><img src="/images/posts/webconfig-writeup/image-1.png" alt="upload-file"></center>
+<center><img src="/images/posts/webconfig-writeup/image_1.png" alt="upload-file"></center>
 
 Once intercepted, we can add our null byte after our ASPX extension, and before our JPG extension:
 
-<center><img src="/images/posts/webconfig-writeup/image-2.png" alt="burp-suite-intercept"></center>
+<center><img src="/images/posts/webconfig-writeup/image_2.png" alt="burp-suite-intercept"></center>
 
 If we were to send this to the server, we will see a successful file upload:
 
