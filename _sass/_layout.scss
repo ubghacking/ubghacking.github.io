@@ -48,6 +48,9 @@ a:hover {
 	color: $link-hover-color;
 	text-decoration: underline;
 }
+a#main-links:hover {
+    color:white;
+}
 header {
 	background: $header;
 	padding: 0px 15px;
