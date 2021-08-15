@@ -10,5 +10,5 @@ A security professional eager in learning new ways to break into and defend IT s
 
 Nan0byte is a Systems Administrator for a large organization by day, and a hacking enthusiast by night. He has been passionate about cyber security for the last several years, and started his security career after earning a Bachelor of Science in Cyber Security. He has worked within cyber security roles defending computers and networks, also while pursuing an offensive mindset, earning numerous certifications along the way. Nan0byt3 enjoys Hack the Box but is also active in TryHackMe and PentesterLabs. He is also a United States Marine, and served nine years Active Duty as a communications maintenance technician, and is trained in radio and satellite communicatiins, as well as telephone and data networks. He made the transition to IT upon being honorably discharged.
 
-<center><script src="https://www.hackthebox.eu/badge/25075"></script></center>\
-<a href="https://app.hackthebox.eu/profile/25075" target="_blank">Check out my HTB profile!</a>
+<center><script src="https://www.hackthebox.eu/badge/25075"></script></center>
+<center><a href="https://app.hackthebox.eu/profile/25075" target="_blank">Check out my HTB profile!</a></center>
