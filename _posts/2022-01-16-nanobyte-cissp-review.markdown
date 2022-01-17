@@ -19,7 +19,7 @@ This exam is incredibly different from any other I have taken. I have been asked
 
 This exam took me three months to study for, from cracking open the first book to provisionally passing the examn. ANother question I received was about my background, so here goes. I have a Bachelors of Science in Cybersecurity from Colorado Technical University, and have been in IT for four years. I decided to take the CISSP because I finally met the requirements for the full credentials. That's not to say that reciving your Associates of CISSP would not be worth it - I just decided to wait. I started as dekstop support, promoted to ecurity administrator, and now am a systems administrator.
 
-<h3>Preparation</h3>
+<h3>2. Preparation</h3>
 
 Below is a brief description and recommendation of the resource I used. I did not finish one before moving onto the next, these are not in any order. I instead decided to use several resouerces at once. I tripled up the Official Study Guide, LinkedIn Learning and FedVTE videos all at once, and then moved onto Boson and Eleventh Hour, and eventually threw in Thor Teaches towards the end.
 
@@ -57,7 +57,7 @@ Towards the end of my studying, I began to memorize a lot of the Boson exam ques
 
 I really wanted to find a great app, so I could study while I was sitting on the couch, or on breaks. This app was the best I could find, and I did like the "quick set" of questions I could choose to do. I only ever used the quick set tests, ranging from 10 to 50 questions. I really wanted to like it, but found myself barely ever using it. I do not think that this is necessary. There is some app content you can use for free, but to unlock the full features you will need to pay for it.
 
-<h3>The Exam</h3>
+<h3>3. The Exam</h3>
 
 I will not be going into detail on the exam, since I had to sign a NDA. I will say to get a good nights rest, eat and hydrate before the exam. Make sure to take care of yourself!
 
