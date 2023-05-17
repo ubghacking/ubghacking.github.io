@@ -27,7 +27,7 @@ Once Node.js is installed, install gitbook-cli:
 npm install gitbook-cli -g
 {% endhighlight %}
 
-Once installed, if you run the command `gitbook init` to initialize, you will receive an error. This is because GitBook is no longer maintained as a project, and the newer `graceful-fs` packages have broken the ability to run as is. In `nano /usr/local/lib/node_modules/gitbook-cli/node_modules/npm/node_modules/graceful-fs/polyfills.js`, comment out the following lines:
+Once installed, if you run the command `gitbook init` to initialize, you will receive an error. This is because GitBook is no longer maintained as a project, and the newer `graceful-fs` packages have broken the ability to run as is. In `/usr/local/lib/node_modules/gitbook-cli/node_modules/npm/node_modules/graceful-fs/polyfills.js`, comment out the following lines:
 
 {% highlight bash linenos %} 
 # Comment out:
@@ -42,7 +42,7 @@ Now, we are able to init and install GitBook:
 gitbook install
 {% endhighlight %}
 
-At this point, we would be able to serve GItBook. Once we run this, we should have a GitBook server listening on port 4000, by default:
+At this point, we would be able to serve GitBook. Once we run this, we should have a GitBook server listening on port 4000, by default:
 
 {% highlight bash linenos %} 
 gitbook serve
@@ -54,7 +54,7 @@ Serving book on http://localhost:4000
 
 <h3>Content Structure</h3>
 
-GitBook creates a structure for content, by default, based off directory structure it finds. You can also create your own, by making a `SUMMARY.md` file in your root directory, in my case, `/opt/gitbook-wiki`. The structure of this file is very easy. Each "Chapter" will not be indented, and each set of "Pages" under that chapter. I made a `wiki` directory in my root directory, to manage my content.
+GitBook creates a structure for content, by default, based off directory structure it finds in the root directory. You can also create your own, by making a `SUMMARY.md` file in your root directory, in my case, `/opt/gitbook-wiki`. The structure of this file is very easy. Each "Chapter" will not be indented, and each set of "Pages" under that chapter will be indented. I made a `wiki` directory in my root directory, to manage my content.
 
 The file should have the title of the pge in square brackets, and the relative path to the markdown file in parenthesis, indented with a tab:
 
@@ -73,7 +73,7 @@ This will create your structure that are linked in the left sidebar for your wik
 
 <h3>Customization</h3>
 
-I did not heavily customize my GitBook, but there is no default way to collapse pages by default. To fix this, I installed a plugin, "collapsible-chapters". I also wanted to use tags in my GitBook wiki. This is completed by creating a `book.json` file in the root of your GitBook directory, in my case, `/opt/gitbook-wiki`. Mine has the following:
+I did not heavily customize my GitBook, but there is no default way to collapse chapters by default. To fix this, I installed a plugin, "collapsible-chapters". I also wanted to use tags in my GitBook wiki. This is completed by creating a `book.json` file in the root of your GitBook directory, in my case, `/opt/gitbook-wiki`. To use the `tags` plugin, you will need to make an empty `tags.md` file in your root directory. My `book.json` looks like the following:
 
 {% highlight bash linenos %} 
 {
