@@ -10,7 +10,8 @@ tags: Notetaking GitBook
 I prefer to use GitBook for my notes. I really the the structure, compared to others like OneNote. The other benefit I find to GitBook is I absolutely enjoy the search functionality. I try to keep my notes in the best hierarchy and logical order which I can - but since I document everything, it can get rather cluttered.
 
 I was using GitBook online, until I discovered I could also host it locally. Setup was rather pain free, as it uses Node.js to provide markdown files as content. Since I already had a web server in my homelab I could use, I will not cover how to stand one up. I initially set this up on my Kali box, but plan to migrate this to my CentOS Stream 9 web server when I am done.
-Come back for the remainder of this guide soon!
+
+<h3>Installing GitBook</h3>
 
 First, I am creating my web root within `/opt/gitbook-wiki`, as the temporary directory. Once I am done, this will reside within `/var/www/github-wiki` on my CentOS box.
 
@@ -51,3 +52,31 @@ Starting server ...
 Serving book on http://localhost:4000
 {% endhighlight %}
 
+<h3>Content Structure</h3>
+
+GitBook creates a structure for content, by default, based off directory structure it finds. You can also create your own, by making a `SUMMARY.md` file in your root directory, in my case, `/opt/gitbook-wiki`. The structure of this file is very easy. Each "Chapter" will not be indented, and each set of "Pages" under that chapter. I made a `wiki` directory in my root directory, to manage my content:
+
+{% highlight bash linenos %} 
+# Summary
+* [Welcome](README.md)
+* [Web Hacking](wiki/web-hacking/README.md)
+        * [checklist](wiki/web-hacking/checklist.md)
+* [RevShell](wiki/revshell/README.md)
+        * [Windows](wiki/revshell/windows.md)
+        * [Linux](wiki/revshell/linux.md)
+* [Cheat Sheets](wiki/cheat-sheets/README.md)
+{% endhighlight %}
+
+This will create your structure that are linked in the left sidebar for your wiki.
+
+<h3>Customization</h3>
+
+I did not heavily customize my GitBook, but there is no default way to collapse pages by default. To fix this, I installed a plugin, "collapsible-chapters". I also wanted to use tags in my GitBook wiki. This is completed by creating a `book.json` file in the root of your GitBook directory, in my case, `/opt/gitbook-wiki`. Mine has the following:
+
+{% highlight bash linenos %} 
+{
+    "title": "Nan0Byt3's Notes",
+    "plugins": ["collapsible-chapters",
+     "tags"]
+}
+{% endhighlight %}
