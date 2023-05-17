@@ -54,7 +54,9 @@ Serving book on http://localhost:4000
 
 <h3>Content Structure</h3>
 
-GitBook creates a structure for content, by default, based off directory structure it finds. You can also create your own, by making a `SUMMARY.md` file in your root directory, in my case, `/opt/gitbook-wiki`. The structure of this file is very easy. Each "Chapter" will not be indented, and each set of "Pages" under that chapter. I made a `wiki` directory in my root directory, to manage my content:
+GitBook creates a structure for content, by default, based off directory structure it finds. You can also create your own, by making a `SUMMARY.md` file in your root directory, in my case, `/opt/gitbook-wiki`. The structure of this file is very easy. Each "Chapter" will not be indented, and each set of "Pages" under that chapter. I made a `wiki` directory in my root directory, to manage my content.
+
+The file should have the title of the pge in square brackets, and the relative path to the markdown file in parenthesis, indented with a tab:
 
 {% highlight bash linenos %} 
 # Summary
