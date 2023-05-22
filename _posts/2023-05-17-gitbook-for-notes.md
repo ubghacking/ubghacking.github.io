@@ -17,19 +17,19 @@ First, I am creating my web root within `/opt/gitbook-wiki`, as the temporary di
 
 Once in your working directory, install Node.js. Node.js is a runtime environment and library for JavaScript. We are installing Node.js to use Node Package Manager, or NPM, to install additional packages for Node.js.
 
-{% highlight bash linenos %} 
+{% highlight bash linenos %}
 sudo apt install nodejs
 {% endhighlight %}
 
 Once Node.js is installed, install gitbook-cli:
 
-{% highlight bash linenos %} 
+{% highlight bash linenos %}
 npm install gitbook-cli -g
 {% endhighlight %}
 
 Once installed, if you run the command `gitbook init` to initialize, you will receive an error. This is because GitBook is no longer maintained as a project, and the newer `graceful-fs` packages have broken the ability to run as is. In `/usr/local/lib/node_modules/gitbook-cli/node_modules/npm/node_modules/graceful-fs/polyfills.js`, comment out the following lines:
 
-{% highlight bash linenos %} 
+{% highlight bash linenos %}
 # Comment out:
 //  fs.stat = statFix(fs.stat)
 //  fs.fstat = statFix(fs.fstat)
@@ -38,13 +38,13 @@ Once installed, if you run the command `gitbook init` to initialize, you will re
 
 Now, we are able to init and install GitBook:
 
-{% highlight bash linenos %} 
+{% highlight bash linenos %}
 gitbook install
 {% endhighlight %}
 
 At this point, we would be able to serve GitBook. Once we run this, we should have a GitBook server listening on port 4000, by default:
 
-{% highlight bash linenos %} 
+{% highlight bash linenos %}
 gitbook serve
 
 ...
@@ -58,7 +58,7 @@ GitBook creates a structure for content, by default, based off directory structu
 
 The file should have the title of the pge in square brackets, and the relative path to the markdown file in parenthesis, indented with a tab:
 
-{% highlight bash linenos %} 
+{% highlight bash linenos %}
 # Summary
 * [Welcome](README.md)
 * [Web Hacking](wiki/web-hacking/README.md)
@@ -75,7 +75,7 @@ This will create your structure that are linked in the left sidebar for your wik
 
 I did not heavily customize my GitBook, but there is no default way to collapse chapters by default. To fix this, I installed a plugin, "collapsible-chapters". I also wanted to use tags in my GitBook wiki. This is completed by creating a `book.json` file in the root of your GitBook directory, in my case, `/opt/gitbook-wiki`. To use the `tags` plugin, you will need to make an empty `tags.md` file in your root directory. My `book.json` looks like the following:
 
-{% highlight bash linenos %} 
+{% highlight bash linenos %}
 {
     "title": "Nan0Byt3's Notes",
     "plugins": ["collapsible-chapters",
