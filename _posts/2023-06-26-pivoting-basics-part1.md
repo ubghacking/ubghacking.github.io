@@ -47,6 +47,6 @@ If all is correct, we will receive 'c : Connected to Server':
 
 We would now have access to the first subnet, 172.18.1.0/24, and also where DC01's interface 172.18.1.5 resides. We could now continue with enumeration of the new network. Our network diagram woulod appear like:
 
-<img src="/images/posts/pivoting/Pivoting_Sshuttle.PNG" alt="pivoting-sshuttle" width="500"/>
+<img src="/images/posts/pivoting/Pivoting_SsHuttle.PNG" alt="pivoting-sshuttle" width="500"/>
 
 And that's it for Part 1! In Part 2, I will continue on with using Chisel, and how to pivot further into environments.
