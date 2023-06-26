@@ -20,7 +20,7 @@ Third Pivot Network: 172.18.3.0/24
 
 To begin this tutorial, we have the ability to login to WEB01 with SSH credentials. It can be a user, or admin/root, it does not matter. We wish to access DC01, located at 172.18.2.5:
 
-!{pivoting-initial](/images/posts/pivoting/Pivoting_Initial.PNG)
+![pivoting-initial](/images/posts/pivoting/Pivoting_Initial.PNG)
 
 <h3>Title</h3>
 
