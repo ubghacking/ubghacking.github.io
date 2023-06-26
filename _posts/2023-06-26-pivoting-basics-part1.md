@@ -32,8 +32,8 @@ sshuttle -r <username>@<ip_addr> <remote_network> -e 'ssh -i id_rsa_file'
 {% endhighlight %}
 
 The above command expects two parameters, -r and -e:
-<li>-r : (also --remote) is the remote network you want to access</li>
-<li>-e : (also --ssh-cmd) is the ssh command to run. In this case, because we have an id_rsa file of the victim user, we use the basic ssh's -i flag</li>
++ -r : (also --remote) is the remote network you want to access
++ -e : (also --ssh-cmd) is the ssh command to run. In this case, because we have an id_rsa file of the victim user, we use the basic ssh's -i flag
 
 Our command would thus look like:
 
