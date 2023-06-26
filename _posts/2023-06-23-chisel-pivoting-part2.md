@@ -25,24 +25,23 @@ This is where we are picking up, with an established SSHuttle session to DC01. A
 
 <h3>Chisel</h3>
 
-First, you will need Chisel. Head to the GitHub, [Here is the GitHub for Chisel](https://github.com/jpillora/chisel).
+First, you will need Chisel. Head to the GitHub, and download Chisel from Releases for the architecrture of the victim, and for your Kali. I will assume that the victim is Windows. [Here is the GitHub for Chisel](https://github.com/jpillora/chisel).
+
+Before we run anything, we first need to modify /etc/proxychains4.conf file on our Kali Linux. Add the following to the bottom of the file:
 
 {% highlight bash linenos %}
-sshuttle -r <username>@<ip_addr> <remote_network> -e 'ssh -i id_rsa_file'
+socks5 127.0.0.1 1080
 {% endhighlight %}
 
-The above command expects two parameters, -r and -e:
-+ -r : (also --remote) is the remote network you want to access
-+ -e : (also --ssh-cmd) is the ssh command to run. In this case, because we have an id_rsa file of the victim user, we use the basic ssh's -i flag
-
-Our command would thus look like:
+The above line adds a SOCKS5 proxy, on localhost (127.0.0.1) at port 1080. Once complete, we can stasrt our chisel listener on our Kali machine. In a terminal, run the following command:
 
 {% highlight bash linenos %}
-sshuttle -r root@10.10.110.10 172.18.1.0/24 -e 'ssh -i id_rsa.txt'
+./chisel server -p 80 --reverse
 {% endhighlight %}
 
-We would now have access to the first subnet, 172.18.1.0/24, and also where DC01's interface 172.18.1.5 resides. We could now continue with enumeration of the new network. Our network diagram woulod appear like:
+The above starts chisel, running it as a server, with the following parameters:
 
-<img src="/images/posts/pivoting/Pivoting_SShuttle.PNG" alt="pivoting-sshuttle" width="500"/>
++ -p : listening on port 80. Why port 80? Because often unrecognized or unusual ports may be blocked by firewall rules.
++ --reverse 
 
-And that's it for Part 1! In Part 2, I will continue on with using Chisel, and how to pivot further into environments.
+
