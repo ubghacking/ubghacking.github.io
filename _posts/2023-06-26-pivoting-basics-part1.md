@@ -21,7 +21,7 @@ Third Pivot Machine: 172.18.3.20
 
 To begin this tutorial, we have the ability to login to WEB01 with SSH credentials. It can be a user, or admin/root, it does not matter. We wish to access DC01, located at 172.18.2.5:
 
-<img src="/images/posts/pivoting/Pivoting_Initial.PNG" alt="pivoting-initial" width="400"/>
+<img src="/images/posts/pivoting/Pivoting_Initial.PNG" alt="pivoting-initial" width="500"/>
 
 <h3>SSHuttle</h3>
 
@@ -43,4 +43,4 @@ sshuttle -r root@10.10.110.10 172.18.1.0/24 -e 'ssh -i id_rsa.txt'
 
 We would now have access to the first subnet, 172.18.1.0/24, and also where DC01's interface 172.18.1.5 resides. We could now continue with enumeration of the new network. Our network diagram woulod appear like:
 
-<img src="/images/posts/pivoting/Pivoting_SSHuttle.PNG" alt="pivoting-sshuttle" width="400"/>
+<img src="/images/posts/pivoting/Pivoting_SShuttle.PNG" alt="pivoting-sshuttle" width="500"/>
