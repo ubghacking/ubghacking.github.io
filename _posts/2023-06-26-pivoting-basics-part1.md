@@ -41,8 +41,12 @@ Our command would thus look like:
 sshuttle -r root@10.10.110.10 172.18.1.0/24 -e 'ssh -i id_rsa.txt'
 {% endhighlight %}
 
+If all is correct, we will receive 'c : Connected to Server':
+
+<img src="/images/posts/pivoting/SSHuttle-Connected.PNG" alt="pivoting-sshuttle" width="500"/>
+
 We would now have access to the first subnet, 172.18.1.0/24, and also where DC01's interface 172.18.1.5 resides. We could now continue with enumeration of the new network. Our network diagram woulod appear like:
 
-<img src="/images/posts/pivoting/Pivoting_SShuttle.PNG" alt="pivoting-sshuttle" width="500"/>
+<img src="/images/posts/pivoting/Pivoting_Sshuttle.PNG" alt="pivoting-sshuttle" width="500"/>
 
 And that's it for Part 1! In Part 2, I will continue on with using Chisel, and how to pivot further into environments.
