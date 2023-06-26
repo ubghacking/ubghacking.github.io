@@ -25,7 +25,7 @@ This is where we are picking up, with an established SSHuttle session to DC01. A
 
 <h3>Chisel</h3>
 
-To start, imagine you want to pivot from WEB01, from 172.18.1.5 interface, to enumerate DC01 on 172.18.1.5. As most HTB machines use SSH on their first foothold, I will assume SSH id_rsa key is available. The easiest tool, and my goto, is SSHuttle. It is baked into Kali Linux, but if you are not using Kali, it can be installed easily. [Here is the GitHub for Chisel](https://github.com/jpillora/chisel).
+First, you will need Chisel. Head to the GitHub, [Here is the GitHub for Chisel](https://github.com/jpillora/chisel).
 
 {% highlight bash linenos %}
 sshuttle -r <username>@<ip_addr> <remote_network> -e 'ssh -i id_rsa_file'
