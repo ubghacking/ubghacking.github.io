@@ -25,7 +25,7 @@ To begin this tutorial, we have the ability to login to WEB01 with SSH credentia
 
 <h3>SSHuttle</h3>
 
-To start, imagine you want to pivot from WEB01, from 172.18.1.5 interface, to enumerate DC01 on 172.18.2.5. As most HTB machines use SSH on their first foothold, I will assume SSH id_rsa key is available. The easiest tool, and my goto, is SSHuttle. It is baked into Kali Linux, but if you are not using Kali, it can be installed easily. [Here is the GitHub for SShuttle]([https://pages.github.com/](https://github.com/sshuttle/sshuttle)).
+To start, imagine you want to pivot from WEB01, from 172.18.1.5 interface, to enumerate DC01 on 172.18.1.5. As most HTB machines use SSH on their first foothold, I will assume SSH id_rsa key is available. The easiest tool, and my goto, is SSHuttle. It is baked into Kali Linux, but if you are not using Kali, it can be installed easily. [Here is the GitHub for SShuttle]([https://pages.github.com/](https://github.com/sshuttle/sshuttle)).
 
 {% highlight bash linenos %}
 sshuttle -r <username>@<ip_addr> <remote_network> -e 'ssh -i id_rsa_file'
