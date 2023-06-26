@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "Pivoting - Part 1"
+author: nanobyte
+date:   2023-06-26
+---
+
+I was asked to give a demonstration during a local HTB meetup, and decided to provide an intro to pivoting basics. Something that is absolutely required to perform during penetration testing engagements, or while learning in labs like HTB ProLabs.
+
+Part 1 of the series can be found <a href="https://nanobytesecurity.com/2023/06/26/pivoting-basics-part1.html">here</a>!
