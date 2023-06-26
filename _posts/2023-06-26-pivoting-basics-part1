@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Pivoting Basics - Part 1"
+author: nanobyte
+date:   2023-06-26
+description: Part 1 of my pivoting basics
+tags: HTB Pivoting Basics
+---
+
+Intro
+
+<h3>Title</h3>
+
+First, I am creating my web root within `/opt/gitbook-wiki`, as the temporary directory. Once I am done, this will reside within `/var/www/github-wiki` on my CentOS box.\
+
+{% highlight bash linenos %}
+Code
+{% endhighlight %}
