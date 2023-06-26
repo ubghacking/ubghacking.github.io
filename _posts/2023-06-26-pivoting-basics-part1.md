@@ -51,4 +51,4 @@ We would now have access to the first subnet, 172.18.1.0/24, and also where DC01
 
 <img src="/images/posts/pivoting/Pivoting_SsHuttle.PNG" alt="pivoting-sshuttle" width="500"/>
 
-And that's it for Part 1! In Part 2, I will continue on with using Chisel, and how to pivot further into environments.
+And that's it for Part 1! In [Part 2](https://nanobytesecurity.com/2023/06/26/chisel-pivoting-part2.html), I will continue on with using Chisel, and how to pivot further into environments.
