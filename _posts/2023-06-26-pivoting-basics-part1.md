@@ -13,13 +13,13 @@ What the h311 is pivoting? In short, it is used when you have a foothold onto a 
 
 For the following scenario, and for the rest of my walkthroughs, the following will remain true:
 
-Kali Linux (Attacking Machine): 10.10.15.100
-First Pivot Machine (Public IP): 10.10.110.10
-First Network: 172.18.1.0/24
-Second Network: 172.18.2.0/24
-Second Pivot Machine: 172.18.2.15
-Third Network: 172.18.3.0/24
-Third Pivot Machine: 172.18.3.20
++ Kali Linux (Attacking Machine): 10.10.15.100
++ First Pivot Machine (Public IP): 10.10.110.10
++ First Network: 172.18.1.0/24
++ Second Network: 172.18.2.0/24
++ Second Pivot Machine: 172.18.2.15
++ Third Network: 172.18.3.0/24
++ Third Pivot Machine: 172.18.3.20
 
 To begin this tutorial, we have the ability to login to WEB01 with SSH credentials. It can be a user, or admin/root, it does not matter. We wish to access DC01, located at 172.18.2.5:
 
