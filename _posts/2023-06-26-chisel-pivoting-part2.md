@@ -103,11 +103,11 @@ If properly setup, we will have a connection from our client:
 
 Once the client is connected, we can begin to tunnel our traffic into the second network, 172.18.2.0/24, and has access to DC02:
 
-<img src="/images/posts/pivoting/chisel-client.PNG" alt="pivoting-part2-chisel-client" width="400"/>
+<img src="/images/posts/pivoting/chisel-client.PNG" alt="pivoting-part2-chisel-client" width="500"/>
 
 And a connection to our server:
 
-<img src="/images/posts/pivoting/chisel-server.PNG" alt="pivoting-part2-chisel-server" width="400"/>
+<img src="/images/posts/pivoting/chisel-server.PNG" alt="pivoting-part2-chisel-server" width="500"/>
 
 <h3>Using Pivot</h3>
 
@@ -141,3 +141,9 @@ With the above completed, we can then download or copy chisel.exe to DC02 in the
 Now that we have our second chisel client connected, we can now hit our final target machine, FS01:
 
 <img src="/images/posts/pivoting/Pivoting-Part2-Final.PNG" alt="pivoting-part2-chisel-2080" width="800"/>
+
+<h3>Chisel and BurpSuite</h3>
+
+One of the main benefits with Chisel, is the ability to use BurpSuite along with your pivot. This assumes that you already know how to configure your web proxy to send traffic to BurpSuite, such as using FoxyProxy. nce you have your Chisel pivot, you can setup a SOCKS Proxy within BurpSuite, by opening Settings in the top right corner, and opening Network, selecting Connections, and adding the following to the SOCKS proxy fields:
+
+<img src="/images/posts/pivoting/Pivoting-Part2-BurpSuite.PNG" alt="pivoting-part2-burpsuite" width="800"/>
