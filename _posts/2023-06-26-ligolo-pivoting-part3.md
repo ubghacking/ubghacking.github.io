@@ -53,7 +53,7 @@ At this point, we are now ready to spawn our proxy. We can launch our proxy with
 
 With the proxy running, we should see the following:
 
-<img src="/images/posts/pivoting/ligolo-proxy-start.PNG" alt="pivoting-ligolo-proxy" width="550"/>
+<img src="/images/posts/pivoting/ligolo-proxy-start.PNG" alt="pivoting-ligolo-proxy" width="700"/>
 
 <h3>Ligolo Agent</h3>
 
@@ -65,19 +65,19 @@ Once we have our proxy listening on our Kali machine, we can run our ligolo-ng a
 
 In the above command, we run the agent to connect back to our Kali machine on port 11601, which ligolo uses by default. Because our proxy used the -selfcert flag, we must use the -ignore-cert flag. We should sewe the following from our victim:
 
-<img src="/images/posts/pivoting/ligolo-agent-start.PNG" alt="pivoting-ligolo-agent-run" width="550"/>
+<img src="/images/posts/pivoting/ligolo-agent-start.PNG" alt="pivoting-ligolo-agent-run" width="700"/>
 
 Once the command has run, looking at our server, we should see Agent joined:
 
-<img src="/images/posts/pivoting/ligolo-proxy-agent1-joined.PNG" alt="pivoting-ligolo-agent-joinedl" width="550"/>
+<img src="/images/posts/pivoting/ligolo-proxy-agent1-joined.PNG" alt="pivoting-ligolo-agent-joinedl" width="700"/>
 
 After the agent has joined, we can type 'session', and using the Enter key, select our session:
 
-<img src="/images/posts/pivoting/ligolo-proxy-agent1-session.PNG" alt="pivoting-ligolo-session" width="550"/>
+<img src="/images/posts/pivoting/ligolo-proxy-agent1-session.PNG" alt="pivoting-ligolo-session" width="700"/>
 
 Once selected, we can start our proxy by typing 'start':
 
-<img src="/images/posts/pivoting/ligolo-proxy-agent1-start.PNG" alt="pivoting-ligolo-start" width="550"/>
+<img src="/images/posts/pivoting/ligolo-proxy-agent1-start.PNG" alt="pivoting-ligolo-start" width="700"/>
 
 If properly setup, we will have a connection from our client to 172.18.2.0/24:
 
@@ -93,15 +93,15 @@ I wiull now assume that you have comrpomised DC02, and need to access FS01 in 17
 
 Back on our proxy, we will see another Agent joined:
 
-<img src="/images/posts/pivoting/ligolo-proxy-agent2-joined.PNGG" alt="pivoting-ligolo-agent-joined2" width="550"/>
+<img src="/images/posts/pivoting/ligolo-proxy-agent2-joined.PNGG" alt="pivoting-ligolo-agent-joined2" width="700"/>
 
 To use this new agent, we will first need to type 'session', and using the arrow key to select the new session, hit Enter:
 
-<img src="/images/posts/pivoting/ligolo-proxy-agent2-session.PNG" alt="pivoting-ligolo-session2" width="550"/>
+<img src="/images/posts/pivoting/ligolo-proxy-agent2-session.PNG" alt="pivoting-ligolo-session2" width="700"/>
 
 We will then need to type 'start', and confirm that we will switch to the new agent, with 'Yes':
 
-<img src="/images/posts/pivoting/ligolo-proxy-agent2-start.PNG" alt="pivoting-ligolo-start2" width="550"/>
+<img src="/images/posts/pivoting/ligolo-proxy-agent2-start.PNG" alt="pivoting-ligolo-start2" width="700"/>
 
 Finally, we will need to add this new route for our interface to use:
 
