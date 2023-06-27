@@ -29,7 +29,7 @@ We are picking up from where Part 1 left off, with an established SSHuttle sessi
 
 <h3>Ligolo Proxy</h3>
 
-First, you will need Ligolo-ng. Head to the GitHub, and download Ligolo from Releases for the architecrture of the victim, and for your Kali. I will assume that the victim is Windows. [Here is the GitHub for Chisel.](https://github.com/nicocha30/ligolo-ng)
+First, you will need Ligolo-ng. Head to the GitHub, and download Ligolo from Releases for the architecrture of the victim, and for your Kali. I will assume that the victim is Windows. [Here is the GitHub for Ligolo-ng.](https://github.com/nicocha30/ligolo-ng)
 
 Similar to Chisel's server, Ligolo uses a Proxy that runs on our Kali machine. Unlike Chisel, we will not use proxychains at all, and instead add a new interface to our machine, and add routes through this interface for our target networks. First, we must create our new tunnel interface, bring the interface up, and add our route:
 
