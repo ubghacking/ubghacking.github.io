@@ -100,3 +100,8 @@ The above starts Chisel as a client on the victim, and connects back to our Kali
 Once the client is connected, we can begin to tunnel our traffic into the second network, 172.18.2.0/24, and has access to DC02:
 
 <img src="/images/posts/pivoting/Pivoting-Chisel-1080.PNG" alt="pivoting-part2-chisel-1080" width="700"/>
+
+<h3>Double Chisel Pivot!</h3>
+
+Now that we have one chisel agent running, assume we compromised DC02, and now found a final machine, FS01. Assume that FS01 is within our third network, 172.18.3.0/24:
+
