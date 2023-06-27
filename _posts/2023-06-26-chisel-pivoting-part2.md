@@ -144,6 +144,9 @@ Now that we have our second chisel client connected, we can now hit our final ta
 
 <h3>Chisel and BurpSuite</h3>
 
-One of the main benefits with Chisel, is the ability to use BurpSuite along with your pivot. This assumes that you already know how to configure your web proxy to send traffic to BurpSuite, such as using FoxyProxy. nce you have your Chisel pivot, you can setup a SOCKS Proxy within BurpSuite, by opening Settings in the top right corner, and opening Network, selecting Connections, and adding the following to the SOCKS proxy fields:
+One of the main benefits with Chisel, is the ability to use BurpSuite along with your pivot. This assumes that you already know how to configure your web proxy to send traffic to BurpSuite, such as using FoxyProxy. Once you have your Chisel pivot, you can setup a SOCKS Proxy within BurpSuite, by opening Settings in the top right corner, and opening Network, selecting Connections, and adding the proxy to the SOCKS proxy fields:
+
+Proxy host: 127.0.0.1
+Proxy port: 1080 (or 2080, 3080 ... etc)
 
 <img src="/images/posts/pivoting/Pivoting-Part2-BurpSuite.PNG" alt="pivoting-part2-burpsuite" width="800"/>
