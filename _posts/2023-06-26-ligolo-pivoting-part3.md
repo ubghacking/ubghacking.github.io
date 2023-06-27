@@ -93,7 +93,7 @@ I wiull now assume that you have comrpomised DC02, and need to access FS01 in 17
 
 Back on our proxy, we will see another Agent joined:
 
-<img src="/images/posts/pivoting/ligolo-proxy-agent2-joined.PNGG" alt="pivoting-ligolo-agent-joined2" width="700"/>
+<img src="/images/posts/pivoting/ligolo-proxy-agent2-joined.PNG" alt="pivoting-ligolo-agent-joined2" width="700"/>
 
 To use this new agent, we will first need to type 'session', and using the arrow key to select the new session, hit Enter:
 
