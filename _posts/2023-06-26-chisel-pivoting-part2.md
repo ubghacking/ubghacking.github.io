@@ -7,6 +7,10 @@ description: Part 2 of my pivoting basics, and how to use Chisel
 tags: HTB OSCP Pivoting
 ---
 
+[Part 1](https://nanobytesecurity.com/2023/06/26/pivoting-basics-part1.html), pivoting introduction and using SSHuttle\
+[Part 2](https://nanobytesecurity.com/2023/06/26/chisel-pivoting-part2.html), pivoting with Chisel\
+[Part 3](https://nanobytesecurity.com/2023/06/26/ligolo-pivoting-part3.html), pivoting with Ligolo-ng
+
 <h3>Pivoting with Chisel - Part 2</h3>
 
 This is a continuation of my Pivoting Basics, and Part 2, and how to use Chisel to pivot. Part 1 dove into what pivoting was, and how to pivot with SSHuttle. In this post, I will continue from where we left off. As a reminder, here is our scenario:
