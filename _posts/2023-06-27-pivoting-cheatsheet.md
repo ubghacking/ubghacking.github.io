@@ -35,7 +35,7 @@ Place this into /etc/proxychains4.conf:
 socks5 127.0.0.1 1080
 {% endhighlight %}
 
-<h4>Triple Pivoting (Oh My!)</h4>h4>
+<h4>Triple Pivoting (Oh My!)</h4>
 
 On Kali:
 
@@ -65,7 +65,7 @@ Third pivot box:
 ./chisel client 10.10.14.228:80 R:3080:socks
 {% endhighlight %}
 
-Change /etc.proxychains4.conf:
+Change /etc/proxychains4.conf:
 
 
 {% highlight bash linenos %}
