@@ -103,7 +103,7 @@ The above starts Chisel as a client on the victim, and connects back to our Kali
 
 If properly setup, we will have a connection from our client:
 
-<img src="/images/posts/pivoting/Pivoting-Part2-Final.PNG" alt="pivoting-part2-chisel-2080" width="800"/>
+<img src="/images/posts/pivoting/Pivoting-Part2-FS01.PNG" alt="pivoting-part2-chisel-2080" width="800"/>
 
 Once the client is connected, we can begin to tunnel our traffic into the second network, 172.18.2.0/24, and has access to DC02:
 
@@ -127,7 +127,7 @@ The above command will use proxychains configuration to send traffic through our
 
 Now that we have one chisel agent running, assume we compromised DC02, and now found a final machine, FS01. Assume that FS01 is within our third network, 172.18.3.0/24:
 
-<img src="/images/posts/pivoting/Pivoting-Part2-FS01.PNG" alt="pivoting-part2-chisel-fs01" width="800"/>
+<img src="/images/posts/pivoting/Pivoting-Part2-Final.PNG" alt="pivoting-part2-chisel-fs01" width="800"/>
 
 We can perform a double pivot, and reach this network with another Chisel pivot. With our first pivot running, we must add another line to our /etc/proxychains4.conf file, under our first change:
 
