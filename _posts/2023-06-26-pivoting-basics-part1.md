@@ -13,7 +13,7 @@ tags: HTB OSCP Pivoting
 
 <h3>Pivoting!? - Part 1</h3>
 
-What the heck is pivoting? In short, it is a technique that is used after a foothold is gained onto a compromised machine, and you wish to access a network that is otherwise not publically accessible, such as a second internal network interface. For an example, let's consider the following. Let's imagine you have a web server, call it WEB01, with a public IP of 10.10.110.10, which you have compromised and have access to. If you wish to pivot to an internal network, 172.18.1.0/24, pivoting on the WEB01 box would provide you access to the internal 172.18.1.0/24 to your Kali Linux machine.
+What the heck is pivoting? In short, it is a technique that is used after a foothold is gained on a target machine, and you wish to access a network that is otherwise not publically accessible, such as from a second internal network interface. For an example, let's consider the following. Let's imagine you have a web server, call it WEB01, with a public IP of 10.10.110.10, which you have compromised and have access to. If you wish to pivot to an internal network, 172.18.1.0/24, pivoting on the WEB01 box would provide you access to the internal 172.18.1.0/24, which you could then access on your Kali Linux machine.
 
 For the following scenario, and for the rest of my walkthroughs, the following will remain true:
 
@@ -31,7 +31,7 @@ To begin this tutorial, we have the ability to login to WEB01 with SSH credentia
 
 <h3>SSHuttle</h3>
 
-To start, imagine you want to pivot from WEB01, out the 172.18.1.4 interface, to enumerate DC01 on 172.18.1.5. As most HTB machines use SSH on their first foothold, I will assume a SSH id_rsa key is available. The easiest tool, and my goto, is SSHuttle. It is baked into Kali Linux, but if you are not using Kali, it can be installed easily. [Here is the GitHub for SShuttle](https://github.com/sshuttle/sshuttle).
+To start, imagine you want to pivot from WEB01, out the 172.18.1.4 interface, to enumerate DC01 on 172.18.1.5. As most HTB machines use SSH on their first foothold, I will assume a SSH id_rsa key is already discovered and available. The easiest tool, and my goto, is SSHuttle. It is baked into Kali Linux, but if you are not using Kali, it can be installed easily. [Here is the GitHub for SShuttle](https://github.com/sshuttle/sshuttle).
 
 {% highlight bash linenos %}
 sshuttle -r <username>@<ip_addr> <remote_network> -e 'ssh -i id_rsa_file'
@@ -55,4 +55,10 @@ We would now have access to the first subnet, 172.18.1.0/24, and also where DC01
 
 <img src="/images/posts/pivoting/Pivoting_SsHuttle.PNG" alt="pivoting-sshuttle" width="500"/>
 
-And that's it for Part 1! In [Part 2](https://nanobytesecurity.com/2023/06/26/chisel-pivoting-part2.html), I will continue on with using Chisel, and how to pivot further into environments.
+And as a bonus, if we wisht to begin enumerating, with NMAP, we could use the following command:
+
+{% highlight bash linenos %}
+nmap -Pn 172.18.1.5
+{% endhighlight %}
+
+However, because we are going through a tunnel, we would not be able to use the full suite of scans available from NMAP, such as NSE.
