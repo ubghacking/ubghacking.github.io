@@ -85,7 +85,7 @@ If properly setup, we will have a connection from our client to 172.18.2.0/24:
 
 <h3>Double Ligolo Pivot!</h3>
 
-I wiull now assume that you have comrpomised DC02, and need to access FS01 in 172.18.3.0/24. We can use the same method, and create a second Ligolo session. Once ligolo-ng is on DC02, we can run the agent command again, on DC02:
+I will now assume that you have comrpomised DC02, and need to access FS01 in 172.18.3.0/24. We can use the same method, and create a second Ligolo session. Once ligolo-ng is on DC02, we can run the agent command again, on DC02:
 
 {% highlight bash linenos %}
 ./agent.exe -connect 10.10.15.100:11601 -ignore-cert
@@ -103,7 +103,7 @@ We will then need to type 'start', and confirm that we will switch to the new ag
 
 <img src="/images/posts/pivoting/ligolo-proxy-agent2-start.PNG" alt="pivoting-ligolo-start2" width="700"/>
 
-Finally, we will need to add this new route for our interface to use:
+Finally, we will need to add this new route for our interface to use, on our Kali Linux machine:
 
 {% highlight bash linenos %}
 sudo ip route add 172.18.3.0/24 dev ligolo
