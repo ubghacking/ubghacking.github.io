@@ -7,6 +7,8 @@ description: Part 2 of my pivoting basics, and how to use Chisel
 tags: HTB OSCP Pivoting
 ---
 
+<h3>Pivoting with Chisel - Part 2</h3>
+
 This is a continuation of my Pivoting Basics, and Part 2, and how to use Chisel to pivot. Part 1 dove into what pivoting was, and how to pivot with SSHuttle. In this post, I will continue from where we left off. As a reminder, here is our scenario:
 
 For the following scenario, and for the rest of my walkthroughs, the following will remain true:
@@ -19,7 +21,7 @@ Second Pivot Machine: 172.18.2.15
 Third Network: 172.18.3.0/24
 Third Pivot Machine: 172.18.3.20
 
-This is where we are picking up, with an established SSHuttle session to DC01. At this point, I will assume you have comrpomised the domain, and have discovered DC02, available at 172.18.2.15, and require access to 172.18.2.0/24:
+We are picking up from where Part 1 left off, with an established SSHuttle session to 172.18.1.0/24. At this point, I will assume you have comrpomised DC01, and have discovered 172.18.2.0/24, with DC02:
 
 <img src="/images/posts/pivoting/Pivoting_Part2_Initial.PNG" alt="pivoting-part2-initial" width="500"/>
 
@@ -44,4 +46,12 @@ The above starts chisel, running it as a server, with the following parameters:
 + -p : listening on port 80. Why port 80? Because often unrecognized or unusual ports may be blocked by firewall rules.
 + --reverse 
 
+Now that there is a Chisel server that is listening, we now would need to drop Chisel onto the Windows DC01 machine. Here are my two methods that can accomplish this:
 
+<h4>HTTP</h4>
+
+First, from your Kali machine, with a terminal open to the directory with your chisel.exe file, start a Python http server:
+
+{% highlight bash linenos %}
+python -m http.server 80
+{% endhighlight %}
