@@ -13,13 +13,13 @@ This is a continuation of my Pivoting Basics, and Part 2, and how to use Chisel 
 
 For the following scenario, and for the rest of my walkthroughs, the following will remain true:
 
-Kali Linux (Attacking Machine): 10.10.15.100
-First Pivot Machine (Public IP): 10.10.110.10
-First Network: 172.18.1.0/24
-Second Network: 172.18.2.0/24
-Second Pivot Machine: 172.18.2.15
-Third Network: 172.18.3.0/24
-Third Pivot Machine: 172.18.3.20
++ Kali Linux (Attacking Machine): 10.10.15.100
++ First Pivot Machine (Public IP): 10.10.110.10
++ First Network: 172.18.1.0/24
++ Second Network: 172.18.2.0/24
++ Second Pivot Machine: 172.18.2.15
++ Third Network: 172.18.3.0/24
++ Third Pivot Machine: 172.18.3.20
 
 We are picking up from where Part 1 left off, with an established SSHuttle session to 172.18.1.0/24. At this point, I will assume you have comrpomised DC01, and have discovered 172.18.2.0/24, with DC02:
 
