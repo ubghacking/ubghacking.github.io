@@ -53,7 +53,7 @@ At this point, we are now ready to spawn our proxy. We can launch our proxy with
 
 With the proxy running, we should see the following:
 
-<img src="/images/posts/pivoting/ligolo-proxy-start.PNG" alt="pivoting-ligolo-proxy" width="400"/>
+<img src="/images/posts/pivoting/ligolo-proxy-start.PNG" alt="pivoting-ligolo-proxy" width="550"/>
 
 <h3>Ligolo Agent</h3>
 
@@ -65,17 +65,17 @@ Once we have our proxy listening on our Kali machine, we can run our ligolo-ng a
 
 In the above command, we run the agent to connect back to our Kali machine on port 11601, which ligolo uses by default. Because our proxy used the -selfcert flag, we must use the -ignore-cert flag. We should sewe the following from our victim:
 
-<img src="/images/posts/pivoting/ligolo-agent-start.PNG" alt="pivoting-ligolo-agent-run" width="400"/>
+<img src="/images/posts/pivoting/ligolo-agent-start.PNG" alt="pivoting-ligolo-agent-run" width="550"/>
 
 Once the command has run, looking at our server, we should see Agent joined:
 
-<img src="/images/posts/pivoting/ligolo-proxy-agent1-joined.PNG" alt="pivoting-ligolo-agent-joinedl" width="400"/>
+<img src="/images/posts/pivoting/ligolo-proxy-agent1-joined.PNG" alt="pivoting-ligolo-agent-joinedl" width="550"/>
 
 After the agent has joined, we can type 'session', and using the Enter key, select our session:
 
-<img src="/images/posts/pivoting/ligolo-proxy-agent1-session.PNG" alt="pivoting-ligolo-session" width="400"/>
+<img src="/images/posts/pivoting/ligolo-proxy-agent1-session.PNG" alt="pivoting-ligolo-session" width="550"/>
 
 Once selected, we can start our proxy by typing 'start':
 
-<img src="/images/posts/pivoting/ligolo-proxy-agent1-start.PNG" alt="pivoting-ligolo-start" width="400"/>
+<img src="/images/posts/pivoting/ligolo-proxy-agent1-start.PNG" alt="pivoting-ligolo-start" width="550"/>
 
