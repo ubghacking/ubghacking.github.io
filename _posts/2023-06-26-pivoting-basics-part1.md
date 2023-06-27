@@ -11,7 +11,7 @@ tags: HTB OSCP Pivoting
 [Part 2](https://nanobytesecurity.com/2023/06/26/chisel-pivoting-part2.html), pivoting with Chisel\
 [Part 3](https://nanobytesecurity.com/2023/06/26/ligolo-pivoting-part3.html), pivoting with Ligolo-ng
 
-<h3>Pivoting!?</h3>
+<h3>Pivoting!? - Part 1</h3>
 
 What the heck is pivoting? In short, it is a technique that is used after a foothold is gained onto a compromised machine, and you wish to access a network that is otherwise not publically accessible, such as a second internal network interface. For an example, let's consider the following. Let's imagine you have a web server, call it WEB01, with a public IP of 10.10.110.10, which you have compromised and have access to. If you wish to pivot to an internal network, 172.18.1.0/24, pivoting on the WEB01 box would provide you access to the internal 172.18.1.0/24 to your Kali Linux machine.
 
