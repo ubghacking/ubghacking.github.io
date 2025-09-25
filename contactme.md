@@ -5,21 +5,32 @@ subtitle: Please reach out!
 ---
 
 <style>
+.contact-form-container {
+    max-width: 800px; /* Optional: Sets a maximum width for larger screens */
+    width: 90%; /* Form container takes 90% of its parent's width */
+    margin: 0 auto; /* Centers the form horizontally */
+}
+input[type="message"],
+input[type="email"],
+textarea {
+    width: 100%; /* Input fields take 100% of their parent's width */
+    box-sizing: border-box; /* Includes padding and border in the element's total width */
+}
   .border-text {
   background-color: transparent;
-  border: 2px solid #007bff;
+  border: 2px solid #44E88C;
   outline: none; 
 }
 .border-button {
   background-color: transparent;
-  border: 2px solid #007bff;
+  border: 2px solid #44E88C;
   padding: 10px 20px;
   cursor: pointer;
   outline: none; 
 }
 .border-button:hover {
-  background-color: #007bff;
-  color: white;
+  background-color: #44E88C;
+  color: black;
 }
 </style>
 
