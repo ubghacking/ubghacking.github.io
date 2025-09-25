@@ -4,7 +4,13 @@ title: whoami
 subtitle: About Nanobyte
 ---
 
-Alex Dalzell is a cyber security professional providing information technology and cyber security consultanting services. He began his cyber security career after his honorable discharge as a communications technician from the United States Marine Corps. Alex started as a security administrator after receiving his bachelors degree, and working into the offensive side of security as a penetration tester. He brings a unique perspective from his administrative, defensive, and offensive skillsets.
+<style>
+p {
+    color: white;
+}
+</style>
+
+<p>Alex Dalzell is a cyber security professional providing information technology and cyber security consultanting services. He began his cyber security career after his honorable discharge as a communications technician from the United States Marine Corps. Alex started as a security administrator after receiving his bachelors degree, and working into the offensive side of security as a penetration tester. He brings a unique perspective from his administrative, defensive, and offensive skillsets.
 
 Degrees Held:
 
@@ -21,4 +27,4 @@ Certifications Held:
 - Certified Azure Red Team Professional (CARTP), Altered Security
 - Certified Ethical Hacker (CEHv10), EC-Council 
 
-View my LinkedIn <a href="https://www.linkedin.com/in/alexander-dalzell/" target="_blank">here</a>!
+View my LinkedIn <a href="https://www.linkedin.com/in/alexander-dalzell/" target="_blank">here</a>!</p>
