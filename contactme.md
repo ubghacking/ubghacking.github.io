@@ -33,7 +33,7 @@ subtitle: Please reach out!
         </div>
         <div class="form-group">
             <label for="message">Message:</label>
-            <br><textarea id="message" name="message" class="border-text" rows="10" cols="70" required></textarea>
+            <br><textarea id="message" name="message" class="border-text" rows="10" required></textarea>
         </div>
         <button type="submit" class="border-button">Send Message</button>
     </form>
