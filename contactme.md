@@ -17,7 +17,7 @@ textarea {
     box-sizing: border-box; /* Includes padding and border in the element's total width */
 }
   .border-text {
-  background-color: transparent;
+  background-color: lightgrey;
   border: 2px solid #44E88C;
   outline: none; 
 }
