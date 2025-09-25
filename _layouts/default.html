@@ -16,6 +16,7 @@
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     {% include head-custom.html %}
+    <title>{{ page.title | default: site.title }}</title>
   </head>
   <body>
 
@@ -23,7 +24,7 @@
 
       <section>
         <div id="title">
-          <h1>{{ site.title | default: site.github.repository_name }}</h1>
+          <h1>Nanobyte Security</h1>
         </div>
 
         {{ content }}
