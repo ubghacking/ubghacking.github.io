@@ -5,6 +5,8 @@ subtitle: Please reach out!
 ---
 
 <style>
+  textarea {max-width:95%;}
+
   .border-text {
   background-color: transparent;
   border: 2px solid #007bff;
