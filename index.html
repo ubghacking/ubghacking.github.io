@@ -9,6 +9,7 @@ layout: home
   gap: 20px; /* Adds a consistent gap between items */
   padding: 20px;
   background-color: transparent;
+  text-align: center;
 }
 
 /* Styling for each individual service item */
@@ -29,11 +30,37 @@ layout: home
 .service-item p {
     color: #D3D3D3;
 }
+
+.certificate-container {
+  display: flex; /* This is the key property for horizontal alignment */
+  justify-content: space-between; /* Distributes items evenly with space between them */
+  gap: 20px; /* Adds a consistent gap between items */
+  padding: 20px;
+  background-color: transparent;
+  text-align: center;
+}
+
+.certificate-item {
+  flex: 1; /* Allows each item to grow and shrink equally */
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 8px;
+  border-color: 44E88C;
+  text-align: left;
+  border-style: solid;
+}
+
+.certificate-item p {
+    color: #D3D3D3;
+}
 </style>
 
 <center><img src="/assets/img/logo-black-trimmed.png" alt="Nanobyte Security" width="50%" height="50%"></center>
 
+<br><br></br>
+<h1>What We Offer</h1>
 <br>
+
 <div class="services-container">
     <div class="service-item">
         <h3 class="service-title">Vulnerability Assessment</h3>
@@ -46,5 +73,33 @@ layout: home
     <div class="service-item">
         <h3 class="service-title">Red Teaming</h3>
         <p class="service-description">Need to test your security operations center and gaps in your defenses? Demonstrates how threats evade detection and perform targeted and sophisticated attacks against your employees and networks.</p>
+    </div>
+  </div>
+
+<br><br></br>
+<h1>Certifications</h1>
+<br>
+
+<div class="certificate-container">
+    <div class="certificate-item">
+        <p class="certificate-description">CISSP</p>
+    </div>
+    <div class="certificate-item">
+        <p class="certificate-description">OSCP</p>
+    </div>
+    <div class="certificate-item">
+        <p class="certificate-description">OSEP</p>
+    </div>
+    <div class="certificate-item">
+        <p class="certificate-description">OSWE</p>
+    </div>
+    <div class="certificate-item">
+        <p class="certificate-description">CRTO</p>
+    </div>
+    <div class="certificate-item">
+        <p class="certificate-description">CARTP</p>
+    </div>
+    <div class="certificate-item">
+        <p class="certificate-description">CEH</p>
     </div>
   </div>
