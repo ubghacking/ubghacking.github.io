@@ -4,8 +4,6 @@ title: whoami
 subtitle: About Me
 ---
 
-# whoami
-
 Alex Dalzell is a cyber security professional providing information technology and cyber security consultanting services. He began his cyber security career after his honorable discharge as a communications technician in the United States Marine Corps. Alex started as a security administrator after receiving his bachelors degree, and eventually a penetration tester. He brings a unique perspective from his administrative, defensive, and offensive skillsets.
 
 Degrees Held:
