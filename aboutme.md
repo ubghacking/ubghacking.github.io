@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About me
-subtitle: Thanks for looking!
+title: whoami
+subtitle: About Me
 ---
 
 # whoami
