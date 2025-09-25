@@ -1,37 +1,25 @@
-<!doctype html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+---
+layout: base
+---
 
-{% seo %}
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-    <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="{{ '/assets/css/ie.css' | relative_url }}">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    {% include head-custom.html %}
-    <title>{{ page.title | default: site.title }}</title>
-  </head>
-  <body>
+<div class="intro-header"></div>
 
-    <div class="wrapper">
-
-      <section>
-        <div id="title">
-          <img src="/images/logo/nanobyte-17-new-sized.png" alt="logo" />
-          <h1>Nanobyte Security</h1>
-        </div>
-
-        {{ content }}
-
-      </section>
-
+<main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
+  {% if page.before-content %}
+    <div class="before-content">
+      {% for file in page.before-content %}
+        {% include {{ file }} %}
+      {% endfor %}
     </div>
-  </body>
-</html>
+  {% endif %}
+
+  {{ content }}
+
+  {% if page.after-content %}
+    <div class="after-content">
+      {% for file in page.after-content %}
+        {% include {{ file }} %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</main>
