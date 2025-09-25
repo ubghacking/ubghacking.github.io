@@ -1,31 +1,45 @@
 ---
 layout: home
 ---
+<style>
+/* Basic styling for the entire section */
+.services-container {
+  display: flex; /* This is the key property for horizontal alignment */
+  justify-content: space-between; /* Distributes items evenly with space between them */
+  gap: 20px; /* Adds a consistent gap between items */
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Styling for each individual service item */
+.service-item {
+  flex: 1; /* Allows each item to grow and shrink equally */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Optional: Additional styling for the content */
+.service-item h3 {
+  margin-top: 0;
+}
+</style>
 
 <center><img src="/assets/img/logo-black-trimmed.png" alt="Nanobyte Security" width="50%" height="50%"></center>
 
-<section class="services-section">
-    <div class="services-container">
-      <h2 class="section-title">Our Services</h2>
-      
-      <div class="service-grid">
-        <!-- Service Box 1 -->
-        <article class="service-card">
-          <h3 class="service-title">Vulnerability Assessments</h3>
-          <p class="service-description">An in depth review of current state of your systems and networks using automated tools to identify open ports, services, and any associated known Common Vulnerabilities and Exposures in a detailed report.</p>
-        </article>
-
-        <!-- Service Box 2 -->
-        <article class="service-card">
-          <h3 class="service-title">Penetration Testing</h3>
-          <p class="service-description">Take your Vulnerability Assessments to the next level - Nanobyte Security will not only identify your vulnerabilities, but demonstrate how threats exploit these vulnerabilities in real-world attacks. Will be provided a detailed report with all evidence, including proof of concept and actual exploitation of vulnerabilities identified.</p>
-        </article>
-
-        <!-- Service Box 3 -->
-        <article class="service-card">
-          <h3 class="service-title">Red Teaming</h3>
-          <p class="service-description">Need to test your operations center, or find gaps in your defenses? Nanobyte Security will demonstrate how threats evade detection, and perform targeted and sophisticated attacks against your employees, systems and networks.</p>
-        </article>
-      </div>
+<div class="services-container">
+    <div class="service-item">
+        <h3 class="service-title">Vulnerability Assessments</h3>
+        <p class="service-description">An in depth review of your organizations current state using automated tools to identify open ports, services, and any associated known Common Vulnerabilities and Exposures (CVE's) in a detailed report.</p>
     </div>
-  </section>
+    <div class="service-item">
+        <h3 class="service-title">Penetration Testing</h3>
+        <p class="service-description">Take your Vulnerability Assessments to the next level - Nanobyte Security will not only identify your vulnerabilities, but demonstrate how threats exploit these vulnerabilities in real-world attacks. Will be provided a detailed report with gathered evidence, including proof of concept and documented exploitation of vulnerabilities.</p>
+    </div>
+    <div class="service-item">
+        <h3 class="service-title">Red Teaming</h3>
+        <p class="service-description">Need to test your security operations center, or find gaps in your defenses? Nanobyte Security will demonstrate how threats evade detection, and perform targeted and sophisticated attacks against your employees, systems and networks.</p>
+    </div>
+  </div>
