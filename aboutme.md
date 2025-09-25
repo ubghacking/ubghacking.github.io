@@ -1,16 +1,26 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Thanks for looking!
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+# whoami
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+Alex Dalzell is a cyber security professional providing information technology and cyber security consultanting services. He began his cyber security career after his honorable discharge as a communications technician in the United States Marine Corps. Alex started as a security administrator after receiving his bachelors degree, and eventually a penetration tester. He brings a unique perspective from his administrative, defensive, and offensive skillsets.
 
-What else do you need?
+Degrees Held:
 
-### My story
+- Masters of Science, Information Systems, Northwestern University
+- Bachelors of Science, Cyber Security, Colorado Technical University
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+Certifications Held:
+
+- Certified Information Systems Security Professional (CISSP), ISC2
+- Offensive Security Certified Professional (OSCP), OffSec
+- Offensive Security Web Expert (OSWE), OffSec
+- Offensive Security Experienced Penetration Tester (OSEP), OffSec
+- Certified Red Team Operator (CRTO), Zero-Point Security
+- Certified Azure Red Team Professional (CARTP), Altered Security
+- Certified Ethical Hacker (CEHv10), EC-Council 
+
+View my LinkedIn <a href="https://www.linkedin.com/in/alexander-dalzell/" target="_blank">here</a>!
