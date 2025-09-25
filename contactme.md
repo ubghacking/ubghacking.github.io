@@ -1,7 +1,7 @@
 ---
 layout: page
 title: contact me
-subtitle: 
+subtitle: Please reach out!
 ---
 
 <style>
@@ -9,7 +9,6 @@ subtitle:
   background-color: transparent;
   border: 2px solid #007bff;
   padding: 10px 20px;
-  cursor: pointer;
   outline: none; 
 }
 
@@ -35,7 +34,7 @@ subtitle:
         </div>
         <div class="form-group">
             <label for="message">Message:</label>
-            <br><textarea id="message" name="message" class="no-resize" class="border-text" rows="10" cols="50" required></textarea>
+            <br><textarea id="message" name="message" class="border-text" rows="10" cols="70" required></textarea>
         </div>
         <button type="submit" class="border-button">Send Message</button>
     </form>
