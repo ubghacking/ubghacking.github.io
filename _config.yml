@@ -8,12 +8,15 @@
 ############################
 # --- Required options --- #
 ############################
+
+# The url
 url: "http://ubghacking.github.io"
+
 # Name of website
 title: Nanobyte Security
 
 # Your name to show in the footer
-author: Alex Dalzeall
+author: Alex Dalzell
 
 ###############################################
 # --- List of links in the navigation bar --- #
