@@ -2,106 +2,165 @@
 layout: home
 ---
 <style>
-/* Basic styling for the entire section */
-.services-container {
-  display: flex; /* This is the key property for horizontal alignment */
-  justify-content: space-between; /* Distributes items evenly with space between them */
-  gap: 20px; /* Adds a consistent gap between items */
-  padding: 20px;
-  background-color: transparent;
-  text-align: center;
+@media (min-width: 768px) {
+.container-md {
+max-width: 1600px;
+}
 }
 
-/* Styling for each individual service item */
-.service-item {
-  flex: 1; /* Allows each item to grow and shrink equally */
-  background-color: transparent;
-  padding: 20px;
-  border-radius: 8px;
-  border-color: 44E88C;
-  text-align: left;
-  border-style: solid;
+@media (min-width: 992px) {
+.container-lg {
+max-width: 1600px;
+}
 }
 
-/* Optional: Additional styling for the content */
-.service-item h3 {
-  margin-top: 0;
+@media (min-width: 1200px) {
+.container-xl {
+max-width: 1600px;
 }
-.service-item p {
-    color: #D3D3D3;
 }
 
-.certificate-container {
-  display: flex; /* This is the key property for horizontal alignment */
-  justify-content: space-between; /* Distributes items evenly with space between them */
-  gap: 20px; /* Adds a consistent gap between items */
-  padding: 20px;
-  background-color: transparent;
-  text-align: center;
+/* Section Styles */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--text-primary);
 }
 
-.certificate-item {
-  flex: 1; /* Allows each item to grow and shrink equally */
-  flex-wrap: wrap;
-  background-color: transparent;
-  border-color: 44E88C;
-  text-align: center;
-  border-style: solid;
-  border-radius: 8px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.certificate-item p {
-    color: #D3D3D3;
+/* Services Section */
+.services {
+    padding: 100px 0;
+    background: var(--dark-secondary);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--dark-card);
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(184, 134, 11, 0.1);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-gold);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-gold), var(--gold-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: var(--dark-bg);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.service-card p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.service-card ul {
+    list-style: none;
+}
+
+.service-card li {
+    color: var(--text-muted);
+    padding: 5px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.service-card li::before {
+    content: "▶";
+    color: var(--primary-gold);
+    position: absolute;
+    left: 0;
+    font-size: 12px;
 }
 </style>
 
 <center><img src="/assets/img/logo-black-trimmed.png" alt="Nanobyte Security" width="50%" height="50%"></center>
 
-<br><br></br>
-<center><h1>Services We Offer</h1></center>
-<br>
+<section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Offensive Security Services</h2>
+            <p class="section-subtitle">Comprehensive security testing to identify and eliminate vulnerabilities</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <h3>Penetration Testing</h3>
+                    <p>Comprehensive security assessments simulating real-world attacks to identify vulnerabilities in your infrastructure, applications, and networks.</p>
+                    <ul>
+                        <li>Network penetration testing</li>
+                        <li>Web application security testing</li>
+                        <li>Mobile application testing</li>
+                        <li>Wireless security assessment</li>
+                    </ul>
+                </div>
 
-<div class="services-container">
-    <div class="service-item">
-        <h3 class="service-title">Vulnerability Assessment</h3>
-        <p class="service-description">Review of your organizations current state using automated tools to identify open ports, services, to identify known Common Vulnerabilities and Exposures (CVE's) in a detailed report.</p>
-    </div>
-    <div class="service-item">
-        <h3 class="service-title">Penetration Testing</h3>
-        <p class="service-description">Demonstrates how adversaries exploit vulnerabilities in real-world scenarios in a detailed report, including proof of concept and documented exploitation of vulnerabilities.</p>
-    </div>
-    <div class="service-item">
-        <h3 class="service-title">Red Teaming</h3>
-        <p class="service-description">Need to test your security operations center and gaps in your defenses? Demonstrates how threats evade detection and perform targeted and sophisticated attacks against your employees and networks.</p>
-    </div>
-  </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>Red Team Operations</h3>
+                    <p>Advanced persistent threat simulations that test your organization's detection and response capabilities through sophisticated attack scenarios.</p>
+                    <ul>
+                        <li>Social engineering campaigns</li>
+                        <li>Physical security testing</li>
+                        <li>Advanced persistent threat simulation</li>
+                        <li>Purple team exercises</li>
+                    </ul>
+                </div>
 
-<br><br></br>
-<center><h1>Certifications</h1></center>
-<br>
+                
 
-<div class="certificate-container">
-    <div class="certificate-item">
-        <p class="certificate-description">CISSP</p>
-    </div>
-    <div class="certificate-item">
-        <p class="certificate-description">OSCP</p>
-    </div>
-    <div class="certificate-item">
-        <p class="certificate-description">OSEP</p>
-    </div>
-    <div class="certificate-item">
-        <p class="certificate-description">OSWE</p>
-    </div>
-    <div class="certificate-item">
-        <p class="certificate-description">CRTO</p>
-    </div>
-    <div class="certificate-item">
-        <p class="certificate-description">CARTP</p>
-    </div>
-    <div class="certificate-item">
-        <p class="certificate-description">CEH</p>
-    </div>
-  </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Security</h3>
+                    <p>Specialized security assessments for cloud environments including AWS, Azure, and GCP to ensure proper configuration and security.</p>
+                    <ul>
+                        <li>Cloud configuration review</li>
+                        <li>Container security testing</li>
+                        <li>Serverless security assessment</li>
+                        <li>Cloud penetration testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
