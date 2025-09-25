@@ -8,7 +8,6 @@ subtitle: Please reach out!
   .border-text {
   background-color: transparent;
   border: 2px solid #007bff;
-  padding: 10px 20px;
   outline: none; 
 }
 
