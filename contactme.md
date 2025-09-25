@@ -10,8 +10,12 @@ subtitle: Please reach out!
     width: 90%; /* Form container takes 90% of its parent's width */
     margin: 0 auto; /* Centers the form horizontally */
 }
-input[type="message"],
-input[type="email"],
+input[type="message"] {
+  color: white
+},
+input[type="email"] {
+  color: white
+},
 textarea {
     width: 100%; /* Input fields take 100% of their parent's width */
     box-sizing: border-box; /* Includes padding and border in the element's total width */
@@ -27,6 +31,7 @@ textarea {
   padding: 10px 20px;
   cursor: pointer;
   outline: none; 
+  color: white;
 }
 .border-button:hover {
   background-color: #44E88C;
