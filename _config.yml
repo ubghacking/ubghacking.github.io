@@ -23,8 +23,8 @@ author: Alex Dalzell
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
-  Contact Me: "contactme"
+  About Me: "about"
+  Contact Me: "contact"
 
 ################
 # --- Logo --- #
