@@ -2,23 +2,6 @@
 layout: home
 ---
 <style>
-@media (min-width: 768px) {
-.container-md {
-max-width: 1600px;
-}
-}
-
-@media (min-width: 992px) {
-.container-lg {
-max-width: 1600px;
-}
-}
-
-@media (min-width: 1200px) {
-.container-xl {
-max-width: 1600px;
-}
-}
 
 /* Section Styles */
 .section-title {
@@ -26,12 +9,10 @@ max-width: 1600px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 15px;
-    color: var(--text-primary);
 }
 
 .section-subtitle {
     font-size: 1.1rem;
-    color: var(--text-secondary);
     text-align: center;
     margin-bottom: 60px;
     max-width: 600px;
@@ -52,7 +33,7 @@ max-width: 1600px;
 }
 
 .service-card {
-    background: var(--dark-card);
+    background: #222222;
     padding: 40px 30px;
     border-radius: 12px;
     border: 1px solid rgba(184, 134, 11, 0.1);
@@ -61,7 +42,7 @@ max-width: 1600px;
 
 .service-card:hover {
     transform: translateY(-5px);
-    border-color: var(--primary-gold);
+    border-color: #36013F;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -82,11 +63,10 @@ max-width: 1600px;
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 15px;
-    color: var(--text-primary);
 }
 
 .service-card p {
-    color: var(--text-secondary);
+    color: white;
     margin-bottom: 20px;
 }
 
@@ -95,15 +75,15 @@ max-width: 1600px;
 }
 
 .service-card li {
-    color: var(--text-muted);
-    padding: 5px 0;
+    color: white;
+    padding: 3px 0;
     position: relative;
     padding-left: 20px;
 }
 
 .service-card li::before {
     content: "▶";
-    color: var(--primary-gold);
+    color: #36013F;
     position: absolute;
     left: 0;
     font-size: 12px;
@@ -114,21 +94,19 @@ max-width: 1600px;
 
 <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Offensive Security Services</h2>
-            <p class="section-subtitle">Comprehensive security testing to identify and eliminate vulnerabilities</p>
+            <h2 class="section-title">Service Offerings</h2>
             
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-crosshairs"></i>
                     </div>
-                    <h3>Penetration Testing</h3>
-                    <p>Comprehensive security assessments simulating real-world attacks to identify vulnerabilities in your infrastructure, applications, and networks.</p>
+                    <h3>Vulnerability Assessment</h3>
+                    <p>Review of your organizations current state using automated tools to identify open ports, services, to identify known Common Vulnerabilities and Exposures (CVE's) in a detailed report.</p>
                     <ul>
-                        <li>Network penetration testing</li>
-                        <li>Web application security testing</li>
-                        <li>Mobile application testing</li>
-                        <li>Wireless security assessment</li>
+                        <li>Network scanning</li>
+                        <li>Identification of CVE's</li>
+                        <li>Assess organizations overall posture</li>
                     </ul>
                 </div>
 
@@ -136,29 +114,25 @@ max-width: 1600px;
                     <div class="service-icon">
                         <i class="fas fa-user-secret"></i>
                     </div>
-                    <h3>Red Team Operations</h3>
-                    <p>Advanced persistent threat simulations that test your organization's detection and response capabilities through sophisticated attack scenarios.</p>
+                    <h3>Penetration Testing</h3>
+                    <p>Demonstrates how adversaries exploit vulnerabilities in real-world scenarios, including actual exploitation of vulnerabilities to demonstrate security misconfigurations and weaknesses.</p>
                     <ul>
-                        <li>Social engineering campaigns</li>
-                        <li>Physical security testing</li>
-                        <li>Advanced persistent threat simulation</li>
-                        <li>Purple team exercises</li>
+                        <li>Network penetration testing</li>
+                        <li>Web application testing</li>
+                        <li>Cloud and containeration testing</li>
                     </ul>
                 </div>
-
-                
 
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-cloud"></i>
                     </div>
-                    <h3>Cloud Security</h3>
-                    <p>Specialized security assessments for cloud environments including AWS, Azure, and GCP to ensure proper configuration and security.</p>
+                    <h3>Red Team Ops</h3>
+                    <p>Advanced Persistent Threat testing against your security operations center to find gaps in defenses. Demonstrates how threats evade detection and perform sophisticated attacks.</p>
                     <ul>
-                        <li>Cloud configuration review</li>
-                        <li>Container security testing</li>
-                        <li>Serverless security assessment</li>
-                        <li>Cloud penetration testing</li>
+                        <li>Advanced persistent Threat emulation</li>
+                        <li>Social engineering campaigns</li>
+                        <li>Defense evasion</li>
                     </ul>
                 </div>
             </div>
