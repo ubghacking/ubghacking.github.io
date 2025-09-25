@@ -1,1 +1,0 @@
-Use welcome as template - this dir is needed for all tags that appear on posts/writeups/news
