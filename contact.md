@@ -22,7 +22,7 @@ textarea {
   outline: none; 
 }
 .border-button {
-    background: transparent;
+    background: #222222;
     padding: 10px 20px;
     border-radius: 25px;
     border: 1px solid #44E88C;
