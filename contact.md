@@ -5,22 +5,81 @@ subtitle: Please reach out!
 ---
 
 <style>
-.contact-form-container {
-    max-width: 800px; /* Optional: Sets a maximum width for larger screens */
-    width: 90%; /* Form container takes 90% of its parent's width */
-    margin: 0 auto; /* Centers the form horizontally */
+.contact-section {
+  width: 100%;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 1rem;
 }
-input[type="message"],
-input[type="email"],
-textarea {
-    width: 100%; /* Input fields take 100% of their parent's width */
-    box-sizing: border-box; /* Includes padding and border in the element's total width */
+
+.contact-intro > * + * {
+  margin-top: 1rem;
 }
-  .border-text {
-    color: white;
-    background-color: #222222;
-    border: 2px solid #44E88C;
-    outline: none; 
+
+.contact-title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: #44E88C
+}
+
+.contact-description {
+  color: #44E88C;
+}
+
+.form-group-container {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  margin-bottom: 0.5rem;
+  color: #44E88C;
+}
+
+.form-input,
+.form-textarea {
+  padding: 0.5rem;
+  border: 1px solid #44E88C;
+  background-color: #222222;
+  color: white;
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.form-input::placeholder,
+.form-textarea:focus-visible {
+  color: #6b7280;
+}
+
+.form-input:focus-visible,
+.form-textarea:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.form-textarea {
+  min-height: 120px;
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 1.2rem;
+  background-color: #3124ca;
+  color: #fff;
+  padding: 13px 5px;
+  border-radius: 0.375rem;
 }
 .border-button {
     background: #222222;
@@ -42,16 +101,40 @@ textarea {
 }
 </style>
 
-<div class="container">
-    <form action="https://formspree.io/f/mldpdljn" method="POST">
-        <div class="form-group">
-            <br><label for="email">Your Email:</label>
-            <br><input type="email" id="email" name="email" class="border-text" required>
-        </div>
-        <div class="form-group">
-            <label for="message">Message:</label>
-            <br><textarea id="message" name="message" class="border-text" rows="10" required></textarea>
-        </div>
-        <button type="submit" class="border-button">Send Message</button>
-    </form>
-</div>
+<script>
+    window.onload = function() {
+        // Reset the form fields when the page loads
+        document.getElementById("form").reset();
+    };
+</script>
+
+<section class="contact-section">
+  <div class="contact-intro">
+    <h2 class="contact-title">Get in Touch</h2>
+    <p class="contact-description">
+      Fill out the form below and we'll get back to you as soon as possible.
+    </p>
+  </div>
+
+  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value=" d3bee2f3-1516-44e3-b80d-f3c3e75bbf34" />
+    <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+    <input type="hidden" name="from_name" value="My Website" />
+    <input type="hidden" name="redirect" value="https://nanobytesecurity.com/thanks">
+    <div class="form-group-container">
+      <div class="form-group">
+        <label for="name" class="form-label">Name</label>
+        <input id="name" name="name" class="form-input" placeholder="Your name" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" name="email" class="form-input" placeholder="Your email" type="email" />
+      </div>
+      <div class="form-group">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="Your message"></textarea>
+      </div>
+    </div>
+    <button class="border-button" type="submit">Send Message</button>
+  </form>
+</section>
