@@ -1,7 +1,7 @@
 ---
 layout: page
-title: contact form
-subtitle: Please reach out!
+title: Get in Touch
+subtitle: Please fill out this form, and we'll get back yo you!
 ---
 
 <style>
@@ -11,6 +11,21 @@ subtitle: Please reach out!
   margin-left: auto;
   margin-right: auto;
   padding: 3rem 1rem;
+}
+
+.contact-intro > * + * {
+  margin-top: 1rem;
+}
+
+.contact-title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: #44E88C
+}
+
+.contact-description {
+  color: #44E88C;
 }
 
 .form-group-container {
@@ -45,26 +60,17 @@ subtitle: Please reach out!
 
 .form-input::placeholder,
 .form-textarea:focus-visible {
-  color: #6b7280;
+  color: white;
 }
 
 .form-input:focus-visible,
 .form-textarea:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #800080;
   outline-offset: 2px;
 }
 
 .form-textarea {
   min-height: 120px;
-}
-
-.form-submit {
-  width: 100%;
-  margin-top: 1.2rem;
-  background-color: #3124ca;
-  color: #fff;
-  padding: 13px 5px;
-  border-radius: 0.375rem;
 }
 .border-button {
     background: #222222;
@@ -114,6 +120,6 @@ subtitle: Please reach out!
         <textarea class="form-textarea" id="message" name="message" placeholder="Your message"></textarea>
       </div>
     </div>
-    <button class="border-button" type="submit">Send Message</button>
+    <br><center><button class="border-button" type="submit">Send Message</button></center>
   </form>
 </section>
