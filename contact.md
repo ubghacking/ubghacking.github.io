@@ -58,14 +58,14 @@ subtitle: Please fill out this form, and we'll get back yo you!
   line-height: 1.25rem;
 }
 
-.form-input::placeholder,
+.form-input:placeholder,
 .form-textarea:focus-visible {
-  color: white;
+  color: grey;
 }
 
 .form-input:focus-visible,
 .form-textarea:focus-visible {
-  outline: 2px solid #800080;
+  outline: 2px solid #2563eb;
   outline-offset: 2px;
 }
 
