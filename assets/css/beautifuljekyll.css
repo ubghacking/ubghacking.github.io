@@ -43,6 +43,185 @@ max-width: 1600px;
 }
 }
 
+/* Section Styles */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+}
+/* Services Section */
+.services {
+    padding: 100px 0;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+.service-card {
+    background: #222222;
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(184, 134, 11, 0.1);
+    transition: all 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: #44E88C;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.service-card p {
+    color: white;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.service-card ul {
+    padding-left: 2px;
+    list-style: none;
+}
+.service-card li {
+    color: white;
+    padding: 1px 0;
+    position: relative;
+    padding-left: 20px;
+}
+.service-card li::before {
+    content: "▶";
+    color: #44E88C;
+    position: absolute;
+    left: 0;
+    font-size: 12px;
+}
+/* Cert Section */
+.cert {
+    padding: 100px 0;
+}
+.certifications {
+    text-align: center;
+}
+.certifications-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.cert-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+.cert-item {
+    background: #222222;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #44E88C;
+    color: #44E88C;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Ready Section */
+.ready {
+    padding: 100px 0;
+}
+.ready {
+    text-align: center;
+}
+.ready-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.border-button {
+    background: #222222;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #44E88C;
+    color: #44E88C;
+    font-weight: 500;
+    font-size: 14px;
+}
+.border-button:hover {
+    background: #44E88C;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #44E88C;
+    color: #000000;
+    font-weight: 500;
+    font-size: 14px;
+}
+p {
+    text-align: center;
+    color: #44E88C;
+}
+
+/* --- Contact Page --- */
+.contact-section {
+  width: 100%;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 1rem;
+}
+.contact-intro > * + * {
+  margin-top: 1rem;
+}
+.contact-title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: #44E88C
+}
+.contact-description {
+  color: #44E88C;
+}
+.form-group-container {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-label {
+  margin-bottom: 0.5rem;
+  color: #44E88C;
+}
+.form-input,
+.form-textarea {
+  padding: 0.5rem;
+  border: 1px solid #44E88C;
+  background-color: #222222;
+  color: white;
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.form-input:placeholder,
+.form-textarea:focus-visible {
+  color: grey;
+}
+.form-input:focus-visible,
+.form-textarea:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+.form-textarea {
+  min-height: 120px;
+}
+
 /* --- General --- */
 
 html {
