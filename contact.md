@@ -22,16 +22,22 @@ textarea {
   outline: none; 
 }
 .border-button {
-  background-color: transparent;
-  border: 2px solid #44E88C;
-  padding: 10px 20px;
-  cursor: pointer;
-  outline: none; 
-  color: white;
+    background: transparent;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #44E88C;
+    color: #44E88C;
+    font-weight: 500;
+    font-size: 14px;
 }
 .border-button:hover {
-  background-color: #44E88C;
-  color: black;
+    background: #44E88C;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #44E88C;
+    color: #000000;
+    font-weight: 500;
+    font-size: 14px;
 }
 </style>
 
