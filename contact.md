@@ -17,9 +17,10 @@ textarea {
     box-sizing: border-box; /* Includes padding and border in the element's total width */
 }
   .border-text {
-  background-color: lightgrey;
-  border: 2px solid #44E88C;
-  outline: none; 
+    color: white;
+    background-color: #222222;
+    border: 2px solid #44E88C;
+    outline: none; 
 }
 .border-button {
     background: #222222;
