@@ -13,21 +13,6 @@ subtitle: Please reach out!
   padding: 3rem 1rem;
 }
 
-.contact-intro > * + * {
-  margin-top: 1rem;
-}
-
-.contact-title {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-  font-weight: 700;
-  color: #44E88C
-}
-
-.contact-description {
-  color: #44E88C;
-}
-
 .form-group-container {
   display: grid;
   gap: 1rem;
@@ -109,15 +94,9 @@ subtitle: Please reach out!
 </script>
 
 <section class="contact-section">
-  <div class="contact-intro">
-    <h2 class="contact-title">Get in Touch</h2>
-    <p class="contact-description">
-      Fill out the form below and we'll get back to you as soon as possible.
-    </p>
-  </div>
 
   <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-    <input type="hidden" name="access_key" value=" d3bee2f3-1516-44e3-b80d-f3c3e75bbf34" />
+    <input type="hidden" name="access_key" value="d3bee2f3-1516-44e3-b80d-f3c3e75bbf34" />
     <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
     <input type="hidden" name="from_name" value="My Website" />
     <input type="hidden" name="redirect" value="https://nanobytesecurity.com/thanks">
