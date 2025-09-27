@@ -49,7 +49,11 @@ max-width: 1600px;
   /* Optional: Add space between the divs */
   gap: 20px; /* or use justify-content: space-between; */
 }
-
+.tagline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
 .tagline-left, .tagline-right {
   /* Optional: Set widths or other styles for your divs */
   width: 50%;
