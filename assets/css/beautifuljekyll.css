@@ -50,12 +50,11 @@ max-width: 1600px;
   gap: 20px; /* or use justify-content: space-between; */
 }
 
-.tagline-left {
-  float: left;
-  width: 33.33%;
-  /* Optional: Add a border and padding for visual separation */
-  box-sizing: border-box; /* Includes padding and border in the width */
+.tagline-left, .tagline-right {
+  /* Optional: Set widths or other styles for your divs */
+  width: 50%;
   padding: 10px;
+  border: 1px solid var(--page-col);
 }
 .tagline-left h1 {
   text-align: left;
