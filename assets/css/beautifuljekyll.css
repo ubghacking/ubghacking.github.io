@@ -43,6 +43,26 @@ max-width: 1600px;
 }
 }
 
+/* Tagline Section */
+.tagline {
+  display: flex;
+  /* Optional: Add space between the divs */
+  gap: 20px; /* or use justify-content: space-between; */
+}
+
+.tagline-left, .tagline-right {
+  /* Optional: Set widths or other styles for your divs */
+  width: 50%;
+  padding: 10px;
+  border: 1px solid var(--page-col);
+}
+.tagline-left h1 {
+  text-align: left;
+}
+.tagline-right p {
+  text-align: right;
+}
+
 /* Section Styles */
 .section-title {
     font-size: 2.5rem;
